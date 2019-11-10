@@ -1,0 +1,298 @@
+/* ----------- Reset the html ----------- */
+
+/* 嵌入字型設定 */
+@font-face {
+    font-family: “微軟正黑體”;
+    src: url(wt005.ttf);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: '微軟正黑體', cursive;/*'Luckiest Guy'*/
+  /*vertical-align: baseline;*/
+}
+/*
+:focus {
+  outline: 0;
+}
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+ol, ul {
+  list-style: none;
+}
+*/
+/* ----------- End Reset the html ----------- */
+ 
+
+/* ----------- Major Class ----------- */
+body {
+  display: flex;
+  flex-flow: column;
+  background-color: #ffc55a;
+}
+
+body h1 {
+  text-align: center;
+  font-family: '微軟正黑體', cursive;
+  font-size: 50px;
+  font-stretch: expanded;
+  color: orange;
+  margin-top: 20px;
+  margin-bottom: -2px;
+  text-shadow: 2px 2px blue,
+               4px 3px white;
+}
+
+button {
+  outline: none;
+}
+
+.all-container {
+  display: flex;
+  align-self: center;
+  width: 900px;
+  height: 600px;
+  box-shadow: 0 0 0 4px orange;
+  border-radius: 4px;
+}
+/* ----------- Sub Major Class ----------- */
+.info-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: orange;
+  width: 250px;
+  height: 600px;
+  backface-visibility: visible;
+  background-image: url('images/background_left.jpg');
+}
+
+.info-intro-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 15px auto;
+  padding: 8px;
+}
+
+.info-intro-container h2 {
+  font-size: 36px;
+  font-family: '微軟正黑體', cursive;
+}
+
+.info-intro-container p {
+  padding: 10px 20px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(255,255,255, 0.6);
+  width: 180px;
+  height: 180px;
+}
+
+.info-level-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 15px auto -30px;
+}
+
+.info-level-container h2 {
+  font-size: 36px;
+  font-family: '微軟正黑體', cursive;
+  margin-bottom: -10px;
+}
+
+.info-level-container button {
+  margin: 6px auto;
+  padding-top: 4px;
+  border: 2px solid black;
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  font-family: '微軟正黑體', cursive;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.info-level-container button:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.info-music-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 35px auto;
+}
+
+.info-music-container button {
+  margin: 0 auto 20px;
+  border: 2px solid black;
+  width: 90px;
+  height: 50px;
+  background-color: white;
+  font-family: '微軟正黑體', cursive;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.info-music-container button:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.info-music-container h2 {
+  font-size: 36px;
+  font-family: '微軟正黑體', cursive;
+}
+
+/* ----------- Sub Major Class ----------- */
+.game-container {
+  width: 400px;
+  height: 600px;
+  background-image: url('images/background_mid.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ----------- Sub Major Class ----------- */
+.scoreboard-container {
+  background-image: url('images/background_right.jpg');
+  width: 250px;
+  height: 600px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.scoreboard-score-container {
+  margin: 10px auto;
+}
+
+.score {
+  font-family: '微軟正黑體', cursive;
+  padding-top: 10px;
+  font-stretch: extra-expanded;
+  color: white;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgba(0,0,0, 0.5);
+  vertical-align: middle;
+}
+
+.scoreboard-score-container h2, h3 {
+  font-size: 36px;
+  font-family: '微軟正黑體', cursive;
+  vertical-align: middle;
+}
+
+.scoreboard-score-container h3 {
+  font-size: 26px;
+  text-align: center;
+  vertical-align: middle;
+    margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.control-panel {
+    margin-left: 8px;
+    background-image: url('images/controlpanel.png');
+    width: 232px;
+    height: 138px;
+}
+
+.control-panel #btnRed{
+    background-image: url(images/btnRed_X.png);
+    width: 93px;
+    height: 74px;
+    border-radius: 40px;
+    background-repeat: no-repeat;
+    margin-left: 0px;
+    margin-top: 60px;
+    background-size: 70px;
+}
+
+.control-panel #btnLeft{
+    background-image: url(images/btnLeft_Z.png);
+       width: 95px;
+    height: 72px;
+    border-radius: 40px;
+    background-repeat: no-repeat;
+    margin-left: 7px;
+    margin-top: 30px;
+    background-size: 70px;
+}
+
+.control-panel #btnRight{
+     background-image: url(images/btnRight_C.png);
+   width: 93px;
+    height: 74px;
+    border-radius: 40px;
+    background-repeat: no-repeat;
+    margin-left: 7px;
+    margin-top: 30px;
+    background-size: 70px;
+}
+
+.scoreboard-button-container {
+  display: flex;
+  flex-flow: column;
+  margin: 20px auto;
+}
+
+.scoreboard-button-container button {
+  margin: 10px auto;
+  border: 2px solid black;
+  width: 100px;
+  height: 32px;
+  background-color: white;
+  font-family: '微軟正黑體', cursive;
+  font-size: 14px;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
+.scoreboard-button-container button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.scoreboard-container-link {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.scoreboard-container-link img {
+  width: 50px;
+  height: 50px;
+}
+
+.scoreboard-container-link img:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+/* ----------- End Major Class ----------- */
