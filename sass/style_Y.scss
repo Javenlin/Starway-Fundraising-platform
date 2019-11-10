@@ -1,0 +1,866 @@
+@import 'reset';
+@import 'mixins';
+@import 'color';
+// @import 'grid';
+
+body{
+	background-image: linear-gradient(80deg, #240d48 0%, #30166d 30%, #30166d 50%, #080422 100%);;
+	// background-image: linear-gradient(80deg, #0c091d 0%, #140f30 30%, #140f30 50%, #0c091d 100%);
+	font-family: Microsoft JhengHei;
+
+}
+
+//******** mainbar的CSS，暫時先不將position fixed ********
+.mainBar{
+	// position: unset;
+}
+
+//******** 購物車CSS ********
+
+#Y_cdPrice{
+	color: rgba(255, 196, 0, 0.7);
+}
+
+.Y_cartContent{
+	max-width: 960px;
+	color: #fff;
+	padding: 30px 0 0 0;
+	// display: none;
+
+	h2{
+		text-align: center;
+		padding: 120px 0px  30px 0;
+	}
+
+}
+	.Y_cartNull{
+		text-align: center;
+		border-radius: 10px;
+		background-image: -webkit-gradient(linear, right top, left top, from(rgba(34, 21, 43, .4)), 
+		color-stop(50%, rgba(34, 21, 43, .6)), color-stop(50%, rgba(34, 21, 43, .9)), to(rgba(41, 14, 88, 1)));
+		// background-color: rgba(255,255,255,.2);
+		background-color: rgba(34, 21, 43, .6);
+		margin: 0 auto;
+		border-bottom: 1px solid rgba(255, 255, 255, .2);
+		padding: 10px 0 10px 0;
+		a:visited{
+			// color: #fff;
+		}
+
+	}
+
+.Y_cartItem{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear, right top, left top, from(rgba(34, 21, 43, .4)), 
+	color-stop(50%, rgba(34, 21, 43, .6)), color-stop(50%, rgba(34, 21, 43, .9)), to(rgba(41, 14, 88, 1)));
+	// background-color: rgba(255,255,255,.2);
+	background-color: rgba(34, 21, 43, .6);
+	// max-width:70%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid rgba(255, 255, 255, .2);
+	padding: 10px 0 10px 0;
+
+
+	.Y_ccartImg{
+		width: 28%;
+		// text-align: center;
+		img{
+		max-width: 60%;
+
+		}
+	}
+	
+
+	.Y_carInfo{
+		text-align: left;
+		h3{
+			line-height: 1.5;
+		}
+		strong{
+			display: inline-block;
+			padding: 20px 0 0 0 ;
+			
+			font-size: 16px;
+		};
+	}
+	.Y_ccartDel{
+		width: 15%;
+		text-align: right;
+	}
+}
+.Y_amount{
+	text-align: right;
+	padding: 20px 10px 0 0;
+	strong{
+	color: rgba(255, 196, 0, 0.7);
+	font-size: 18px;
+	}
+}
+
+#Y_cartGo{
+display: flex;
+
+.Y_browse{
+	margin: 0 auto;
+	a{
+		@include btn2;
+	}
+}
+
+.Y_check{
+	margin: 0 auto;
+	a{
+		@include btn;
+	}
+}
+}
+
+//付款方式及寄件資訊頁面
+#Y_payInfo
+{
+	max-width: 960px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 103px;
+	// bottom: 0;
+	margin: auto;;
+	// width: 60%;
+	// height: 100%;
+	overflow: hidden;
+	display: none;
+}
+
+  @media screen and (max-width: 569px){
+  	#Y_payInfo{
+	position: unset;
+	margin: 71px auto 0 auto;;
+  		
+  	}
+  }
+
+  .L_pay_payinfo{
+    width: 100%;
+    position: relative;
+    padding: 26px 32px;
+    text-align: left;
+    box-sizing: border-box; 
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+
+    .L_pay_payinfo_pay{
+      // padding-bottom: 50px;
+      >h5:first-child{ 
+        padding-top: 10px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 35px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      label{
+        @include btn2;
+        margin-right: 20px; 
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        // border-radius: 7px;
+       }
+
+       input:checked ~ label{
+       	// background-color: #a22135;
+       	background-color: rgba(245, 1, 62, 0.3);
+		color: #ececec;
+		font-weight: bold;
+       };
+
+       input[type=radio]{
+       	// opacity: 0;
+       	display: none;
+       }
+
+    }
+//信用卡卡號輸入相關
+#Y_payCreditInput{
+	display: none;
+	padding: 25px 0 0 0;
+	letter-spacing: 1px;
+	img{
+		max-width: 40%;
+	}
+	input{
+		background-color: rgba(255, 255, 255, 0.1);
+		border-style: none;
+		border-left: 5px solid transparent;
+		padding: 6px;
+		border-radius: 3px;
+		outline: none;
+		caret-color: #fff;
+		color: #fff;
+		font-size: 16px;
+	}
+
+
+	.Y_expireDay{
+		margin: 10px 0 10px 0 ;
+	}
+
+}
+
+  @media screen and (max-width: 569px){
+  		#Y_payCreditInput{
+			img{
+				max-width: 55%;
+			}
+  		}
+
+		.creadCardtext{
+		span{
+			display: block;
+			padding-bottom: 10px;
+		}
+	}
+  }
+
+#Y_payATMInput{
+	display: none;
+	padding: 25px 0 0 0;
+	letter-spacing: 1px;
+	input{
+		background-color: rgba(255, 255, 255, 0.1);
+		border-style: none;
+		border-left: 5px solid transparent;
+		padding: 6px;
+		border-radius: 3px;
+		outline: none;
+		caret-color: #fff;
+		color: #fff;
+		font-size: 16px;
+	}
+}
+
+  @media screen and (max-width: 569px){
+  		#Y_payATMInput{
+		span{
+			display: block;
+			padding-bottom: 10px;
+		}
+	}
+  }
+
+// 付款資訊 - 是否使用折價卷
+    .Y_pay_payinfo_pay{
+    	 // padding-bottom: 50px;
+      >h5:first-child{
+        padding-top: 60px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 35px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      label{
+        @include btn2;
+        // background-color: hsla(76, 53%, 49%, 0.2);
+        background-color: rgba(245, 1, 62, 0.1);
+        // background-color: rgba(255, 196, 0, 0.1);
+        margin-right: 20px; 
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        // border-radius: 7px;
+		position: relative;
+
+        &:after{
+        	content: '';
+        	background-image: url('../images/Cart/check2.png');
+        	width: 64px;
+        	height: 64px;
+        	background-repeat: no-repeat;
+        	background-size: 45%;
+        	position: absolute;
+        	top: -16px;
+        	right: -65px;
+        	display: none
+
+        }
+
+        &:hover{
+        // background-color: hsla(76, 53%, 49%, 0.6);
+        background-color: rgba(245, 1, 62, 0.2);
+        };
+       }
+
+       input:checked ~ label{
+       	// background-color: rgba(255, 196, 0, 0.8);
+        // background-color: hsla(76, 53%, 49%, 0.8);
+        background-color: rgba(245, 1, 62, 0.3);
+       	// border: 2px solid rgba(255, 196, 0, 1);
+		color: #ececec;
+		font-weight: bold;
+		 &:after{
+        
+        	display: block
+
+        }
+       };
+
+         input[type=radio]{
+       	// opacity: 0;
+       	 display: none;
+       }
+
+    }
+
+      @media screen and (max-width: 569px){
+      	.L_pay_payinfo_pay{
+      		label{
+      		    padding: 12px 35px;
+      		}
+      	}
+      }
+
+	// 付款資訊 - 寄件資訊
+    .L_pay_payinfo_adres{
+      padding-bottom: 15px;
+      >h5:first-child{  //?ļ??Ӎ
+        padding-top: 60px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 36px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      .L_pay_payinfo_adres_form{
+        padding-top: 15px;
+        padding-bottom: 30px;
+        >li{
+          letter-spacing: 1.5px;
+          line-height: 3;
+          >span{
+            padding-right: 20px;
+            &::after{
+              content: ":";
+              position: absolute;
+              left: 111px;
+            }
+          }
+          >input{
+            margin-left: 5px;
+            width: 88%;
+            background-color: rgba(255, 255, 255, .1);
+            border-style: none;
+            border-left: 5px solid transparent;
+            padding: 6px;
+            border-radius: 3px;
+            outline: none;
+            caret-color: #fff;
+            color: #fff;
+            font-size: 16px;
+            &::placeholder{
+              color: rgba(255, 255, 255, .6);
+              letter-spacing: 1px;
+            }
+          }
+        }
+        >:first-child{
+          >span{
+            letter-spacing: 9px;
+          }
+          >input{
+            margin-left: 0px;
+          }
+        }
+      }
+		
+	    @media screen and (max-width: 768px){
+	    	.L_pay_payinfo_adres_form{
+	    		>li{
+	    			input{
+	    				width: 100%
+	    			}
+	    		}
+	    }
+}
+      .L_pay_payinfo_adres_formBtn{
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: space-evenly;
+
+        & button:nth-of-type(1){
+          @include btn2;
+          padding: 12px 50px;
+        }
+          & button:nth-of-type(2){
+          @include btn;
+          padding: 12px 50px;
+        }
+      }
+    }
+  }
+
+//******** 認訂單細明及收件人資料頁面 ********
+#Y_albumOrder{
+	max-width: 960px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: 103px auto 0 auto;;
+	// width: 60%;
+	// height: 100%;
+	overflow: hidden;
+	display: none;
+	 h5{
+		 padding-top: 10px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 35px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+	};
+}
+
+#albumOrderInfo{
+width: 100%;
+position: relative;
+padding: 26px 32px;
+text-align: left;
+box-sizing: border-box;
+color: #fff;
+background-color: rgba(255, 255, 255, 0.1);
+border-radius: 15px;
+
+    #Y_albumOrderDetails-right{
+		padding: 0px 0px 0px 24px;
+		line-height: 33px;
+		//使用優惠卷樣式
+		#use_Cupon{
+		color: rgba(255, 196, 0, 0.7);
+		font-weight: bold;
+		}
+		//總價格樣式
+		#confirmTotal{
+		color: rgba(255, 196, 0, 0.7);
+		font-weight: bold;
+		};
+   }
+}
+
+.Y_NextBefore{
+  	letter-spacing: 1px;
+   	display: flex;
+    justify-content: space-evenly;
+
+    button{
+    	 @include btn2;
+          padding: 12px 50px;
+    }
+
+    #albumOrderConfirmed{
+    	 @include btn;
+          padding: 12px 50px;
+    }
+}
+
+//******** 訂單完成後感謝購買訊息窗 ********
+#Y_thanksMsgBox{
+	max-width: 960px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: 103px auto 0 auto;;
+	// width: 60%;
+	overflow: hidden;
+	height:300px;
+	padding: 26px 0px;
+	width: 100%;
+	color: #fff;
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.1);
+	text-align: center;
+	box-sizing: border-box;
+	display: none;
+	box-shadow: 0px 0px 20px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 5px #fff;
+}
+
+  @media screen and (max-width: 414px){
+  	#Y_thanksMsgBox{
+  		max-width: 400px;
+  		height:350px;
+  	}
+  }
+
+.Y_completeMsg{
+	position: relative;
+	top:50%;
+	transform:translateY(-50%);
+	strong{
+		font-size: 40px;
+		line-height: 1.3;
+	}
+	p{
+		line-height: 1.6;
+	 letter-spacing: 2px;
+	 & span:nth-of-type(1){
+	 	font-weight: bold;
+	 };
+	}
+	.Y_checkBtn{
+	 letter-spacing: 1px;
+     display: flex;
+	 justify-content: space-evenly;
+	 transform: translate(0%,50%);
+	 opacity: 0;
+	}
+	
+	a{
+		@include btn2;
+		 padding: 12px 50px;
+
+	}
+}
+
+  @media screen and (max-width: 414px){
+  	.Y_completeMsg{
+  		p{
+  			padding: 5px 0;
+  		}
+  	}
+  }
+
+//******** canvas的CSS-目前這效果先用在關於我們 ********
+#canvas {
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0;
+  z-index: -1;
+}
+
+//******** 關於我們CSS ********
+.Y_aboutStar{
+	width: 400px;
+	
+}
+
+
+//開頭資訊
+#Y_idealInfo{
+	display: flex;
+	justify-content:space-between;
+	// align-items: center;
+	padding: 121px 0 0 0;
+	color: #fff;
+	h1{
+		line-height: 2;
+	}
+	p{
+		line-height: 1.6;
+		font-size: 16px;
+	}
+
+
+
+ & li:nth-of-type(1){
+
+ 	width: 42%;
+ 	color: #fff;
+ 	 // align-self:center;
+ };
+
+  & li:nth-of-type(2){
+ 	width: 52%;
+ };
+
+  @media screen and (max-width: 768px){
+  	  & li:nth-of-type(1){
+ 		width: 100%;
+  		padding: 0 15px;
+
+ 	};
+
+
+  	  & li:nth-of-type(2){
+ 		display: none;
+ 	};
+  }
+
+}
+
+
+//******** 星路歷程 ********
+#Y_timeline{
+	padding: 100px 0 0 0;
+	max-width: 1200px;
+	margin: 0 auto;
+	h2{
+		color: #fff;
+	}
+  @media screen and (max-width: 768px){
+  	& h2{
+  		padding: 0 15px;
+  		margin: 0 0 -20px 0;
+  	}
+  }
+}
+
+//******** 成員介紹的CSS ********
+
+#Y_member{
+	padding: 80px 0 0 0 ;
+	max-width: 1200px;
+	margin: 0 auto;
+	h2{
+		color: #fff;
+	}
+  
+  @media screen and (max-width: 768px){
+  	& h2{
+  		padding: 0px 0 20px 15px;
+  	}
+  }
+}
+//******** 會員註冊頁的CSS ********
+#Y_register{
+	padding-top: 150px;
+	max-width: 1200px;
+	margin: 0 auto;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+.Y_Lside{
+	width: 65%;
+	display: flex;
+	.Y_Limg{
+		width: 50%;
+	}
+	.Y_Ltitle{
+		align-self: center;
+		h2{
+			line-height: 2;
+		}
+		p{
+			line-height: 2;
+			// text-decoration: underline;
+		}
+	}
+}
+
+
+
+.Y_Rside{
+	width: 40%;
+	align-self: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 70px 15px 5px 15px;
+    border-radius: 5px;
+    position: relative;
+
+    .Y_regTitle{
+    	background-color: hsla(250, 43%, 61% ,0.7);
+    	padding: 10px 20px;
+    	position: absolute;
+    	left: -10px;
+    	top: 10px;
+    	color: white;
+    	box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+    	&:before{
+    		content: '';
+			position: absolute;
+			bottom: -10px;
+			left: 0px;
+			z-index: 2;
+			border-left: 10px solid transparent;
+			border-bottom: 0px solid transparent;
+			border-top: 10px solid hsla(250, 53%, 55% ,1);
+    	};
+
+    }
+
+	//送出按鈕置中
+	& .form-group:nth-of-type(8){
+		text-align: center;
+	};
+
+	.form-group{
+		margin-bottom: 15px;
+		label{
+			display: inline-block;
+			margin-bottom: .5rem;
+			color: #ddd;
+			font-weight: bold;
+		}
+		.form-control{
+			color: #fff;
+			display: block;
+			width: 100%;
+			height: calc(2.25rem + 2px);
+			padding: .375rem .75rem;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.5;
+			background-color: hsla(0, 0%, 67%, .5);
+			background-clip: padding-box;
+			border: 1px solid hsla(0, 0%, 67%, .5);
+			border-radius: 7px;
+			transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+		}
+		.Y_RegBut{
+			@include btn;
+			// text-align: center;
+		}
+	}
+}
+  @media screen and (max-width: 768px){
+  	#Y_register{
+	flex-direction: column;
+	padding-top: 65px;
+
+	.Y_Lside{
+		width: 100%;
+		justify-content:center;
+  	}
+  	.Y_Limg{
+  		display: none;
+  	}
+	.Y_Ltitle{
+		width: auto;
+		padding-bottom: 20px;
+	}
+	}
+
+	.Y_Rside{
+		width: 80%;
+		justify-content:center;
+  	}
+ }
+
+//註冊成功，出現的訊息框CSS
+#Y_regSucess{
+position: fixed;
+z-index: 2001;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+background-color: rgba(0, 0, 0, .5);
+display: none;
+}
+
+  
+
+#Y_sucessMsg{
+	background-color: rgba(55, 55, 55, 0.8);
+	margin: 20% auto 15% auto;
+	border: 1px solid rgba(55, 55, 55, 0.8);
+	width: 28%;
+	padding: 23px 0;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 5px #fff;
+	position: relative;
+	text-align:center;
+	p{
+		    // padding-bottom: 20px;
+            color: #bbb;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 17px;
+	}
+	#goButton{
+		display: flex;
+		justify-content: space-evenly;
+	}
+	#Y_goHome,#Y_goGame{
+		@include btn2;
+	}
+
+	#Y_goHome{
+		&:hover{
+		background-color: #20c997;
+		transition: all .3s;
+		};
+	}
+
+	#Y_goGame{
+	&:hover{
+	background-color: #fd7e14;
+	transition: all .3s;
+	};
+	}
+}
+  @media screen and (max-width: 569px){
+	#Y_sucessMsg{
+		width: 96%;
+		margin: 70% auto 15% auto;
+	}
+
+  }
+
+//******** 註冊成功後，跑動畫的CSS ********
+#Y_vinilImg{
+  height: 100vh;
+  position: absolute;
+  right: -150%;
+  top: 0;
+  transform: rotate(0deg);
+  z-index: 2002;
+  display: none;
+	img{
+		  height: 100%;
+	}
+}
+
+#Y_vinilBg{
+  // background-color: #0052b2;
+  background-color: rgba(55, 55, 55, 0.8);
+  width: 200%;
+  height: 141vh;
+  right: 250%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2001
+}
+
+#Y_vinilImg.active {
+  animation: vinilRotate 2.8s forwards;
+  display: block;
+}
+
+
+@keyframes vinilRotate {
+  from {
+    right: -150%;
+    transform: rotate(0deg); 
+}
+
+  to {
+    right: 150%;
+    transform: rotate(-360deg); 
+}
+}

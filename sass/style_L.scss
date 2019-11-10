@@ -1,0 +1,3165 @@
+@import 'reset';
+@import 'mixins';
+@import 'color';
+// @import 'grid';
+
+.L_body{
+  position: relative;
+}
+.menu li .L_CD{
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 15px  rgba(255, 0, 106, 0.8);
+}
+
+//______________ 募資專輯 _____________
+//!important
+//___________ Swiper開始 ___________
+.L_dona_slider{
+  margin-top: 100px;
+  height: 700px!important;
+  background-color: transparent;
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    .swiper-wrapper{   
+      .swiper-slide { //form
+        position: relative;
+        padding: 50px 0;
+        text-align: center;
+        font-size: 18px;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        >.L_dona_fin_record{
+         display: flex;
+         z-index: 1;
+         position: relative;
+         perspective: 2000;
+         -webkit-perspective: 2000;
+          >img{
+            // position: absolute;
+            width: 26%;
+            height: 26%;
+            margin-left: auto;
+            // perspective-origin: 10% 10%;
+            transform: rotateY(30deg);
+            -webkit-transform: rotateY(30deg);
+          }
+          >.L_dona_fin_info{
+            width: 30%;
+            text-align: left;
+            margin: auto;
+            margin-left: 0;
+            padding-left: 5%;
+            letter-spacing: 1px;
+            color: #fff;
+            position: relative;
+            >:first-child{
+              font-size: 23px;
+              font-weight: bold;
+              line-height: 1;
+            }
+            >:nth-child(2){
+              line-height: 2.2;
+            }
+            >:nth-child(3){
+              display: block;
+              padding: 15px 0;
+              line-height: 1.6;
+            }
+            >ul{
+              position: relative;
+              line-height: 1.2;
+              display: flex;
+              padding-top: 16px;
+              >li:nth-child(2){
+                position: absolute;
+                right: 0;
+              }
+            }
+            >:nth-child(5){
+              height: 3px;
+              margin-top: 10px;
+              background-color: #ffc400;
+              position: relative;
+              &:before{
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: rgba(255, 255, 255, .3);
+              }
+            }
+            >input{
+              width: 100%;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background-color: transparent;
+              border: transparent;
+              cursor: pointer;
+            }
+          }
+        }
+        >.L_dona_fin_bg{
+          width: 100%;
+          position: absolute;
+          opacity: .2;
+          // backdrop-filter: blur(30px);
+          >img{
+            width: 100%;
+          }
+        }
+      }
+    }
+    >.swiper-pagination{
+      bottom: 50px;
+      >.swiper-pagination-bullet{
+        background: rgba(255, 255, 255, 1);
+      }
+      >.swiper-pagination-bullet-active{
+        background: #fff;
+      }
+    }
+    >.swiper-button-prev{
+      background-image: url(../images/CDWall/previous.png);
+      left: 10%;
+    }
+    >.swiper-button-next{
+      background-image: url(../images/CDWall/next.png);
+      right: 10%;
+    }
+  }
+}
+
+@include web-A{
+  .L_wall_fin_sidebar{
+    display: none;
+  }
+}
+
+@include pad{
+  .L_dona_slider{
+    >.L_wall_fin_sidebar{
+      position: relative;
+      text-align: center;
+      width: 100%;
+      line-height: 100px;
+      display: inline-block;
+      color: #fff;
+      &::before,&::after{
+        content: '';
+        display: inline-block;
+        position: relative;
+        bottom: 6px;
+        margin: 0 10px;
+        height: 1px;
+        width: 24%;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    .swiper-container{
+      >.swiper-pagination{
+        display: none;
+      }
+      >.swiper-button-next,.swiper-button-prev{
+        top: 165px;
+        transform: scale(0.5);
+      }
+      >.swiper-button-next{
+        right: 5%;
+      }
+      >.swiper-button-prev{
+        left: 5%;
+      }
+      .swiper-wrapper{ 
+        .swiper-slide { //form
+          .L_dona_fin_record{
+            display: block;
+            >img{
+              width: 75%;
+              transform: rotateY(0deg);
+            }
+            >.L_dona_fin_info{
+              width: 100%;
+              padding: 10%;
+              padding-top: 30px;
+            }
+          }
+          >.L_dona_fin_bg{
+            position: absolute;
+            overflow: hidden;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+
+  
+}
+
+//___________ Swiper結束 ___________
+
+.L_dona_pop{
+  margin-bottom: 100px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 5%;
+  .L_dona_pop_sidebar{
+    display: none;
+  }
+  .L_dona_pop_wrap{
+    height: 550px;
+    &::before{
+      content: '';
+      pointer-events: none;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-image: linear-gradient(90deg, rgb(25, 11, 58)0%, rgba(25, 11, 58,0)20%, rgba(48, 22, 109,0)80%, rgb(8, 4, 34)100%);
+      position: absolute;
+      z-index: 1;
+    }
+    >.L_dona_pop_newarival{
+      position: absolute;
+      width: 100%;
+      margin-top: -15%;
+      >img{
+        width: 100%;
+        padding: 0 26%;
+      }
+    }
+    >.L_dona_pop_btnLeft{
+      display: none;
+      position: absolute;
+      width: 25%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      transition: .7s;
+      &:hover{
+        background-image: linear-gradient(90deg, rgba(25, 11, 58, 1)10%, rgba(25, 11, 58, 0)100%);  
+        >img{
+          opacity: 1;
+        }
+      }
+      >img{
+        position: relative;
+        margin-left: 50px;
+        vertical-align: middle;
+        opacity: 1;
+        top: 50%;
+        left: 40%;
+        opacity: 0;
+      }
+    }>.L_dona_pop_btnright{
+      display: none;
+      position: absolute;
+      width: 25%;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+      transition: 1.5s;
+      &:hover{
+        background-image: linear-gradient(90deg, rgba(25, 11, 58, 0)0%, rgba(25, 11, 58, .5)100%);  
+        >img{
+          opacity: .9;
+        }
+      }
+      >img{
+        position: relative;
+        margin-right: 50px;
+        vertical-align: middle;
+        opacity: 1;
+        top: 50%;
+        right: -30%;
+        opacity: 0;
+      }
+    }
+    >.L_dona_pop_carousel{
+      #L_CDWall_New{
+        width: 80%;
+        height: 600px;
+        position: absolute;
+        position: relative;
+        text-align: center;
+        margin: auto;
+        margin-top: 100px;
+        display: flex;
+        >form{
+          width: 15%;
+          padding-top: 10%;
+          text-align: center;
+          margin: auto;
+          transition: .3s;
+          .L_dona_pop_record{
+            width: 100%;
+            display: inline-block;
+            position: relative;
+            >img{
+              width: 100%;
+              max-width: 600px;
+              position: relative;
+              margin-bottom: 20px;
+            }
+            >:nth-child(2){
+              font-size: 24px;
+              line-height: 2.2;
+              color: rgba(255, 255, 255, 0.9);
+            }
+            >:nth-child(3){
+              display: none;
+              font-size: 18px;
+              padding-bottom: 25px; 
+              color: rgba(255, 255, 255, 0.7);
+              &:hover{
+                color: rgba(255, 255, 255, 0.9);
+              }
+            }
+            >ul{
+              display: none;
+              text-align: left;
+              position: relative;
+              letter-spacing: 1.2px;
+              &::before{
+                content: '';
+                display: inline-block;
+                position: relative;
+                height: 3px;
+                width: 100%;
+                top: 38px;
+                background-color: rgba(255, 255, 255, .2);
+              }
+              >li{
+                display: inline;
+                font-size: 17px;
+                color: rgba(255, 255, 255, .9);
+              }
+              >:nth-child(2){
+                position: absolute;
+                right: 0;
+              }
+            }
+            >:nth-child(5){
+              display: none;
+              height: 3px;
+              width: 50%;
+              background-color: #ffc400;
+              margin-top: 18px;
+            }
+            .L_dona_new_input{
+              width: 100%;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background-color: transparent;
+              border: transparent;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include web-A{
+  .L_wall_new_sidebar{
+    display: none;
+  }
+}
+
+@include pad{
+  .L_dona_pop{
+    >.L_wall_new_sidebar{
+      position: relative;
+      text-align: center;
+      width: 100%;
+      line-height: 100px;
+      display: inline-block;
+      color: #fff;
+      top: 150px;
+      &::before,&::after{
+        content: '';
+        display: inline-block;
+        position: relative;
+        bottom: 6px;
+        margin: 0 10px;
+        height: 1px;
+        width: 24%;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    .L_dona_pop_wrap{
+      height: 2700px;
+      >.L_dona_pop_newarival{
+        margin-top: -55%;
+        >img{
+          padding: 0 5%;
+          left: 5px;
+          position: relative;
+        }
+      }
+      .L_dona_pop_btnLeft,
+      .L_dona_pop_btnright{
+        display: none;
+      }
+      .L_dona_pop_carousel{
+        #L_CDWall_New{
+          height: unset;
+          display: block;
+          margin-top: 300px;
+          >form{
+            width: 100%;
+            margin-bottom: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//______________ [ 購唱片 ] _____________
+.L_side_swich{
+  position: fixed;
+  top: 230px;
+  right: 60px;
+  width: 22px;
+  height: 195px;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: -12px;
+    display: inline-block;
+    height: 98%;
+    border-right: solid 3px rgba(225, 225, 225, 0.15);
+    border-radius: 3px; 
+  }
+  .L_side_swich_1,.L_side_swich_2{
+    display: block;
+    p{
+      color: rgba(225, 225, 225, 0.8);
+      font-size: 14px;
+      width: 15px;
+      padding-left: 5px;
+    }
+  }
+  .L_side_swich_1{
+    margin-bottom: 15px;
+    &:hover{
+      cursor: default;
+    }
+    p{
+      padding-bottom: 5px;
+    }
+    img{
+      margin-left: 4px;
+    }
+  }
+  .L_side_swich_2{
+    opacity: 0.3;
+    &:hover{
+      opacity: .8;
+    }
+    p{
+      padding-top: 5px;
+    }
+  }
+  >div{
+    position: absolute;
+    top: 2px;
+    right: -12px;
+    display: inline-block;
+    height: 48%;
+    border-right: solid 3px rgba(225, 225, 225, 0.8);
+    border-radius: 3px;
+  }
+}
+
+
+
+//____________ 第一屏：人氣唱片 _____________
+.L_pop_pin{
+  position: absolute;
+  top: 0;
+}
+.L_pop{
+  height: 80vh;
+  .L_pop_sidebar{
+    display: none;
+  }
+  #L_CDWallSellNew{
+    width: 100%;
+    padding-top: 14%;
+    position: relative;
+    >form{
+      width: 100%;
+      position: absolute;
+      display: flex;
+      vertical-align: top;
+      .L_pop_record{
+        width: 25%;
+        margin-left: 22%;
+        margin-right: 10%;
+        max-width: 1700px;
+        display: inline-block;
+        position: relative;
+        >a{
+          position: relative;
+          top: 22%;
+          left: 18%;
+          width: 27%;
+          height: 43%;
+        }
+        >.L_pop_pin_img_1,
+         .L_pop_pin_img_2,
+         .L_pop_pin_img_3{
+          position:absolute;
+          width: 100%;
+          max-width: 600px;
+          clip:rect(0px 600px 600px 0px);
+        }
+        >.L_pop_pin_img_1{
+          z-index: 3;
+        }
+        >.L_pop_pin_img_2{
+          z-index: 2;
+        }
+        >.L_pop_pin_img_3{
+          z-index: 1;
+        }
+      }
+      .L_pop_cont{
+        letter-spacing: 2px;
+        >span{
+          font-size: 24px;
+          line-height: 1.3;
+          color: #fff;
+        }
+        >a{
+          text-decoration: none;
+          display: block;
+          font-size: 18px;
+          line-height: 2.5;
+          color: rgba(255, 255, 255, 0.7);
+          letter-spacing: 2px;
+          &:hover{
+            color: rgba(255, 255, 255, 0.9);
+          }
+        }
+        >:nth-child(6){
+          font-size: 18px;
+          padding-bottom: 25px; 
+          color: rgba(255, 255, 255, 0.7);
+          &:hover{
+            color: rgba(255, 255, 255, 0.9);
+          }
+        }
+        >:nth-child(9){
+          color: rgba(255, 255, 255, 0.8);
+          &::before{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            height: 5px;
+            left: -20px;
+            top: 164px;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 6px solid #fff;
+          }
+        }
+        >:nth-child(11){
+          font-size: 22px;
+          margin-top: 50px;
+          line-height: 3;
+          color: #ffc400;
+          display: none;
+        }
+        .L_addCart{
+          -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+          -moz-appearance: none;     /* FireFox */
+          appearance: none;
+          @include btn;
+          display: none;
+        }
+      }
+    }
+  } 
+}
+.L_pop_swich{
+  display: inline-block;
+  position: relative;
+  // top: -125px;
+  left: 45%;
+  ul{
+    cursor: default; 
+    a{
+      display: inline-block;
+      padding-bottom: 10px;
+      margin: 10px 2px;
+      &:hover li{
+        background-color: rgba(225, 225, 225, 0.8);
+      }
+      li{
+        display: inline-block;
+        background-color: rgba(225, 225, 225, 0.6);
+        width: 25px;
+        height: 2px;
+        
+      }
+    }
+  }
+}
+
+
+@include pad{ //max-width: 768px
+  .L_web_sidebar{
+    display: none;
+  }
+  .L_pop{
+    display: none; //無法處理手機版的tweenmax讀取問題
+    width: 100%;
+    margin-top: 20%;
+    margin-bottom: -20%;
+    .L_pop_sidebar{
+      position: relative;
+      text-align: center;
+      width: 100%;
+      line-height: 100px;
+      display: inline-block;
+      color: #fff;
+      &::before,&::after{
+        content: '';
+        display: inline-block;
+        position: relative;
+        bottom: 6px;
+        margin: 0 10px;
+        height: 1px;
+        width: 24%;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    #L_CDWallSellNew{
+      padding-top: 0;
+      >form{
+        padding: 5%;
+        display: block;
+        // text-align: center;
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        .L_pop_record{
+          width: 100%;
+          margin-left: 0%;
+          margin-right: 0%;
+          text-align: none;
+          >img{
+            margin-top: 0;
+            position: relative;
+            .L_pop_cont{
+              >a{
+                display: none;
+              }
+              >:nth-child(6){
+                display: block;
+                padding-bottom: 0px;
+                line-height: 1.5;
+              }
+              >:nth-child(11){
+                font-size: 18px;
+              }
+              >.L_addCart{
+                font-size: 16px;
+                margin-bottom: 50px;
+                -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+                -moz-appearance: none;     /* FireFox */
+                appearance: none;
+                @include btn;
+              }
+            }
+          }
+          >.L_pop_pin_img_1,
+          .L_pop_pin_img_2,
+          .L_pop_pin_img_3{
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+//____________ 第二屏：強打唱片 _____________
+.L_wall{
+  column-count: 4;
+  column-gap: 0;
+  width: 71%;
+  margin: 0 auto;
+  .L_wall_sidebar{
+    display: none;
+  }
+  .L_wall_card{
+    break-inside: avoid;
+    box-sizing:border-box;
+    padding: 10px;
+    a:first-child{
+      display: block;
+      text-decoration: none;
+      // height: 100%;
+    }
+    .L_wall_card_cont{
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      width: 100%; 
+      .L_wall_card_cont_img{
+        position: relative;
+        width: 100%;
+        border-radius: 5px 5px 0px 0px;
+        .L_wall_card_cont_img_cover{ //外封面
+          width: 100%;
+          position: absolute;
+          left: 0;
+          transition: .5s;
+          // opacity: .1;
+          z-index: 3;
+        }
+        .L_wall_card_cont_img_playpause{ //play
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #fff;
+            text-align: right;
+            transform: scale(.9);
+            cursor: pointer;
+            z-index: 2;
+            >:nth-child(2){
+              display: none;
+            }
+        } 
+        >:nth-child(3){ //黑膠上的封面
+          width: 31%;
+          margin: 34%;
+          position: absolute;
+          top: 0;
+          clip-path: circle(50% at 50% 50%);
+          z-index: 1;
+        }
+        @keyframes CDspin {
+          0%{ transform: rotate(0deg)}
+          100%{ transform: rotate(720deg)}
+        }
+        >:nth-child(4){ //黑膠
+          width: 80%;
+          margin: 10%;
+          position: relative;
+          top: 0;
+        }
+        >:nth-child(5){
+          display: none;
+        }
+      }
+      >a{
+        .L_wall_card_cont_wrap{
+          padding: 10px;
+          box-sizing:border-box;
+          position: relative;
+          p{
+            font-size: 13px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, .8);
+            font-weight: bold;
+            &:nth-child(2){
+              font-size: 12px;
+              // transform: scale(0.8);
+              line-height: 3;
+              color: rgba(255, 255, 255, 0.5);
+              padding-bottom: 10px;
+            }
+            &:nth-child(6){ // 募資專輯內文
+              font-size: 12px;
+              color: rgba(255, 255, 255, .7);
+              line-height: 1.8;
+              letter-spacing: .3px;
+              padding-top: 8px;
+            }
+          }
+          .L_wall_card_cont_wrap_star{
+            display: block;
+            padding-bottom: 10px;
+            .fa-star{
+              font-size: 12px;
+              color: #ffc400;
+              transform: scale(.7);
+            } 
+            span{
+              font-size: 12px;
+              letter-spacing: 1.2px;
+              color: rgba( 255, 196, 0, .7);
+              transform: scale(.9);  //沒有用
+            }
+          }
+          .L_wall_card_cont_wrap_pp{ // 銷售專輯內文
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.8;
+            letter-spacing: .3px;
+            padding-top: 10px;
+            &::before{ // 專輯內文前分隔線
+              content: '';
+              padding-top: 10px;
+              display: inline-block;
+              height: 1px;
+              width: 100%;
+              position: relative;
+              top: 0px;
+              border-top: 1px solid rgba(255, 255, 255, .3);
+            }
+          }
+          .L_dona_wall_input{
+            position: absolute;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+          }
+        }
+      }  
+    }
+  }
+}
+.L_sell_wall{
+  padding-top: 600px;
+}
+
+
+
+@include pad{
+  .L_wall{
+    column-count:1;
+    margin-top: 100px;
+    width: 100%;
+    .L_wall_sidebar{
+      position: relative;
+      text-align: center;
+      width: 100%;
+      line-height: 100px;
+      display: inline-block;
+      color: #fff;
+      &::before,&::after{
+        content: '';
+        display: inline-block;
+        position: relative;
+        bottom: 6px;
+        margin: 0 10px;
+        height: 1px;
+        width: 24%;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    .L_wall_card{
+      width: 80%;
+      margin: auto;
+      padding-bottom: 30px;
+    }
+  }
+  .L_sell_wall{
+    padding-top: 0px;
+  }
+}
+
+//____________ 播放列表 _____________
+.L_playbar{
+  display: none;
+  position: fixed;
+  bottom: -1px;
+  width: 100vw;
+  height: 75px;
+  background-image: linear-gradient(80deg, rgba(19, 13, 54, .7)0%, rgba(27, 10, 51, .7)30%, rgba(27, 10, 51, .7)50%, rgba(20, 14, 56, .7)100%);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(30px); // 背景模糊還沒有用，chrome://flags/，開啟Experimental Web Platform features;
+  z-index: 5;
+  left: 0;
+  &:hover>span,&:hover>span>div{
+    height: 6px;
+    cursor: pointer;
+    // transition: .5s;
+  }
+  &:hover>span>div::before{
+    opacity: 1;
+  }
+  >span{
+    position: absolute;
+    top: -2px;
+    width: 100vw;
+    background-color: rgba(225, 225, 225, .3);
+    height: 4px;
+    >div{
+      width: 0px;
+      height: 4px;
+      position: absolute;
+      background-color: rgba(255, 255, 255, .8);
+      &:before{
+        content: '';
+        position: absolute;
+        top: -3px;
+        right: 0;
+        width: 9px;
+        height: 9px;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 1);
+        opacity: 0;
+      }
+    }
+  }
+  .L_playbar_img{
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    margin: 5px 0;
+    margin-left: 10%;
+    img{
+      width: 100%;
+    }
+  }
+  .L_playbar_text{
+    width: 30%;
+    display: inline-block;
+    padding-top: 15px;
+    padding-left: 50px;
+    p{
+      font-size: 16px;
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+    p:nth-child(2){
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    a{
+      -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+      -moz-appearance: none;     /* FireFox */
+      appearance: none;
+      @include btn;
+    }
+  }
+  .L_playbar_ctrl{
+    display: inline-block;
+    line-height: 72px;
+    padding: 0 50px;
+    >img{
+      vertical-align: middle;
+      opacity: .6;
+      &:hover{
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+    div{
+      display: inline-block;
+      margin: 0 15px;
+      line-height: 0px;
+      opacity: .6;
+      &:hover{
+        cursor: pointer;
+        opacity: 1;
+      }
+      img{
+        vertical-align: middle;
+      }
+      :nth-child(2){
+        display: none;
+        vertical-align: middle;
+      }
+    }
+  }
+  .L_playbar_vol{
+    position: absolute;
+    right: 80px;
+    .fa-volume-off{
+      margin-top: 1px;
+      padding-right: 12px;
+      font-size: 25px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 73px;
+      vertical-align: middle;
+    }
+    >span{
+      display: inline-block;
+      // position: relative;
+      width: 100px;
+      max-width: 100px;
+      height: 4px;
+      line-height: 74px;
+      background-color: rgba(255, 255, 255, .3);
+      vertical-align: middle;
+      &:hover{  
+        cursor: pointer;
+      }
+      >div{
+        width: 100px;
+        height: 4px;
+        position: absolute;
+        background-color: rgba(255, 255, 255, .8);
+        &::before{
+          content: '';
+          display: block;
+          position: absolute;
+          width: 6px;
+          height: 14px;
+          top: -5px;
+          right: 0;
+          background-color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+}
+
+@include iphone5{
+  .L_playbar{
+    height: 54px;
+    .L_playbar_img{
+      width: 12%;
+      margin-left: 6%;
+    }
+    .L_playbar_text{
+      padding-top: 4px;
+      padding-left: 5%;
+    }
+    .L_playbar_ctrl{
+      width: 100%;
+      line-height:54px;
+      position: absolute;
+      text-align: right;
+      padding: 0 10px;
+      >div{
+        // padding: 0 10px;
+        line-height: 54px;
+        margin: 0 8px;
+        >img{
+          width: 80%;
+        }
+      }
+      >img{
+        display: none;
+      }
+    }
+    .L_playbar_vol{
+      display: none;
+    }
+  }
+}
+
+
+//______________ 募資專輯 _____________
+.L_wall_card_cont_wrap{
+  >span+div{ //剩餘天數＋已募金額的爸爸
+    color: rgba(255, 255, 255, .8);
+    font-size: 13px;
+    padding-top: 10px;
+    position: relative;
+    letter-spacing: 1.3px;
+    // vertical-align: bottom;
+  }
+  >span+div>div{ //剩餘天數
+    display: inline;
+  }
+  >span+div>div+div{ //已募金額
+    display: inline-block;
+    position: absolute;
+    right: 0%;
+  }
+  >span+div+div{ //進度條
+    position: relative;
+    :nth-child(1){
+      // width: 100%;
+      height: 2px;
+      margin: 10px 0;
+      background-color: #ffc400;
+      &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: rgba(255, 255, 255, .2);
+      }
+    }
+  }
+  .L_wall_card_input{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+  }
+}
+
+
+
+
+//______________ blurrymenu _____________
+#Bmenu { //原為menu，防衝突先改Bmenu
+  position: absolute;
+  width: 0px;
+  overflow: hidden;
+  top: 0px;
+  left: -7px;
+  color: #ffffff;
+}
+#Bhamburger{ //原為hamburger，防衝突先改Bhamburger
+  position: absolute;
+  top: 0px;
+  left: 300px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  z-index: 100;
+}
+ 
+#menu-content { position: relative; }
+ 
+#blurred-bg-canvas { position: absolute; }
+ 
+#captured-image { display: none; }  
+
+
+
+
+//______________ 首頁 _____________
+//__________ 第一屏 _________
+.L_index_wall_wrap{
+  overflow: hidden;
+  .L_index_wall_lingra{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-image: linear-gradient(80deg, rgba(0, 0, 0, .45)0%, rgba(20, 15, 48, .2)65%, rgba(20, 15, 48, .2)75%, rgba(0, 0, 0, .7)100%);
+    text-align: left;
+    padding-left: 23%;
+    >img{
+      width: 75%;
+      padding-top: 6%;
+      margin-bottom: -10%;
+      margin-left: -12%;
+    }
+    >div{
+      font-size: 28px;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 3px;
+      line-height: 3;
+    }
+    >span{
+      display: block;
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, .9);
+      letter-spacing: 3px;
+      line-height: 2;
+      padding-right: 27px;
+      padding-left: 10px;
+    }
+    >:nth-child(4){
+      display: inline-block;
+      position: relative;
+      bottom: 8px;
+      padding-right: 0px;
+    }
+    >:nth-child(5){
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+      padding-left: 0px;
+      >div{
+        font-size: 32px;
+        display: inline-block;
+        color: #ffc400;
+        letter-spacing: 5px;
+      }
+      >:first-child{
+        position: relative;
+        &::after{
+          content: '位';
+          position: absolute;
+          padding-left: 85px;
+          bottom: 5px;
+          font-size: 20px;
+          color: #fff;
+        }
+      }
+      #L_index_wall_lingra_peop100{
+        height: 26px;
+        vertical-align: top;
+        animation: DateAdd100 800s linear 0s infinite;
+      }
+      #L_index_wall_lingra_peop10{
+        height: 26px;
+        vertical-align: top;
+        animation: DateAdd10 80s linear 0s infinite;
+      }
+      #L_index_wall_lingra_peop1{
+        height: 26px;
+        vertical-align: top;
+        animation: DateAdd1 8s linear 0s infinite;
+      }
+    }
+    >:nth-child(6){
+      display: inline;
+      padding-right: 0;
+      position: relative;
+      bottom: 5px;
+      padding-left: 0px;
+    }
+    >:nth-child(7){
+      display: inline;
+      padding-left: 0;
+    }
+  }
+  //已出道歌手計算
+  @keyframes DateAdd100 {
+       0%{ margin-top: -128px }
+    2.3%{ margin-top: -128px } // 9
+    2.35%{ margin-top: -192px }
+    100%{ margin-top: -192px }
+  }
+  @keyframes DateAdd10 {
+             0%{ margin-top: -512px }
+           2.9%{ margin-top: -512px } // 7
+           3.3%{ margin-top: -576px }
+          12.9%{ margin-top: -576px }
+          13.3%{ margin-top: -640px }
+          22.9%{ margin-top: -640px }
+ 22.9000000001%{ margin-top: -0px }   // 9
+          23.3%{ margin-top: -64px }
+          32.9%{ margin-top: -64px }  // 0
+          33.3%{ margin-top: -128px }
+          42.9%{ margin-top: -128px }
+          43.3%{ margin-top: -192px }
+          52.9%{ margin-top: -192px }
+          53.3%{ margin-top: -256px }
+          62.9%{ margin-top: -256px }
+          63.3%{ margin-top: -320px }
+          72.9%{ margin-top: -320px }
+          73.3%{ margin-top: -384px }
+          82.9%{ margin-top: -384px }  // 5
+          83.3%{ margin-top: -448px }
+          92.9%{ margin-top: -448px }  // 6
+          93.3%{ margin-top: -512px }
+           100%{ margin-top: -512px }
+  }
+  @keyframes DateAdd1 {
+             0%{ margin-top: -512px } // 7
+             8%{ margin-top: -512px }
+            10%{ margin-top: -576px }
+            18%{ margin-top: -576px }
+            20%{ margin-top: -640px }
+            28%{ margin-top: -640px } // 9
+ 28.0000000001%{ margin-top: -0px }   // 9
+            30%{ margin-top: -64px }  // 0
+            38%{ margin-top: -64px }
+            40%{ margin-top: -128px }
+            48%{ margin-top: -128px }
+            50%{ margin-top: -192px }
+            58%{ margin-top: -192px }
+            60%{ margin-top: -256px }
+            68%{ margin-top: -256px }
+            70%{ margin-top: -320px }
+            78%{ margin-top: -320px }
+            80%{ margin-top: -384px }  // 5
+            88%{ margin-top: -384px }
+            90%{ margin-top: -448px }  // 6
+            98%{ margin-top: -448px }
+           100%{ margin-top: -512px }
+  }
+  .L_index_wall{
+    z-index: -1;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    margin: -5% -2%;
+    transform: rotate(5deg);
+    filter: blur(0px);
+    opacity: .4;
+    >:nth-child(even){
+      padding-top: 5%;
+    }
+    .L_index_wall_line{
+      .L_index_wall_card{
+        break-inside: avoid;
+        box-sizing:border-box;
+        border-radius: 2px;
+        padding: 6px 7px;
+        a:first-child{
+          display: block;
+          text-decoration: none;
+          height: 100%;
+        }
+        .L_index_wall_card_cont{
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.1);
+          // border-radius: 2px;
+          img{
+            overflow: hidden;
+              width: 100%; 
+          }
+          .L_index_wall_card_cont_wrap{
+            text-align: left;
+            padding: 6px;
+            box-sizing:border-box;
+            p{  //專輯名
+              font-size: 12px;
+              color: rgba(255, 255, 255, 0.8);
+              transform: scale(.8);
+              position: relative;
+              left: -9%;
+              &:nth-child(2){ //歌手名
+                font-size: 12px;
+                line-height: 1.5;
+                color: rgba(255, 255, 255, 0.5);
+                padding-bottom: 4px;
+              }
+            }
+            .L_index_wall_card_cont_wrap_line{ //進度條
+              position: relative;
+              :nth-child(1){
+                // width: 100%;
+                height: 1px;
+                background-color: #ffc400;
+                &::before{
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  background-color: rgba(255, 255, 255, .2);
+                  width: 100%;
+                  height: 1px;
+                }
+              }
+            }
+          }    
+        }
+      }
+    }
+  }
+}
+
+@include pad{
+  .L_index_wall_wrap {
+    .L_index_wall_lingra{
+      display: block;
+      padding-left: 17%;
+      position: relative;
+      top: 10%;
+      >img{
+        position: relative;
+        width: 100%;
+      }
+      >:nth-child(5){
+        display: block;
+      }
+    }
+    .L_index_wall{
+      left: -26%;
+      >:nth-child(n+6){
+        display: none;
+      }
+    }
+  }
+}
+
+
+@include iphone5{
+  .L_index_wall_wrap{
+    >.L_index_wall_lingra{
+      >span{
+        #L_index_wall_lingra_peop100, #L_index_wall_lingra_peop10{
+          display: inline-block;
+        }
+      }
+    }
+    .L_index_wall{
+      flex-direction: column;
+      top: 0%;
+      left: 0%;
+      animation: starWallScroll 1.3s ease-out 1,
+                 wallScroll 20s 1.3s linear infinite alternate-reverse;
+      
+      // 第一屏唱片捲動
+      @keyframes starWallScroll{
+        0%{ top: -80%; margin-left: 24.615%; opacity: 0; filter:blur(10px); }
+        50%{  opacity: .4; }
+        100%{ top: 0%; margin-left: 15%; opacity: .4; }
+      }             
+
+      @keyframes wallScroll {
+        0%{ top: -80%; margin-left: 24.615%; }
+        100%{ top: -0%; margin-left: 15%; }
+      }
+      >:nth-child(n+2){
+        display: none;
+      }
+    }
+  }
+}
+
+
+//__________ 第二屏 _________
+.L_index_pop_wrap{
+  background-image: url(../images/index/record_bg.png);
+  background-repeat: no-repeat;
+  background-position: 100%;
+  background-size: 50%;
+  >div{
+    .L_index_pop_wrap_info{
+      width: 100%;
+      display: flex;
+      margin-top: 150px;
+      padding-bottom: 100px;
+      .L_index_pop_wrap_intor{
+        width: 40%;
+        text-align: left;
+        padding-left: 50px;
+        >div{
+          font-size: 28px;
+          color: #ffc400;
+          line-height: 2;
+          letter-spacing: 1.2px;
+        }
+        >:nth-child(2){
+          padding-left: 50px;
+          padding-bottom: 20px;
+        }
+        >span{
+          display: block;
+          font-size: 20px;
+          line-height: 2.5;
+          color: #fff;
+          margin-left: 33px;
+        }
+      }
+      .L_index_pop_wrap_inner{
+        width: 60%;
+        position: relative;
+        // animation: popSwich 10s 2s infinite;
+        @keyframes popSwich{
+                  0%{ left: -60%; }
+                  10%{ left: -130%; }
+                33.3%{ left: -130%; }
+                43.3%{ left: -200%; }
+                66.6%{ left: -200%; }
+        66.600000001%{ left: 20%; }
+                76.6%{ left: -60%; }
+                99.9%{ left: -60%; }
+                100%{ left: -60%; }
+        }
+        >.L_index_pop_wrap_inner_form{
+          padding-right: 5%;
+          position: absolute;
+          display: none;
+          .L_index_pop{
+            width: 100%;
+            >img{
+              width: 40%;
+              left: 22%;
+              right: 10%;
+              top: 35%;
+              vertical-align: top;
+            }
+            .L_index_pop_cont{
+              width: 50%;
+              display: inline-block;
+              text-align: left;
+              top: 33%;
+              left: 53%;
+              margin-left: 8%;
+              vertical-align: top;
+              letter-spacing: 2px;
+              > span{
+                display: block;
+                font-size: 28px;
+                line-height: 2.5;
+                color: #fff;
+              }
+              > a{
+                display: block;
+                font-size: 18px;
+                padding-bottom: 25px; 
+                color: rgba(255, 255, 255, 0.7);
+                &:hover{
+                  color: rgba(255, 255, 255, 0.9);
+                } 
+              }
+              > p{
+                text-decoration: none;
+                display: inline-block;
+                font-size:16px;
+                line-height: 3.5;
+                color: rgba(255, 255, 255, 0.8);
+                letter-spacing: 2px;
+              }
+              :nth-child(5){
+                padding-right: 20px;
+                line-height: 1.5;
+              }
+              :nth-child(6){
+                display: inline;
+                position: relative;
+                right: 0;
+                line-height: 1.5;
+              }
+              .L_index_pop_cont_line{
+                position: relative;
+                width: 100%;
+                > :nth-child(1){
+                  width: 100%;
+                  position: absolute;
+                  height: 2px;
+                  background-color: rgba(255, 255, 255, 0.2);
+                }
+                > :nth-child(2){
+                  width: 20%;
+                  height: 2px;
+                  background-color: #ffc400;
+                }
+
+              }
+              .L_index_addCart{
+                -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+                -moz-appearance: none;     /* FireFox */
+                appearance: none;
+                font-size: 20px;
+                letter-spacing: 5px;
+                display: block;
+                width: 100%;
+                @include btn;
+              }
+            }
+          }
+        } 
+        >:nth-child(5){
+          display: block;
+        }
+      }
+    }
+    .L_index_pop_reco{
+      width: 80%;
+      margin: auto;
+      display: flex;
+      // padding-top: 100px;
+      cursor: pointer;
+      >.L_index_pop_records{
+        width: 8%;
+        pointer-events: none;
+        -webkit-perspective: 500;
+        perspective: 500;
+        perspective-origin: center center;
+        -webkit-perspective-origin: center center;
+        transition: margin .3s;
+        margin: 0;
+        padding-top: 3%;
+        >img{
+          width: 100%;
+          background-color: #fff;
+          transform: rotateY(-50deg);
+				  opacity: .7;
+          transition: transform opacity .3s;
+          vertical-align: bottom;
+        }
+      }
+      >:nth-child(5){
+        opacity: 1;
+        width: 14%;
+        margin: 0 7%;
+        padding-top: 0%;
+        transition: margin padding-top width  .3s;
+        >img{
+          transform: rotateY(0deg);
+          box-shadow: 9px 12px 42px rgba(0, 0, 0, .8)
+        }
+      }
+    }
+    .L_index_pop_swich{
+      display: none;
+      // display: inline-block;
+      position: absolute;
+      bottom: 10%;
+      right: 0;
+      left: 0%;
+      ul{
+        cursor: pointer;
+        div{
+          cursor: pointer;
+          display: inline-block;
+          padding-bottom: 10px;
+          margin: 10px 2px;
+          &:hover li{
+            background-color: rgba(225, 225, 225, 0.5);
+          }
+          li{
+            display: inline-block;
+            background-color: rgba(225, 225, 225, 0.2);
+            width: 25px;
+            height: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include web-A{
+  .L_index_addCart{
+    &:hover{
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      >p{
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+  }
+}
+
+
+@include pad{
+  .L_index_pop_wrap{
+    background-position: 40% 200%;
+    background-size: 170%;
+    display: flex;
+    flex-direction: column;
+    >div{
+      >.L_index_pop_wrap_info{
+        display: block;
+        margin-top: 40px;
+        padding-bottom: 10px;
+        >.L_index_pop_wrap_intor{
+          display: none;
+          width: 100%;
+          padding: 5%;
+        }
+        >.L_index_pop_wrap_inner{
+          // display: none;
+          width: 100%;
+          >.L_index_pop_wrap_inner_form{
+            width: 100%;
+            padding: 0 5%;
+            position: relative;
+            .L_index_pop{
+              width: 100%;
+              >img{
+                width: 50%;
+                padding-bottom: 10px;
+                padding-top: 50px;
+              }
+              .L_index_pop_cont{
+                width: 100%;
+                margin: auto;
+                display: block;
+                position: relative;
+                left: 0;
+                >span{
+                  line-height: 2;
+                  font-size: 25px;
+                }
+                >a{
+                  padding-bottom: 0px;
+                }
+                >p{
+                  line-height: 2;
+                }
+                :nth-child(6){
+                  display: inline-block;
+                  padding-top: 10px;
+                  position: absolute;
+                }
+                .L_index_addCart{
+                  margin-top: 10px;
+                  padding: 5px 40px;
+                }
+              }
+              .L_index_pop_swich{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      >.L_index_pop_reco{
+        width: 100%;
+      }
+    } 
+  }
+}
+
+//________ 單一唱片資訊 CDPage _________
+//_______ 第一區塊：歌手簡介 ________
+.L_singer{
+  display: inline-block;
+  position: fixed;
+  width: 22%;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0)20%, rgba(255,255,255,.1)50%, rgba(255,255,255,.1)60%, rgba(255,255,255,0)100%);
+  z-index: 1;
+  padding-bottom: 50px;
+  // margin-left: 5%;
+  >div{
+    text-align: center;
+  }
+  >div >img{
+    padding-top: 160px; 
+  }
+  .L_singer_wrap{
+    box-sizing: border-box;
+    .L_singer_info{
+      padding: 23px;
+      text-align: center;
+      color: #fff;
+      >div{  //歌手
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      >div+div{  //歌手名
+        font-size: 22px;
+        line-height: 1.8;
+        padding-bottom: 16px;
+      }
+      >span{  //歌手簡介
+        // width: 1%;
+        font-size: 18px;
+        opacity: .8;
+        line-height: 1.8;
+
+      }
+    }
+    .L_singer_track{
+      text-align: left;
+      padding: 23px;
+      margin-top: 24px;
+      box-sizing: border-box;
+      color: #fff;
+      >div:first-child{  //歷年專輯
+        padding-top: 10px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 36px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      .L_singer_track_s{
+        display: block;
+        margin-top: 20px;
+        margin: 0 -23px;
+        padding: 15px;
+        color: #fff;
+        transition: .5s;
+        .L_singer_track_s_img{
+          display: inline-block;
+        }
+        >ul{
+          vertical-align: top;
+          display: inline-block;
+          letter-spacing: 1px;
+          padding-left: 10px;
+          >li{
+            line-height: 2;
+            font-size: 15px;
+            opacity: .7;
+          }
+          >li:first-child{
+            font-size: 18px;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include web-A{
+  .L_singer_track_s{
+    &:hover{
+      background-color: rgba(255, 255, 255, .1);
+    }
+  }
+}
+
+//_______ 第二區塊：簡介唱片 ________
+//＿＿＿＿＿ 募資 ＿＿＿＿＿
+.L_recordInfo_info{
+  padding-bottom: 60px;
+  .L_recordInfo_img{
+    width: 43%;
+    display: inline-block;
+  }
+  >ul{
+    vertical-align: top;
+    width: 56%;
+    display: inline-block;
+    padding-top: 20px;
+    padding-left: 7%;
+    li:first-child{
+      font-size: 25px;
+      line-height: 1.5;
+      letter-spacing: 3px;
+    }
+    li:nth-child(2){
+      line-height: 2;
+      padding-bottom: 25px;
+      letter-spacing: 3px;
+      opacity: .8;
+    }
+    li:nth-child(3){
+      line-height: 2;
+      letter-spacing: 1.2px; 
+    }
+    >:nth-child(4){
+      width: 100%;
+      position: relative;
+      padding-top: 25px;
+      letter-spacing: 1px;
+      &::after{
+        content: '';
+        display: inline-block;
+        position: relative;
+        height: 3px;
+        width: 100%;
+        margin-top: 15px;
+        background-color: rgba(255, 255, 255, .2);
+      }
+      >:first-child{
+        position: relative;
+      }
+      >:nth-child(2){
+        position: absolute;
+        right: 0;
+      }
+    }
+    >:nth-child(5){
+      height: 3px;
+      width: 80%;
+      background-color: #ffc400;
+      margin-top: -3px;
+      margin-bottom: 18px;
+    }
+    >a{
+      -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+      -moz-appearance: none;     /* FireFox */
+      appearance: none;
+      display: inline-block;
+      width: 100%;
+      @include btn{
+        padding: 12px 0;
+        margin-left: 2%;
+        margin-right: 2%;
+      }
+    } 
+  }   
+}
+
+
+
+
+
+//＿＿＿＿＿ 銷售 ＿＿＿＿＿
+.L_recordInfo{
+  // width: 90%;
+  display: inline-block;
+  position: relative;
+  padding-left: 45%;
+  padding-top: 150px;
+  color: #fff;
+  .L_CDsell_recordInfo_info{
+    padding-bottom: 90px;
+
+    .L_recordInfo_img{
+      display: inline-block;
+      width: 43%;
+    }
+    >ul{
+      vertical-align: top;
+      width: 56%;
+      display: inline-block;
+      padding-top: 20px;
+      padding-left: 7%;
+      li:first-child{
+        font-size: 25px;
+        line-height: 1.5;
+        letter-spacing: 3px;
+      }
+      li:nth-child(2){
+        line-height: 2;
+        padding-bottom: 25px;
+        letter-spacing: 3px;
+        opacity: .8;
+      }
+      li:nth-child(3){
+        line-height: 2;
+        letter-spacing: 1.2px;
+      }
+      li:nth-child(4){
+        line-height: 2;
+        letter-spacing: 1.2px;
+        font-size: 18px;
+        color: #ffc400;
+      }
+      >input{
+        -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+        -moz-appearance: none;     /* FireFox */
+        appearance: none;
+        width: 100%;
+        @include btn;
+      }    
+    }    
+  }
+  // 曲目
+  .L_recordInfo_track{
+    padding-bottom: 50px;
+    >div{
+      padding-top: 10px;
+      padding-bottom: 50px;
+      &::before{
+        content: '';
+        width: 100%;
+        display: block;
+        position: relative;
+        top: 35px;
+        border-bottom: 1.2px rgba(255, 255, 255, .8) solid;
+      }
+    }
+    >ul{
+      display: flex;
+      padding-bottom: 30px; 
+      >li{
+        letter-spacing: 2px;
+        font-size: 18px;
+      }
+      .L_recordInfo_track_index{
+        flex-grow: 2!important;;
+      }
+      >li:first-child{
+        flex-grow: 20;
+        font-size: 16px;
+        opacity: .8;
+      }
+      >li:nth-child(2){
+        width: 30%;
+        flex-grow: 5;
+      }
+      >li:nth-child(3){
+        flex-grow: 2;
+        letter-spacing: 2.5px;
+        font-size: 16px;
+        opacity: .8;
+      }
+      >div{
+        display: block;
+        flex-grow: 1;
+        color: #fff;
+        letter-spacing: 4px;
+        opacity: .8;
+        cursor: pointer;
+        >.fa-play{
+          padding-right: 5px; 
+          transform: scale(.8);
+        }
+        >.fa-pause{
+          padding-right: 5px;
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include web-A{
+  .L_recordInfo{
+    .L_recordInfo_track{
+      >ul{
+        >div{
+          &:hover{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+//募資
+@include pad{
+  .L_singer{
+    display: none;
+  }
+  .L_recordInfo{
+    padding-left: 0;
+    padding-top: 140px;
+    width: 100%;
+    .L_recordInfo_info{
+      width: 100%;
+      padding: 5%;
+      padding-bottom: 10%;
+      .L_recordInfo_img{
+        display: block;
+        width: 100%;
+        padding: 0 12%;
+      }
+      >ul{
+        width: 100%;
+        padding-left: 0;
+        display: block;
+        >div{
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+        }
+        >a{
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          margin-bottom: 25%;
+        }
+      }
+      .L_recordInfo_track{
+        width: 100%;
+      }
+    }
+    .L_recordInfo_track{
+      padding: 5%;
+      >ul{
+        line-height: 1.6;
+        padding-bottom: 25px;
+        >:nth-child(1){
+          font-size: 12px;
+          flex-grow: 1;
+        }
+        li:nth-child(2){
+          flex-grow: 8;
+          padding-right: 20px;
+        }
+        >a{
+          flex-grow: 1;
+          text-align: center;
+          flex-grow: .5;
+          font-size: 12px;
+          >.fa-play{
+            padding-left: 6px;
+            display: block;
+            font-size: 20px;
+            padding-left: 8px;
+            padding: 4px 0;
+          }
+        }
+      }
+    }
+  }
+}
+//銷售
+@include pad{
+  .L_reco_hot{
+    width: 100%;
+    .L_recordInfo{
+      padding-left: 0;
+      padding-top: 140px;
+      width: 100%;
+      .L_CDsell_recordInfo_info{ 
+        padding: 5%;
+        >.L_recordInfo_img{
+          display: block;
+          width: 100%;
+          padding: 0 12%;
+        }
+        >ul{
+          width: 100%;
+          padding-left: 0;
+          display: block;
+          >div{
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+          }
+          >a{
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 25%;
+          }
+        }
+      }
+      >.L_recordInfo_track{
+        padding: 5%;
+        >ul{
+          line-height: 1.6;
+          padding-bottom: 25px;
+          >:nth-child(1){
+            font-size: 12px;
+            flex-grow: 1;
+          }
+          li:nth-child(2){
+            flex-grow: 8;
+            padding-right: 20px;
+          }
+          >:nth-child(3){
+            display: none;
+          }
+          >a{
+            flex-grow: 1;
+            text-align: center;
+            flex-grow: .5;
+            font-size: 12px;
+            >.fa-play{
+              padding-left: 6px;
+              display: block;
+              font-size: 20px;
+              padding-left: 8px;
+              padding: 4px 0;
+            }
+          }
+        }
+      }
+    }   
+  }
+}
+
+
+//_______ 第三區塊：留言 ________
+.L_record_comm{
+  display: none;
+  padding-bottom: 150px;
+  >div:not(div+div){
+    padding-top: 10px;
+    padding-bottom: 50px;
+    &::before{
+      content: '';
+      width: 100%;
+      display: block;
+      position: relative;
+      top: 36px;
+      border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+    }
+  }
+  // _________ 別人的留言 _________
+  .L_record_comm_board{
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 8px;
+    display: flex;
+    &::before{
+      display: none;
+    }
+    .L_record_comm_board_head{
+      width: 98px;
+      padding-right: 8px;
+      border-right: 2px solid rgba(0, 0, 0, 0.4); 
+      >div{
+        padding: 10px;
+        padding-top: 0;
+        display: block;
+        >img{
+        border-radius: 100%;
+        border: 5px solid rgba(255, 255, 255, .1);
+        }
+      }
+      >div:nth-child(2){
+        display: block;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+    }
+    >ul{
+      width: 100%;
+      display: flex;
+      padding-left: 20px;
+      letter-spacing: 1px;
+      >li{
+        align-self: center;
+      }
+      >li:first-child{
+        width: 70%;
+        font-size: 18px;
+      }
+      >li:nth-child(2){
+        flex-grow: 1.5;
+        letter-spacing: 2px;
+        opacity: .7;
+      }
+      >li:nth-child(3){
+        width: 50px;
+        text-align: center;
+        >img{
+          padding: 6px;
+          cursor: pointer;
+          margin: auto;
+        }
+        >div{
+          display: none;
+          color: #fff;
+          letter-spacing: 4px;
+          padding: 0px;
+          color: #ffc400;
+        }
+        >span{
+          position: absolute;
+          display: none;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: rgba(255, 255, 255, .2);
+        } 
+      }
+    }
+  }
+
+  // _________ 看更多 _________
+  .L_record_comm_more{
+    text-align: center;
+    letter-spacing: 2px;
+    opacity: .7;
+    padding-bottom: 15px;
+    cursor: pointer;
+    transition: .5s;
+    .fa-caret-down{
+      font-size: 18px;
+      padding-right: 5px;
+    }
+    &::before{
+      display: none;
+    }
+  }
+  // _________ 自己的留言 _________
+  .L_record_comm_write{
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 8px;
+    display: flex;
+    &::before{
+      display: none;
+    }
+    .L_record_comm_write_head{
+      width: 112px;
+      padding-right: 8px;
+      border-right: 2px solid rgba(0, 0, 0, 0.4); 
+      >div{
+        padding: 16px;
+        padding-top: 0;
+        display: block;
+        >img{
+        border-radius: 100%;
+        border: 5px solid rgba(255, 255, 255, .1);
+        }
+      }
+      >div:nth-child(2){
+        display: block;
+        text-align: center;
+        letter-spacing: 1px;
+      }
+    }
+    >:nth-child(2){
+      flex-grow: 10;
+      margin-left: 20px; 
+      background-color: rgba(255, 255, 255, .05);
+      border: transparent 10px solid;
+      border-radius: 4px;
+      caret-color: #fff;
+      color: #fff;
+      &:focus{
+        outline: none;
+      }
+      &::placeholder{ 
+        color: rgba(255, 255, 255, 0.6);
+        letter-spacing: 1px;
+      }
+    }
+    >:nth-child(3){
+      flex-grow: 1;
+      background-color: transparent;
+      border: 0;
+      color: #fff;
+      padding-right: 0;
+      padding-left: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+@include web-A{
+  .L_recordInfo{
+    .L_record_comm{
+      display: none;
+      .L_record_comm_board{
+        >ul{
+          >:nth-child(3){
+              >div{
+                font-size: 15px;
+                display:none;
+                cursor: pointer;
+              }
+          }
+        }
+      }
+      >.L_record_comm_more{
+        &:hover{
+          opacity: 1;
+        }
+      }
+      >.L_record_comm_write{
+        >:nth-child(3){
+          &:hover{
+            color: #ffc400;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include pad{
+  .L_recordInfo{
+    .L_record_comm{
+      display: none;
+      padding-bottom: 40px;
+      padding: 5%;
+      .L_record_comm_board{
+        padding: 7px 0px;
+        border-radius: 4px;
+        >.L_record_comm_board_head{
+          width: 30%;
+          padding-right: 0;
+          border: none;
+          >div{
+            margin: auto;
+            margin-top: 5px;
+            width: 70%;
+            padding: 0;
+            text-align: center;
+            font-size: 14px;
+            >img{
+              width: 100%;
+              text-align: center;
+              border: 3px solid rgba(255, 255, 255, 0.1)
+            }
+          }
+        }
+        >ul{
+          padding-left: 0px;
+          position: relative;
+          margin-right: 8px;
+          >:first-child{
+            font-size: 15px;
+            line-height: 1.5;
+            flex-grow: 6;
+          }
+          >:nth-child(2){
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 12px;
+            flex-grow: 0;
+          }
+          >:nth-child(3){
+            flex-grow: 1;
+            >div{
+              z-index: 1;
+            }
+          }
+        }
+      }
+      .L_record_comm_write{
+        padding: 10px;
+        .L_record_comm_write_head{
+          width: 70px;
+          border: none;
+          padding-right: 0;
+          >div{
+            padding: 0;
+              text-align: center;
+            >img{
+              width: 100%;
+              border: 3px solid rgba(255, 255, 255, 0.1);
+            }
+          }
+          >:nth-child(2){
+            font-size: 14px;
+          }
+          >::nth-child(2){
+            font-size: 16px;
+          }
+        }
+        >:nth-child(2){
+          margin-left: 8px;
+          border: transparent 5px solid;
+        }
+        >:nth-child(3){
+          flex-grow: 1;
+          background-color: transparent;
+          border: 0;
+          color: #fff;
+          letter-spacing: 2px;
+          padding-right: 0;
+          padding-left: 8px;
+          cursor: pointer;
+        }
+      } 
+    }
+  }
+}
+
+
+//_________ 方案 __________
+.L_record_plan_title{
+  padding-bottom: 50px;
+  &::before{
+    content: '';
+    width: 100%;
+    display: block;
+    position: relative;
+    top: 36px;
+    border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+  }
+}
+.L_record_plan{
+  padding-bottom: 200px;
+  .L_record_pay_plan{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    >:first-child{
+      width: 30%;
+    }
+    >div>img{
+      width: 100%;
+    }
+    .L_record_pay_plan_detil{
+      width: 70%;
+      text-align: left;
+      padding: 23px;
+      color: #fff;
+      letter-spacing: 1px;
+      >:first-child{ //方案
+        font-size: 22px;
+        line-height: 1.5;
+        &::before{
+          content: '';
+          display: inline-block;
+          position: relative;
+          bottom: 6px;
+          margin: 0 10px;
+          height: 3px;
+          width: 10px;
+          background-color: rgba(255, 255, 255, .7);
+        }
+        &::before,&::after{
+          content: '';
+          display: inline-block;
+          position: relative;
+          bottom: 6px;
+          margin: 0 10px;
+          height: 3px;
+          width: 10px;
+          background-color: rgba(255, 255, 255, .7);
+        }
+      }
+      >:nth-child(2){ //價格
+        font-size: 20px;
+        line-height: 2.5;
+        color: #ffc400;
+        letter-spacing: 1.5px;
+      }
+      >:nth-child(4),>div:nth-child(5){ //內容
+        font-size: 16px;
+        line-height: 2;
+      }
+      >:nth-child(6){
+        line-height: 2;
+        margin-top: 20px;
+        &::before{
+          content: '';
+          display: block;
+          position: relative;
+          background-color: rgba(255, 255, 255, .4);
+          width: 100%;
+          height: 1px;
+          top: -11px;
+        }
+      }
+      >:nth-child(7){ //注意
+        line-height: 2;
+        color: rgb(245, 1, 62);
+      }
+      >input{
+        -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+        -moz-appearance: none;     /* FireFox */
+        appearance: none;
+        display: inline-block;
+        width: 100%;
+        @include btn{
+          padding: 12px 0;
+          margin-left: 2%;
+          margin-right: 2%;
+        }
+      } 
+    }
+  }
+}
+@include pad{
+  .L_record_plan_title{
+    padding: 5%;
+  }
+  .L_record_plan{
+    width: 100%;
+    padding: 5%;
+    .L_record_pay_plan{ 
+      margin-top: 0px;
+      display: inline-block;
+      >:first-child{
+        width: 100%;
+        padding: 0 5%;
+      }
+      .L_record_pay_plan_detil{
+        width: 100%;
+        padding: 0;
+        padding-bottom: 120px;
+        >a{
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          margin-bottom: 25%;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+//________ 付款頁面 Paypage _________
+//_______ 第一區塊：方案 ________
+.L_pay_web_sidebar{
+  display: block;
+}
+.L_pay_plan_wrap{
+  display: flex;
+  .L_pay_plan_sidebar{
+    display: none;
+  }
+  .L_pay_plan{
+    display: inline-block;
+    position: relative;
+    width: 40%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0)0%, rgba(255,255,255,.1)30%, rgba(255,255,255,.1)60%, rgba(255,255,255,0)100%);
+    z-index: 1;
+    padding-bottom: 50px;
+    >div{
+      text-align: center;
+    }
+    >div>img{
+      padding-top: 190px;
+    }
+    .L_pay_plan_detil{
+      text-align: left;
+      padding: 23px;
+      color: #fff;
+      letter-spacing: 1px;
+      transition: display 1s;
+      >:first-child{ //方案
+        font-size: 22px;
+        line-height: 1.5;
+        &::before{
+          content: '';
+          display: inline-block;
+          position: relative;
+          bottom: 6px;
+          margin: 0 10px;
+          height: 3px;
+          width: 10px;
+          background-color: rgba(255, 255, 255, .7);
+        }
+        &::before,&::after{
+          content: '';
+          display: inline-block;
+          position: relative;
+          bottom: 6px;
+          margin: 0 10px;
+          height: 3px;
+          width: 10px;
+          background-color: rgba(255, 255, 255, .7);
+        }
+      }
+      >:nth-child(2){ //價格
+        font-size: 20px;
+        line-height: 2.5;
+        color: #ffc400;
+        letter-spacing: 1.5px;
+      }
+      >:nth-child(3),>div:nth-child(4){ //內容
+        font-size: 16px;
+        line-height: 2;
+      }
+      >:nth-child(4){
+        margin-top: 20px;
+        &::before{
+          content: '';
+          display: block;
+          position: relative;
+          background-color: rgba(255, 255, 255, .4);
+          width: 100%;
+          height: 1px;
+          top: -10px;
+        }
+      }
+      >:nth-child(5){ //注意
+        line-height: 2;
+        color: rgb(245, 1, 62);
+      }
+    }
+  }
+  .L_pay_payConfirm{
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 37%;
+    margin-left: 30%;
+    transition: display 1s;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    padding-top: 200px;
+    .L_pay_payConfirm_pay{
+      padding-bottom: 50px;
+      >div:first-child{  //付款方式
+        padding-top: 10px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 35px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      >p{
+        margin-top: 20px;
+        font-size: 20px;
+        color: #fff;
+      }
+    }
+    .L_pay_payConfirm_adres{
+      padding-bottom: 50px;
+      >div:first-child{  //寄件資訊
+        padding-top: 10px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 36px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      .L_pay_payConfirm_adres_form{
+        padding-top: 15px;
+        padding-bottom: 30px;
+        font-size: 20px;
+        color: #fff;
+        >li{
+          letter-spacing: 1.5px;
+          line-height: 2.6;
+          >span{
+            padding-right: 20px;
+            &::after{
+              content: '：';
+              position: absolute;
+              left: 100px;
+            }
+          }
+          >p{
+            display: inline-block;
+            width: 76%;
+            padding: 5px;
+            color: #fff;
+          }
+        }
+        >:first-child{
+          >span{
+            letter-spacing: 7px;
+          }
+          >input{
+            margin-left: 0px;
+          }
+        }
+      }
+      >:nth-child(3){
+        -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+        -moz-appearance: none;     /* FireFox */
+        appearance: none;
+        @include btn2;
+        font-size: 18px;
+        padding: 10px 0;
+        width: 45%;
+        margin-right: 10px;
+      }
+      >:nth-child(4){
+        -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+        -moz-appearance: none;     /* FireFox */
+        appearance: none;
+        @include btn;
+        font-size: 18px;
+        padding: 10px 0;
+        width: 45%;
+      }
+    }
+  }
+  //_______ 第二區塊：付款資訊 ________
+  .L_pay_payinfo{
+    width: 50%;
+    margin-left: 5%;
+    position: relative;
+    padding-top: 190px;
+    text-align: left;
+    box-sizing: border-box;
+    color: #fff;
+    .L_pay_payinfo_pay{
+      padding-bottom: 50px;
+      >div:first-child{  //付款方式
+        padding-top: 10px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 35px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      >span{ //信用卡付款
+        >label{
+          -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+          -moz-appearance: none;     /* FireFox */
+          appearance: none;
+          @include btn2;
+          margin-right: 16px;
+          padding: 12px 0px;
+          width: 45%;
+          letter-spacing: 1px;
+        }
+        >input[type=radio]{
+          // opacity: 0;
+          display: none;
+        }
+        >input:checked ~ label{
+          background-color: rgba(245, 1, 62, 0.6);
+          border: 1px solid rgba(245, 1, 62, 0.6);
+          color: #ececec;
+          font-weight: bold;
+        }
+      }
+      >:nth-child(3){  //ATM付款
+        >label{
+          -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+          -moz-appearance: none;     /* FireFox */
+          appearance: none;
+          @include btn2;
+          padding: 12px 0px;
+          width: 45%;
+          letter-spacing: 1px;
+        }
+        >input[type=radio]{
+          // opacity: 0;
+          display: none;
+        }
+        >input:checked ~ label{
+          background-color: rgba(245, 1, 62, 0.6);
+          border: 1px solid rgba(245, 1, 62, 0.6);
+          color: #ececec;
+          font-weight: bold;
+        }
+      }
+    }
+    .L_pay_payinfo_adres{
+      padding-bottom: 50px;
+      >div:first-child{  //寄件資訊
+        padding-top: 10px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 36px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      .L_pay_payinfo_adres_form{
+        padding-top: 15px;
+        padding-bottom: 30px;
+        >li{
+          letter-spacing: 1.5px;
+          line-height: 3;
+          >span{
+            padding-right: 20px;
+            &::after{
+              content: '：';
+              position: absolute;
+              left: 75px;
+            }
+          }
+          >input{
+            margin-left: 5px;
+            width: 83%;
+            background-color: rgba(255, 255, 255, .1);
+            border-style: none;
+            border-left: 5px solid transparent;
+            padding: 5px;
+            border-radius: 3px;
+            outline: none;
+            caret-color: #fff;
+            color: #fff;
+            &::placeholder{
+              color: rgba(255, 255, 255, .6);
+              letter-spacing: 1px;
+            }
+          }
+        }
+        >:first-child{
+          >span{
+            letter-spacing: 9px;
+          }
+          >input{
+            margin-left: 0px;
+          }
+        }
+      }
+      .L_pay_payinfo_adres_formBtn{
+        letter-spacing: 1px;
+        >:nth-child(1){
+          -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+          -moz-appearance: none;     /* FireFox */
+          appearance: none;
+          vertical-align: bottom;
+          @include btn2;
+          margin-right: 20px; 
+          padding: 15px 0px;
+          width: 47%;
+          cursor: pointer;
+        }
+        >:nth-child(2){
+          -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+          -moz-appearance: none;     /* FireFox */
+          appearance: none;
+          @include btn;
+          padding: 11px 0px;
+          width: 48%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@include pad{
+  .L_pay_web_sidebar{
+    display: none;
+  }
+  .L_pay_plan_wrap{
+    display: block;
+    margin-top: 60px;
+    .L_pay_plan_sidebar{
+      position: relative;
+      text-align: center;
+      width: 100%;
+      line-height: 100px;
+      display: inline-block;
+      color: #fff;
+      &::before,&::after{
+        content: '';
+        display: inline-block;
+        position: relative;
+        bottom: 6px;
+        margin: 0 10px;
+        height: 1px;
+        width: 24%;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    .L_pay_plan{
+      width: 100%;
+      height: auto;
+      >:first-child{
+        margin: auto;
+        >img{
+          width: 90%;
+          padding-top: 0%;
+          padding-left: 6%;
+        }
+      }
+      .L_pay_plan_detil{
+        padding: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+    >.L_pay_payConfirm{ 
+        width: 100%;
+        margin-left: 0%;
+        padding: 0 5%;
+        padding-top: 50px;
+        height: unset;
+      .L_pay_payConfirm_pay{
+      }
+    }
+    .L_pay_payinfo{
+      width: 100%;
+      margin-left: 0px;
+      padding-top: 0%;
+      padding-left: 20px;
+      padding-right: 20px;
+      .L_pay_payinfo_pay{
+        >:nth-child(1){
+          &::before{
+            content: '';
+            top: 36px;
+          }
+        }
+        >:nth-child(2){
+          width: 45%;
+          padding-left: 0px;
+          padding-right: 0px;
+          margin-top: 3%;
+        }
+        >:nth-child(3){
+          width: 45%;
+          padding-left: 0px;
+          padding-right: 0px;
+          margin-top: 3%;
+        }
+      }
+      .L_pay_payinfo_adres{
+        padding-bottom: 20px;
+        .L_pay_payinfo_adres_form{
+          > li{
+            line-height: 2.2;
+            padding-bottom: 15px;
+            > span{
+              letter-spacing: 0px;
+              &::after{
+                left: 85px;
+              }
+            }
+            >input{
+              margin-left: 0px;
+              width: 100%;
+              font-size: 16px;
+            }
+          }
+          >:first-child > span{
+            letter-spacing: 9px;
+          }
+        }
+        .L_pay_payinfo_adres_formBtn{
+          >:nth-child(1){
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+          }
+          >:nth-child(2){
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+
+          }
+        } 
+      }
+    }
+  }
+}
+
+//_________ 付款頁面 _________
+#Y_thanksMsgBox{
+  max-width: 960px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 103px auto 0 auto;;
+  // width: 60%;
+  overflow: hidden;
+  height:300px;
+  padding: 26px 0px;
+  width: 100%;
+  color: #fff;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+  display: none;
+  box-shadow: 0px 0px 20px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 5px #fff;
+}
+
+  @media screen and (max-width: 414px){
+    #Y_thanksMsgBox{
+      max-width: 400px;
+      height:350px;
+    }
+  }
+
+.Y_completeMsg{
+  position: relative;
+  top:50%;
+  transform:translateY(-50%);
+  strong{
+    font-size: 40px;
+    line-height: 1.3;
+  }
+  p{
+    line-height: 1.6;
+   letter-spacing: 2px;
+   & span:nth-of-type(1){
+    font-weight: bold;
+   };
+  }
+  .Y_checkBtn{
+   letter-spacing: 1px;
+     display: flex;
+   justify-content: space-evenly;
+   transform: translate(0%,50%);
+   opacity: 0;
+  }
+  
+  a{
+    -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+    -moz-appearance: none;     /* FireFox */
+    appearance: none;
+    @include btn2;
+     padding: 12px 50px;
+
+  }
+}
+
+  @media screen and (max-width: 414px){
+    .Y_completeMsg{
+      p{
+        padding: 5px 0;
+      }
+    }
+  }
+
+  
+
+//_______ 信用卡卡號輸入相關 ________
+#Y_payCreditInput{
+  display: none;
+  padding: 25px 0 0 0;
+  letter-spacing: 1px;
+  img{
+    max-width: 40%;
+  }
+  input{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-style: none;
+    border-left: 5px solid transparent;
+    padding: 6px;
+    border-radius: 3px;
+    outline: none;
+    caret-color: #fff;
+    color: #fff;
+    font-size: 16px;
+  }
+
+
+  .Y_expireDay{
+    margin: 10px 0 10px 0 ;
+  }
+
+}
+
+  @media screen and (max-width: 569px){
+      #Y_payCreditInput{
+      img{
+        max-width: 55%;
+      }
+      }
+
+    .creadCardtext{
+    span{
+      display: block;
+      padding-bottom: 10px;
+    }
+  }
+  }
+
+#Y_payATMInput{
+  display: none;
+  padding: 25px 0 0 0;
+  letter-spacing: 1px;
+  input{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-style: none;
+    border-left: 5px solid transparent;
+    padding: 6px;
+    border-radius: 3px;
+    outline: none;
+    caret-color: #fff;
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+  @media screen and (max-width: 569px){
+      #Y_payATMInput{
+    span{
+      display: block;
+      padding-bottom: 10px;
+    }
+  }
+  }

@@ -1,0 +1,1426 @@
+@import "reset";
+@import "mixins";
+@import "color";
+/*@import 'grid';*/
+
+* {
+  /*outline:1px solid red;*/
+  color: white;
+  letter-spacing: 2px;
+}
+body {
+  overflow-x: hidden;
+}
+
+
+
+// RWD - iphone5型態
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+@include iphone5 {
+  /* .logo{
+        position: absolute;
+        left: 110px;
+        top:5px;
+    }
+// .logo{
+//     display: block;
+//     position: relative;
+//     width: 126px;
+//     z-index: 5;
+//     margin-top: -20px;
+//     top: 0%;
+//     left: 32%;
+
+// }*/
+
+  /*小主題側欄*/
+  .sidebar {
+    /*font-size: 16px;*/
+    width: 330px;
+    height: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+    // top: 50px;
+    // margin-top: 1%;
+  }
+
+  .sidebar p {
+    width: 60px;
+    padding: 0px 0;
+    margin-left: 110px;
+  }
+
+  .sidebar::before {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    // margin-bottom: 10px;
+    width: 120px;
+    height: 0px;
+    // top:5px;
+    left: -20px;
+    margin-top: 10px;
+    transform: rotate(0deg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .sidebar::after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    // margin-top: 10px;
+    width: 120px;
+    height: 0px;
+    // top: 5px;
+    left: 180px;
+    margin-top: 5px;
+    transform: rotate(0deg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  /*第一屏 會員資料*/
+  section.user_Info {
+    // display: flex;
+    // flex-direction: columns;
+    justify-content: center;
+    line-height: 2;
+    margin: auto;
+    padding-top: 10px;
+    
+    /*圖片型資料*/
+    .graphic_info {
+      /*padding: 50px;*/
+      padding-left: 50px;
+      padding-top: 100px;
+
+      .memAvatar {
+        padding-bottom: 30px;
+        img {
+          width: 100px;
+        }
+        #upFile {
+          padding: 5px 10px;
+        }
+        form {
+          height: 185px;
+          padding-left: 20vw;
+        }
+        input {
+          @include btn2;
+          padding: 1px 24px;
+          margin-top: 8px;
+        }
+      }
+      .skillBar {
+        display: flex;
+        font-size: 16px;
+        margin-top: 20px;
+        padding-left: 30px;
+        img {
+          margin-top: 20px;
+          width: 50%;
+          height: 50%;
+        }
+        ul {
+          margin-top: 13px;
+          margin-left: 11px;
+          line-height: 40px;
+        }
+        span {
+          display: inline-block;
+        }
+      } //.skillBar
+    } //.graphic_info
+
+    /*文字型資料*/
+    .literal_info {
+      .upper_literal > ul {
+        display: flex;
+        color: white;
+        position: relative;
+        li {
+          margin-left: 50px;
+          font-size: 25px;
+          font-weight: 500;
+        }
+        a {
+          @include btn;
+          padding: 0px 30px;
+          position: absolute;
+          right: 54px;
+          bottom: 0px;
+        }
+      }
+      
+      .lower_literal {
+        // display: flex;
+        margin-top: 15px;
+      }
+      .lower_literal input {
+        color:black;
+      }
+      .lower_literal input[type='radio'] {
+        appearance: radio;
+        -webkit-appearance: radio;
+      }
+      .lower_literal > ul {
+        position: relative;
+        float: left;
+        padding-left: 100px;
+      }
+      &::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .lower_literal > ul li {
+        // margin-top: 40px;
+        color: white;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.5);
+        span {
+          display: block;
+          color: rgb(255, 255, 255);
+        }
+        &::after {
+          display: block;
+          content: "";
+          width: 200px;
+          margin-top: 5px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+      }
+      .lower_literal > ul li::before {
+        /*content: "\f007";*/
+        position: absolute;
+        font-family: FontAwesome;
+        color: white;
+        left: 50px;
+        font-size: 20px;
+      }
+      .lower_literal > ul > li::before {
+        content: "\f007";
+      }
+      .lower_literal > ul > li + li::before {
+        content: "\f095";
+      }
+      .lower_literal > ul > li + li + li::before {
+        content: "\f0e0";
+      }
+      .lower_literal > ul > li + li + li + li::before {
+        content: "\f041";
+      }
+      .lower_literal > ul + ul > li::before {
+        content: "\f192";
+      }
+      .lower_literal > ul + ul > li + li::before {
+        content: "\f1fd";
+      }
+      .lower_literal > ul + ul > li + li + li::before {
+        content: "\f0d6";
+      }
+      /*.lower_literal >ul>li::before {content: "\f007";}*/
+    } //.literal_info
+  } //section.user_Info
+
+  /*第二屏 我的作品*/
+  section.user_artWork {
+    width: 80%;
+    // display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-top: 300px;
+    .graphic_info {
+      width: 300px;
+    }
+    .literal_info {
+      width: 300px;
+    }
+    //側邊攔微調
+    .sidebar {
+      left: 0px;
+      top: -130px;
+    }
+
+    // .sidebar p{
+
+    // }
+
+    // .sidebar::before {
+    // top:0px;
+    // left: 0px;
+    // }
+    // .sidebar::after {
+    // top:0px;
+    // left: 180px;
+    // }
+
+    
+    .literal_info {
+      position: relative;
+      .artWork_name {
+        position: absolute;
+        font-size: 50px;
+        margin-top: 40px;
+        top: -450px;
+        // margin-left: 50px;
+      }
+      .artWork_descript {
+        width: 100%;
+        margin-top: 30px;
+        // margin-left: 50px;
+        line-height: 1.8;
+        /*letter-spacing: 0.5px;*/
+      }
+      .fundStatusBar {
+        border-radius: 50px;
+        border: 1px solid #fff;
+        background-color: #4b343e;
+        width: 100%;
+        height: 25px;
+        margin-top: 70px;
+        // margin-left: 50px;
+        &::after {
+          overflow: hidden;
+          display: block;
+          content: "";
+          padding-top: 4px;
+          padding-left: 50%;
+          width: 50%;
+          height: 23px;
+          border-radius: 50px;
+          background-color: #924467;
+        }
+      }
+      .fundTotal {
+        font-size: 14px;
+        position: absolute;
+        margin-top: 40px;
+        // margin-bottom:20px;
+        left: 0px;
+      }
+      .fundGoal {
+        font-size: 20px;
+        font-weight: 700;
+        position: absolute;
+        margin-top: 20px;
+        right: 0px;
+      }
+
+      //我的作品 客製化控制板
+      #skin {
+        border: 3px dotted steelblue;
+        border-radius: 10px;
+        width: 700px;
+        text-align: center;
+        margin: 50px auto;
+        padding: 15px 0px;
+      }
+      section {
+        margin-top: 15px;
+      }
+      button {
+        text-transform: capitalize;
+        width: 68px;
+      }
+      #buttons {
+        width: 100%;
+        margin-left: 75px;
+        margin-bottom: 10px;
+        float: left;
+        button {
+          @include btn2;
+          padding: 5px 10px;
+          text-align: center;
+        }
+      }
+
+      #defaultBar {
+        /*border: 1px solid #aaa;*/
+        /*margin-top: 10px;
+      margin-left: 70px;
+      width: 500px;
+      height: 14px;
+      padding: 2px;
+      float: left;
+      border-radius: 50px;
+      background-color: black;*/
+
+        margin-top: 10px;
+        margin-left: 0px;
+        width: 300px;
+        height: 24px;
+        padding: 0 2px;
+        float: left;
+        border-radius: 50px;
+        background-color: black;
+      }
+      #progressBar {
+        width: 0;
+        height: 5px;
+        margin-top: 2px;
+        background: white;
+        position: relative;
+        background: rgba(59, 173, 227, 1);
+        background: linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+      }
+      #progressBar::after {
+        content: "";
+        width: 20px;
+        height: 12px;
+        border-radius: 50px;
+        border: 1px solid white;
+        position: absolute;
+        background-color: black;
+        right: -18px;
+        top: -5px;
+        cursor: -webkit-grab;
+      }
+      #p_Bar {
+        width: 95%;
+        margin-left: 10px;
+        margin-top: 9px;
+      }
+
+      /*    .user_artWork .graphic_info{
+      width: 300px;
+    }
+    .user_artWork .literal_info{
+      width: 300px;
+    }     
+*/
+
+      /******撥放進度條*****/
+      .range {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        /*left: 65%;
+        top: 50%;*/
+        /*width: 100px;*/
+        /*transform: translate(-50%, -50%);*/
+        /*position: absolute;*/
+      }
+      input[type="range"]::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        background: rgba(59, 173, 227, 1);
+        background: -moz-linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        background: -webkit-gradient(
+          left bottom,
+          right top,
+          color-stop(0%, rgba(59, 173, 227, 1)),
+          color-stop(25%, rgba(87, 111, 230, 1)),
+          color-stop(51%, rgba(152, 68, 183, 1)),
+          color-stop(100%, rgba(255, 53, 127, 1))
+        );
+        background: -webkit-linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        background: -o-linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        background: -ms-linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        background: linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+        height: 7px;
+      }
+      input[type="range"]:focus {
+        outline: none;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid white;
+        border-radius: 30%;
+        height: 15px;
+        width: 25px;
+        max-width: 80px;
+        position: relative;
+        bottom: 4px;
+        background-color: #1d1c25;
+        cursor: -webkit-grab;
+        -webkit-transition: border 1000ms ease;
+        transition: border 1000ms ease;
+      }
+      /******撥放進度條*****/
+    } //.literal_info
+  } //section.user_artWork
+
+  /*第三屏 我的訂單*/
+  section.user_order {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-left: 5%;
+    padding-top: 250px;
+    //側邊攔微調
+    .sidebar {
+      left: 100px;
+      top: -230px;
+    }
+
+    #tab-orderTable {
+      position: relative;
+      width: 103%;
+      left: -6px;
+      table.typeA {
+        display: block;
+        padding: 10px;
+      }
+      table.typeB {
+        display: none;
+        padding: 10px;
+      }
+      img {
+        width: 100px;
+      }
+      th {
+        width: 100px;
+        padding: 10px;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        word-break: break-all;
+        word-wrap: break-all;
+        white-space:nowrap;
+      }
+      tr:not(:first-child)::after {
+        display: block;
+        position: absolute;
+        content: "";
+        left: 10px;
+        width: 132%;
+        height: 1px;
+        border-radius: 50px;
+        background-color: #fff;
+      }
+      td {
+        padding: 15px 0px;
+        text-align: center;
+        font-size: 14px;
+      }
+      td:not(:first-child) {
+        padding: 15px 0px;
+        text-align: center;
+        font-size: 14px;
+      }
+      table {
+        margin: auto;
+        // padding: 30px;
+      }
+      input.getlinkdetail {
+        @include btn;
+        margin-top: 0px;
+        padding: 4px 10px; 
+      }
+      .pageBar {
+        padding: 25px 0px;
+      }
+    }
+    .tab02_albumCover{
+      display: none;
+    }
+    .tab-title {
+      list-style: none;
+    }
+    #tab-orderTable > ul {
+      display: block;
+      margin: 0;
+      list-style: none;
+      width: 140%;
+      display: flex;
+    }
+    #tab-orderTable > ul > li {
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 0px 0px 0;
+      /*border:1px solid #BCBCBC; */
+      border-radius: 5px 5px 0px 0px;
+      height: 30px;
+      width: 504px; //336px;
+      line-height: 25px;
+      // background:rgba(204, 159, 178,.5);
+      padding: 0 15px;
+      // box-shadow: 0 0 0 1px hsla(240,0%,100%,.3) inset,0.5em 1em rgba(0, 0, 0, 0.6);
+      // text-shadow: 0 1px 1px hsla(240,0%,100%,.5);
+      background-color: rgba(204, 159, 178, 0.2);
+      list-style: none;
+      box-sizing: border-box;
+    }
+    #tab-orderTable > ul > li:hover {
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 0, 106, 0.8);
+    }
+    #tab-orderTable > ul > li {
+      color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      text-align: center;
+    }
+    #tab-orderTable > ul > li.active {
+      // border-bottom:1px solid #333;
+      background-color: rgba(204, 159, 178, 0.3);
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 0, 106, 0.8);
+    }
+    #tab-orderTable > .tab-inner {
+      clear: both;
+      color: #000;
+      /*border:1px #BCBCBC solid;*/
+    }
+    .tab-inner {
+      // padding:15px;
+      width: 140%;
+      // box-shadow: 0 0 0 1px hsla(240,0%,100%,.3) inset,0.5em 1em rgba(0, 0, 0, 0.6);
+      text-shadow: 0 1px 1px hsla(240, 0%, 100%, 0.5);
+      background-color: rgba(204, 159, 178, 0.3); //rgba(100,100,100,.5);
+    }
+  } //-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+  /*第四屏 我的唱片*/
+  section.user_collection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    // margin-left: 11%;
+    padding-top: 200px;
+    //側邊攔微調
+    .sidebar {
+      left: 45px;
+      top: -40px;
+    }
+    tr {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: auto;
+    }
+
+    td {
+      /*height: 240px; 
+    padding-bottom: 50px;*/
+      /*width: 80vw; */
+      /* padding: 20px; */
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+
+      /*height: 240px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;*/
+
+      box-shadow: 0 0 0 1px hsla(240, 0%, 100%, 0.3) inset, 0.5em 1em rgba(20, 20, 20, 0.6);
+      text-shadow: 0 1px 1px hsla(240, 0%, 100%, 0.5);
+
+      li.p_album_inner {
+        display: flex;
+        flex-direction: row;
+      }
+
+      > ul.album_pic {
+        display: flex;
+        flex-direction: row;
+        background-color: grey;
+        /*box-shadow: 0 0 0 1px hsla(240,0%,100%,.3) inset,0.5em 1em rgba(20, 20, 20, 0.6);
+           text-shadow: 0 1px 1px hsla(240,0%,100%,.5);*/
+        background-color: rgba(100, 100, 100, 0.2);
+        width: 90vw;
+        /*height: 180px;*/
+
+        > li:not(:last-child) {
+          width: 120px;
+          img {
+            width: 100%;
+          }
+        }
+        > li + li {
+          width: 250px;
+          background-color: rgb(48, 23, 73);
+        }
+        ul.p_album_inner {
+          padding-left: 20px;
+          > li + li + li {
+            //saleCount
+            color: yellow;
+            font-size: 14px;
+          }
+          > li + li {
+            //singerName
+            font-size: 16px;
+          }
+          > li {
+            padding-top: 10px;
+            font-size: 25px;
+          }
+        }
+      }
+
+      > ul.album_inner {
+        :not(:last-child) {
+          display: none;
+        }
+        background-color: grey;
+        /*box-shadow: 0 0 0 1px hsla(240,0%,100%,.3) inset,0.5em 1em rgba(20, 20, 20, 0.6);
+           text-shadow: 0 1px 1px hsla(240,0%,100%,.5);*/
+        background-color: rgba(100, 100, 100, 0.2);
+        display: flex;
+        flex-direction: column;
+        li {
+          margin-left: 20px;
+          margin-bottom: 20px;
+        }
+
+        /*padding-left: 20px;*/
+        /*padding-top: 20px;*/
+        > li + li + li {
+          //saleCount
+          color: yellow;
+          font-size: 14px;
+        }
+        > li + li {
+          //singerName
+          font-size: 16px;
+        }
+        > li {
+          font-size: 25px;
+        }
+        audio {
+          padding: 10px;
+        }
+      }
+
+      /*>ul.album_inner :not(:last-child) {
+            
+              display: none;
+             
+        }*/
+    }
+  } //section.user_collection
+} //@include iphone5
+
+/*td{
+        padding: 15px 0px;
+
+       
+        ul {
+           background-color: grey;
+           box-shadow: 0 0 0 1px hsla(240,0%,100%,.3) inset,0.5em 1em rgba(0, 0, 0, 0.6);
+           text-shadow: 0 1px 1px hsla(240,0%,100%,.5);
+           background-color: rgba(100,100,100,.2);
+           display: flex;
+           flex-direction: column;
+           audio{
+            width: 90vw;
+           }
+           >li{width: 50%}
+           >li+li{width: 200px;}
+            ul.album_inner{
+                padding-left: 5px;
+                padding-top: 10px;
+                ul.album_controll{
+                  display: flex; 
+                  position: relative;
+                  font-family: FontAwesome;                 
+                  >li::before {content: "\f04b"; font-size:16px; cursor:pointer;color:rgba(255,255,255,0.2);} //播放按鈕
+                  >li:hover::before{color:rgba(255,255,255,1);text-shadow: 0 0 15px rgba(255, 0, 106, 0.8);} //播放按鈕
+                  >li+li::before {content: "\f04c"; font-size:16px; cursor:pointer;} //暫停按鈕
+                  >li+li+li::before {content: "";} //播放控制條
+                }
+                >li+li+li{//albumName
+                  color:yellow;
+                  font-size:14px;
+                }
+                >li+li{//memName
+                  font-size:16px;
+                }
+                li{//album_controll
+                    font-size: 18px;
+                    padding: 7px;
+                }
+            }
+        }
+    }*/
+
+/******撥放進度條*****/
+/* .range {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    left: 65%;
+    top: 50%;
+    width: 100px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    background: rgba(59,173,227,1);
+    background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
+    background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+    height: 2px;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid white;
+    border-radius: 30%;
+    height: 15px;
+    width: 25px;
+    max-width: 80px;
+    position: relative;
+    bottom: 8px;
+    background-color: #1d1c25;
+    cursor: -webkit-grab;
+    -webkit-transition: border 1000ms ease;
+    transition: border 1000ms ease;
+  }*/
+/******撥放進度條*****/
+
+// RWD - 桌機型態
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+@include web-A {
+  /*小主題側欄*/
+  .sidebar {
+    /*font-size: 16px;*/
+    width: 15px;
+    height: 330px;
+    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    left: 50px;
+    margin-top: 5%;
+  }
+  .sidebar::before {
+    position: relative;
+    display: inline-block;
+    content: "";
+    margin-bottom: 10px;
+    height: 120px;
+    left: 6px;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .sidebar::after {
+    position: relative;
+    display: inline-block;
+    content: "";
+    margin-top: 10px;
+    height: 120px;
+    top: 5px;
+    left: 6px;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  /*第一屏 會員資料*/
+  section.user_Info {
+    display: flex;
+    justify-content: center;
+    line-height: 2;
+    margin: auto;
+    padding-top: 250px;
+
+    /*圖片型資料*/
+    .graphic_info {
+      padding-right: 50px;
+      .memAvatar {
+        img {
+          width: 300px;
+        }
+        #upFile {
+          padding: 5px 10px;
+        }
+
+        input {
+          @include btn2;
+          padding: 7px 100px;
+          margin-top: 20px;
+          width: 300px;
+        }
+      }
+      .skillBar {
+        display: flex;
+        font-size: 16px;
+        margin-top: 30px;
+        img {
+          margin-top: 20px;
+          width: 50%;
+          height: 50%;
+        }
+        ul {
+          margin-top: 13px;
+          margin-left: 11px;
+          line-height: 47px;
+        }
+        span {
+          display: inline-block;
+        }
+      }
+    }
+    /*文字型資料*/
+    .literal_info {
+      .upper_literal > ul {
+        display: flex;
+        color: white;
+        position: relative;
+        li {
+          margin-left: 50px;
+          font-size: 25px;
+          font-weight: 500;
+        }
+        a {
+          @include btn2;
+          padding: 0px 55px;
+          position: absolute;
+          right: 0;
+        }
+        /*    a{
+    padding: 0px 20px;
+    border-radius: 50px;
+    background-color: #65485c;
+    margin-left: 150px;
+    li{                 
+        font-size:16px;
+    }
+}  */
+      }
+      .lower_literal {
+        display: flex;
+        margin-top: 15px;
+      }
+      .lower_literal .modify_mode {
+        display: none;
+      }
+      .lower_literal > ul {
+        position: relative;
+        float: right;
+        padding-left: 100px;
+      }
+      .lower_literal input {
+        color:black;
+        padding-left: 8px;
+        height: 25px;
+      }
+      .lower_literal input[type='radio'] {
+        appearance: radio;
+        -webkit-appearance: radio;
+      }
+      &::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .lower_literal > ul li {
+        margin-top: 40px;
+        color: white;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.5);
+        span {
+          display: block;
+          color: rgb(255, 255, 255);
+        }
+        &::after {
+          display: block;
+          content: "";
+          width: 200px;
+          margin-top: 5px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+      }
+      .lower_literal > ul li::before {
+        /*content: "\f007";*/
+        position: absolute;
+        font-family: FontAwesome;
+        color: white;
+        left: 50px;
+        font-size: 20px;
+      }
+      .lower_literal > ul > li::before {
+        content: "\f007";
+      }
+      .lower_literal > ul > li + li::before {
+        content: "\f095";
+      }
+      .lower_literal > ul > li + li + li::before {
+        content: "\f0e0";
+      }
+      .lower_literal > ul > li + li + li + li::before {
+        content: "\f041";
+      }
+      .lower_literal > ul + ul > li::before {
+        content: "\f192";
+      }
+      .lower_literal > ul + ul > li + li::before {
+        content: "\f1fd";
+      }
+      .lower_literal > ul + ul > li + li + li::before {
+        content: "\f0d6";
+      }
+    }
+  } //section.user_Info
+  /*第二屏 我的作品*/
+  section.user_artWork {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-top: 300px;
+    .graphic_info {
+      width: 700px;
+      margin-top: 135px;
+    }
+    .literal_info {
+      width: 700px;
+    }
+    img {
+      width: 1000px;
+    }
+    .literal_info {
+      position: relative;
+      .artWork_name {
+        font-size: 50px;
+        margin-left: 50px;
+      }
+      .artWork_descript {
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 50px;
+        line-height: 1.8;
+        /*letter-spacing: 0.5px;*/
+      }
+      .fundStatusBar {
+        border-radius: 50px;
+        border: 1px solid #fff;
+        background-color: #4b343e;
+        width: 100%;
+        height: 25px;
+        margin-top: 100px;
+        margin-left: 50px;
+        &::after {
+          overflow: hidden;
+          display: block;
+          padding-top: 4px;
+          padding-left: 50%;
+          content: "$16,000";
+          width: 70%;
+          height: 23px;
+          border-radius: 50px;
+          background-color: #924467;
+        }
+      }
+
+      .fundTotal {
+        font-size: 16px;
+        position: absolute;
+        margin-top: 70px;
+        // margin-bottom:20px;
+        left: 50px;
+      }
+      .fundGoal {
+        font-size: 23px;
+        font-weight: 700;
+        position: absolute;
+        margin-top: 20px;
+        right: -50px;
+      }
+      //我的作品 客製化控制板
+      #skin {
+        border: 3px dotted steelblue;
+        border-radius: 10px;
+        width: 700px;
+        text-align: center;
+        margin: 50px auto;
+        padding: 15px 0px;
+      }
+      section {
+        margin-top: 15px;
+      }
+      button {
+        text-transform: capitalize;
+        width: 68px;
+      }
+      #buttons {
+        width: 100%;
+        margin-left: 75px;
+        margin-bottom: 10px;
+        float: left;
+        button {
+          @include btn2;
+          padding: 5px 10px;
+          text-align: center;
+        }
+      }
+
+      #defaultBar {
+        /*border: 1px solid #aaa;*/
+        /*margin-top: 10px;
+      margin-left: 70px;
+      width: 500px;
+      height: 14px;
+      padding: 2px;
+      float: left;
+      border-radius: 50px;
+      background-color: black;*/
+
+        margin-top: 10px;
+        margin-left: 70px;
+        width: 500px;
+        height: 24px;
+        padding: 0 2px;
+        float: left;
+        border-radius: 50px;
+        background-color: black;
+      }
+      #progressBar {
+        width: 0;
+        height: 5px;
+        margin-top: 2px;
+        background: white;
+        position: relative;
+        background: rgba(59, 173, 227, 1);
+        background: linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+      }
+      #progressBar::after {
+        content: "";
+        width: 20px;
+        height: 12px;
+        border-radius: 50px;
+        border: 1px solid white;
+        position: absolute;
+        background-color: black;
+        right: -18px;
+        top: -5px;
+        cursor: -webkit-grab;
+      }
+      #p_Bar {
+        width: 95%;
+        margin-left: 10px;
+        margin-top: 9px;
+      }
+
+      /*    .user_artWork {
+        .graphic_info{
+          width: 700px;
+        }
+        .literal_info{
+          width: 700px;
+        }    
+    }*/
+
+      /*    .user_artWork .graphic_info{
+      width: 700px;
+    }
+    .user_artWork .literal_info{
+      width: 700px;
+    }     */
+
+      /******撥放進度條*****/
+      .range {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        /*left: 65%;
+        top: 50%;*/
+        /*width: 100px;*/
+        /*transform: translate(-50%, -50%);*/
+        /*position: absolute;*/
+      }
+      input[type="range"]::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        background: rgba(59, 173, 227, 1);
+        background: -moz-linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        background: -webkit-gradient(
+          left bottom,
+          right top,
+          color-stop(0%, rgba(59, 173, 227, 1)),
+          color-stop(25%, rgba(87, 111, 230, 1)),
+          color-stop(51%, rgba(152, 68, 183, 1)),
+          color-stop(100%, rgba(255, 53, 127, 1))
+        );
+        background: -webkit-linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        background: -o-linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        background: -ms-linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        background: linear-gradient(
+          45deg,
+          rgba(59, 173, 227, 1) 0%,
+          rgba(87, 111, 230, 1) 25%,
+          rgba(152, 68, 183, 1) 51%,
+          rgba(255, 53, 127, 1) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+        height: 7px;
+      }
+      input[type="range"]:focus {
+        outline: none;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid white;
+        border-radius: 30%;
+        height: 15px;
+        width: 25px;
+        max-width: 80px;
+        position: relative;
+        bottom: 4px;
+        background-color: #1d1c25;
+        cursor: -webkit-grab;
+        -webkit-transition: border 1000ms ease;
+        transition: border 1000ms ease;
+      }
+      /******撥放進度條*****/
+    } //.literal_info
+  } //section.user_artWork
+  /*第三屏 我的訂單*/
+  section.user_order {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-left: 8%;
+    padding-top: 300px;
+
+    table.typeA {
+      display: block;
+    }
+    table.typeB {
+      display: none;
+    }
+    #tab-orderTable {
+      position: relative;
+      width: 100%;
+      img {
+        width: 100px;
+      }
+      th {
+        padding: 40px 0;
+        text-align: center;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      tr:not(:first-child)::after {
+        display: block;
+        position: absolute;
+        content: "";
+        left: 30px;
+        width: 132%;
+        height: 1px;
+        border-radius: 50px;
+        background-color: #fff;
+      }
+      #tab01 {
+        td {
+          padding: 15px 55px;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+      #tab02 {
+        td {
+          padding: 15px 30px;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+      td {
+        padding: 15px 30px;
+        text-align: center;
+        font-size: 16px;
+      }
+      table {
+        margin: auto;
+        // padding: 0px;
+      }
+      input {
+        @include btn;
+        padding: 8px 20px;
+        margin-top: 0px;
+        margin-left: 10px;
+      }
+    }
+    .tab-title {
+      list-style: none;
+    }
+    #tab-orderTable > ul {
+      display: block;
+      margin: 0;
+      list-style: none;
+      width: 140%;
+      display: flex;
+    }
+    #tab-orderTable > ul > li {
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 0px 0px 0;
+      /*border:1px solid #BCBCBC; */
+      border-radius: 5px 5px 0px 0px;
+      height: 30px;
+      width: 504px; //336px;
+      line-height: 25px;
+      // background:rgba(204, 159, 178,.5);
+      padding: 0 15px;
+      // box-shadow: 0 0 0 1px hsla(240,0%,100%,.3) inset,0.5em 1em rgba(0, 0, 0, 0.6);
+      // text-shadow: 0 1px 1px hsla(240,0%,100%,.5);
+      background-color: rgba(204, 159, 178, 0.2);
+      list-style: none;
+      box-sizing: border-box;
+    }
+    #tab-orderTable > ul > li:hover {
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 0, 106, 0.8);
+    }
+    #tab-orderTable > ul > li {
+      color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      text-align: center;
+    }
+    #tab-orderTable > ul > li.active {
+      background-color: rgba(204, 159, 178, 0.3);
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 0, 106, 0.8);
+    }
+    #tab-orderTable > .tab-inner {
+      clear: both;
+      color: #000;
+      // border:1px solid rgba(255,255,255,.1) ;
+      box-shadow: 0 0 0 0px rgba(60, 32, 68, 0.3) inset, 0.5em 1em rgba(20, 20, 20, 0.6);
+    }
+    .tab-inner {
+      padding: 15px;
+      width: 140%;
+      text-shadow: 0 1px 1px hsla(240, 0%, 100%, 0.5);
+      background-color: rgba(204, 159, 178, 0.3); //rgba(100,100,100,.5);
+    }
+  } //-- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+  /*第四屏 我的唱片*/
+  section.user_collection {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-left: 11%;
+    padding-top: 250px;
+    padding-bottom: 200px;
+
+    tbody {
+      display: flex;
+      flex-wrap: wrap;
+      width: 1200px;
+    }
+    td {
+      height: 240px;
+      padding: 20px;
+      display: flex;
+      > ul.album_pic {
+        background-color: grey;
+        box-shadow: 0 0 0 1px hsla(240, 0%, 100%, 0.3) inset, 0.5em 1em rgba(20, 20, 20, 0.6);
+        text-shadow: 0 1px 1px hsla(240, 0%, 100%, 0.5);
+        background-color: rgba(100, 100, 100, 0.2);
+        width: 200px;
+        img {
+          width: 100%;
+        }
+        ul.p_album_inner {
+          display: none;
+        }
+      }
+      > ul.album_inner {
+        width: 350px;
+        background-color: grey;
+        box-shadow: 0 0 0 1px hsla(240, 0%, 100%, 0.3) inset, 0.5em 1em rgba(20, 20, 20, 0.6);
+        text-shadow: 0 1px 1px hsla(240, 0%, 100%, 0.5);
+        background-color: rgba(100, 100, 100, 0.2);
+        display: flex;
+        flex-direction: column;
+        li {
+          margin-left: 20px;
+          margin-bottom: 20px;
+        }
+
+        /*padding-left: 20px;*/
+        padding-top: 20px;
+        > li + li + li {
+          //saleCount
+          color: yellow;
+          font-size: 14px;
+        }
+        > li + li {
+          //singerName
+          font-size: 16px;
+        }
+        > li {
+          font-size: 25px;
+        }
+        audio {
+          padding: 10px;
+        }
+      }
+    }
+  } //section.user_collection
+} //@include web-A

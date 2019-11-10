@@ -1,0 +1,30 @@
+.swirl {
+	position: fixed;
+	min-height: 100vh;
+	color: var(--color-text);
+	overflow: hidden;
+	z-index: -1000;
+	background: hsla(260,40%,5%,0);
+
+}
+.swirl_content {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: calc(100vh - 13rem);
+	position: relative;
+	justify-content: flex-start;
+	align-items: center;
+	opacity: .1;
+}
+  
+@media screen and (min-width: 53em) {
+	.message {	/* 他哪位？ */
+		display: none;
+	}
+	
+	.swirl_content {
+		height: 100vh;
+		justify-content: center;
+	}
+}

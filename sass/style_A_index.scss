@@ -1,0 +1,1035 @@
+@import 'reset';
+@import 'mixins';
+@import 'color';
+
+.section {
+    text-align:center;
+    font-size: 3em;
+}
+
+//sidebar
+.sidebar1,.sidebar2,.sidebar3,.sidebar4{
+    width: 280px;
+    // height: 330px;
+    color: rgba(255, 255, 255, 0.6);
+    position: fixed;
+    left: 50px;
+    // margin-top: -160px;
+    margin: auto;
+}
+.sidebar1 p,.sidebar2 p,.sidebar3 p,.sidebar4 p{
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+
+
+.sidebar1::before,.sidebar2::before,.sidebar3::before,.sidebar4::before{
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 100px;
+    // height: 120px;
+    left: 6px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+
+    content: '';
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    transform: translateY(20px);
+}
+.sidebar1::after,.sidebar2::after,.sidebar3::after,.sidebar4::after{
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 100px;
+    // height: 120px;
+    top: 5px;
+    left: 175px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+    content: '';
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    transform: translateY(-25px);
+}
+
+.logo{
+    display: block;
+}
+
+//專輯製作
+.A-record{
+    background-image: url("../images/index/concert.png");
+    background-repeat: no-repeat; 
+    width: 100vw;
+    height: 100vh;
+    .A-page4th{
+        margin-top: -100px;
+        h2{
+            color: #fff;
+            padding: 50px 30px 20px;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 2px;
+            line-height: 1.6em;
+        }
+        .A-recordH3{
+            font-size: 16px;
+            color: #fff;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        h3{
+            font-size: 16px;
+            color: #fff;
+            margin-top: -75px;
+        }
+        .cuProcrss{
+            width: 100%;
+            height: 250px;
+            display: flex;
+            align-content: center;
+            padding: 10px;
+            .cuPro{
+                margin: 0px 5px 100px;
+                width: 90px;
+                // height: 90px;
+                line-height: 10px;
+                display: inline-block;
+                // background: rgba(255, 255, 255, 0.4);
+                // border-radius: 50%;
+                text-align: center;
+                padding: 15px;
+                color: #333;
+                border-radius: 5px;
+                border: 2px solid rgba(255, 255, 255, 0.4); 
+                .A-CDStep{
+                    width: 70%;
+                }
+                .A-starStep{
+                    width: 40%;
+                    display: block;
+                    margin: auto;
+                }
+                p{
+                    font-size: 14px;
+                    color: #fff;
+                    // text-align: left;
+                    line-height: 1.4em;
+                    
+                }
+            }
+            .cuPro:nth-child(1) {
+                animation: stepLight 8s 0s step-start infinite;
+                display: block;
+            }
+            .cuPro:nth-child(2) {
+                animation: stepLight 8s 2s step-start infinite;
+                display: block;
+            }
+            .cuPro:nth-child(3) {
+                animation: stepLight 8s 4s step-start infinite;
+                display: block;
+            }
+            .cuPro:nth-child(4) {
+                animation: stepLight 8s 6s step-start infinite;
+                display: block;
+            }
+        }
+        h3{
+            font-size: 16px;
+            color: #fff;
+            margin-top: -160px;
+        }
+        .container {
+            display: block;
+            position: relative;
+            width: 320px;
+            margin: 50px auto 0 auto;
+            perspective: 1000px;
+            .carousel {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d; 
+                animation: rotate360 60s infinite forwards linear;
+                .carousel__face { 
+                    position: absolute;
+                    width: 30%;
+                    height: 100px;
+                    top: -50px;
+                    left: 10px;
+                    right: 10px;
+                    background-size: cover;
+                    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+                    display: flex;
+                    span {
+                        margin: auto;
+                        font-size: 2rem;
+                    }
+                }
+                .carousel__face:nth-child(1) {
+                    background-image: url("../images/CDWall/records/reco1.png");
+                    transform: rotateY(  0deg) translateZ(430px); }
+                .carousel__face:nth-child(2) { 
+                    background-image: url("../images/CDWall/records/reco2.png");
+                    transform: rotateY( 40deg) translateZ(430px); }
+                .carousel__face:nth-child(3) {
+                    background-image: url("../images/CDWall/records/reco3.png");
+                    transform: rotateY( 80deg) translateZ(430px); }
+                .carousel__face:nth-child(4) {
+                    background-image: url("../images/CDWall/records/reco4.png");
+                    transform: rotateY(120deg) translateZ(430px); }
+                .carousel__face:nth-child(5) { 
+                    background-image: url("../images/CDWall/records/reco5.png");
+                   transform: rotateY(160deg) translateZ(430px); }
+                .carousel__face:nth-child(6) { 
+                    background-image: url("../images/CDWall/records/reco6.png");
+                   transform: rotateY(200deg) translateZ(430px); }
+                .carousel__face:nth-child(7) { 
+                    background-image: url("../images/CDWall/records/reco7.png");
+                   transform: rotateY(240deg) translateZ(430px); }
+                .carousel__face:nth-child(8) {
+                    background-image: url("../images/CDWall/records/reco8.png");
+                    transform: rotateY(280deg) translateZ(430px); }
+                .carousel__face:nth-child(9) {
+                    background-image: url("../images/CDWall/records/reco1.png");
+                    transform: rotateY(320deg) translateZ(430px); }
+            }
+        }
+        #A-nextButton{
+            @include btn;
+        }
+    }
+    @keyframes rotate360 {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(-360deg);
+        }
+    }
+
+    @keyframes stepLight {
+        0% {
+          background-color: rgba(133, 51, 104, 0.6); 
+        }
+        25% {
+          background-color:  rgba(133, 51, 104, 0.6); 
+        }
+        50% {
+          background-color: none; 
+        }
+        75% {
+          background-color: none;
+        }
+        // 80% {
+        //   background-color: none; 
+        // }
+        100% {
+          background-color: none; 
+        } 
+    }
+    
+}    
+        
+          
+        
+          
+          
+          
+          
+
+        
+
+// h3{
+    //     font-size: 24px;
+    //     color: #fff;
+    //     // margin-top: 400px;
+    // }
+    // #A-nextButton{
+    //     text-decoration: none;
+    //     display: inline-block;
+    //     padding: 8px 55px;
+    //     margin-top: 20px;
+    //     background-color: rgba(245, 1, 62, 0.3);
+    //     border: 1px solid rgba(255, 255, 255, 0.3);
+    //     border-radius: 28px;
+    //     color: rgba(255, 255, 255, 0.7);
+    //     text-align: center;
+    //     transition: 0.3s;
+    //     &:hover{
+    //     background-color: rgba(255, 255, 255, 0.08);
+    //     border: 1px solid rgba(255, 255, 255, 0.7);
+    //     cursor: pointer;
+    //     p{
+    //         color: rgba(255, 255, 255, 0.9);
+    //     }
+    //     }
+    //     p{
+    //     font-size: 16px;
+    //     transition: 0.3s;
+    //     }
+    // }
+// .record{
+// margin: auto;
+// width: 100%;
+// margin-top: 20px;
+// }
+// .record img{
+// width: 20%;
+// }
+// #controls{
+// margin: auto;
+// text-align: center;
+// top: 65%;
+// left: 50%;
+// button {
+//     text-decoration: none;
+//     display: inline-block;
+//     padding: 8px 55px;
+//     margin-top: 20px;
+//     background-color: rgba(245, 1, 62, 0.3);
+//     border: 1px solid rgba(255, 255, 255, 0.3);
+//     border-radius: 28px;
+//     color: rgba(255, 255, 255, 0.7);
+//     text-align: center;
+//     transition: 0.3s;
+//     &:hover{
+//     background-color: rgba(255, 255, 255, 0.08);
+//     border: 1px solid rgba(255, 255, 255, 0.7);
+//     cursor: pointer;
+//     }
+//     p{
+//         color: rgba(255, 255, 255, 0.9);
+        
+//     }
+//     p{
+//         font-size: 16px;
+//         transition: 0.3s;
+//     }
+// }
+// button:hover, button:focus {
+//     outline: none;
+//     background: #c72d1c;
+// }
+// button::-moz-focus-inner {
+//     border: 0;
+// }
+// button:active {
+//     box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+//     /*line-height: 3rem;*/
+// }
+// button:disabled {
+//     pointer-events: none;
+//     background: rgb(87, 87, 87);
+// }
+// audio {
+//     display: block;
+//     width: 100%;
+//     margin-top: 0.2rem;
+// }
+// li {
+//     list-style: none;
+//     margin-bottom: 1rem;
+// }
+// #formats {
+//     margin-top: 0.5rem;
+//     font-size: 80%;
+// }
+// .musicwave img{
+//     width: 100vw;
+// }
+// }
+// .mic{
+// width: 80%;
+// img{
+//     width: 65%;
+//     text-align: left;
+//     left: 0;
+// }
+// }
+
+
+
+//第四屏
+h1{
+    color: #fff;
+}
+h2{
+    color: #fff;
+    padding: 50px 30px 20px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.6em;
+}
+.A-gamePage{
+    background-image: url("../images/index/pbg.png");
+    background-repeat: no-repeat; 
+    height: 100%;
+}
+.A-page3rd{
+    margin-top: 70px;
+    position: relative;
+    // height: 100vh;
+    .A-couponTiTle{
+        width: 100%;
+        .coupon3,.coupon4{
+            display: none;
+        }
+        .coupon{
+            display: inline-block;
+            img{
+                float: left;
+                width: 80px;
+                // height: 100%;
+                margin:0 50px;
+                transform: rotate(15deg);
+            }
+            .coupon1,.coupon2{
+                animation: jump 2.5s infinite alternate-reverse;
+            } 
+        }
+    }
+    .game-allA{
+        .star-game{
+            width: 100%;
+            h4{
+                color: #fff;
+                font-size: 18px;
+                padding-top: 5px;
+                // text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87;
+                text-shadow: 0 0 5px #F87, 0 0 10px #F87, 0 0 15px #F87, 0 0 20px rgb(175, 1, 1), 0 0 25px rgb(175, 1, 1), 0 0 30px rgb(175, 1, 1), 0 0 50px rgb(175, 1, 1), 0 0 80px rgb(175, 1, 1), 0 0 150px rgb(175, 1, 1);
+            }
+            p{
+                color: #fff;
+                font-size: 15px;
+                padding: 10px;
+                text-align: left;
+                letter-spacing: 2px;
+                line-height: 1.6em;
+            }
+            .sing-game{
+                float: left;
+                width: 50%;
+                position: relative;
+                margin: auto;
+                padding: 10px;
+                .sing-gameImg{
+                    width: 50%;
+                }
+                .sing-game-content{
+                    width: 100%;
+                    margin: auto;
+                }
+                .gameLine{
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                }
+            }
+            .rhyme-game{
+                width: 50%;
+                float: left;
+                position: relative;
+                margin: auto;
+                padding: 10px;
+                .rhyme-gameImg{
+                    width: 50%;
+                }
+                .rhyme-game-content{
+                    width: 100%;
+                }
+                .gameLine{
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+}
+@keyframes jump {
+	0% {
+        transform: translateY(10%);
+	}
+	50% {
+		transform: translateY(-50%);
+	}
+	100% {
+		transform: translateY(10%);
+	}
+}
+
+
+//加值課程
+.A-class{
+    background-image: url("../images/index/class-bg1.png");
+    background-repeat: no-repeat; 
+    width: 100vw;
+    height: 100vh;
+    margin-top: 30px;
+    // height: 100vh;
+    .owl-carousel h4{
+        color:#fff; 
+    }
+    .A-classItem{
+        margin: auto;
+        width: 85%;
+        background-color: #000000;
+        height: 420px;
+        h4{
+            font-size: 22px;
+            padding: 10px;
+        }
+        p{
+            color: #fff;
+            font-size: 16px;
+            text-align: left;
+            padding: 5px 10px;
+            letter-spacing: 2px;
+            line-height: 1.6em;
+        }
+        .A-singUpButton{
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 55px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: rgba(245, 1, 62, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 28px;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            transition: 0.3s;
+            &:hover{
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            p{
+                color: rgba(255, 255, 255, 0.9);
+            }
+            }
+            p{
+            font-size: 16px;
+            transition: 0.3s;
+            }
+        }
+    }  
+}
+
+
+
+
+
+
+@include web-A{
+    // .footer {
+    //     height: 100px;
+    // }
+    //header
+    .logo{
+        display: block;
+    }
+    .sidebar1,.sidebar2,.sidebar3,.sidebar4{
+        width: 15px;
+        height: 330px;
+        color: rgba(255, 255, 255, 0.6);
+        position: fixed;
+        left: 50px;
+        margin-top: 75px;
+    }
+    .sidebar1 p,.sidebar2 p,.sidebar3 p,.sidebar4 p{
+        margin: 0 auto;
+        padding: 20px 0;
+        font-size: 2.3vmin;
+    }
+    .sidebar1::before,.sidebar2::before,.sidebar3::before,.sidebar4::before{
+        position: relative;
+        // display: inline-block;
+        content: '';
+        height: 120px;
+        left: 10px;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: none;
+        width: 1px;
+        margin: 10px 0;
+    }
+    .sidebar1::after,.sidebar2::after,.sidebar3::after,.sidebar4::after{
+        position: relative;
+        // display: inline-block;
+        content: '';
+        height: 120px;
+        top: 5px;
+        left: 10px;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: none;
+        width: 1px;
+        margin: 10px 0;
+    }
+
+    .clear-fix{
+        clear: both;
+    }
+    
+
+    //星錘百練{
+    h2{
+        color: #fff;
+        padding: 20px;
+        margin: 100px auto 50px;
+        font-size: 26px;;
+    }
+    .A-page3rd{
+        .A-couponTiTle{
+            display: flex;
+            .coupon{
+                display: none;
+                opacity: 0;
+                .coupon1,.coupon2{
+                    display: none;
+                }  
+            }
+            h2{
+                color: #fff;
+                padding: 20px;
+                margin: 30px auto 50px;
+                font-size: 26px;;
+            }
+            .coupon3,.coupon4{
+                width: 150px;
+                height: 100%;
+                margin-top: 80px;
+                display: block;
+                animation: jump1 2.5s infinite alternate-reverse;
+                
+            }
+        }
+        .game-allA{
+            // display: flex;
+            margin-top: -90px;
+            .star-game{
+                // width: 1200px;
+                padding: 20px;
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                h4{
+                    color: #fff;
+                    font-size: 30px;
+                    padding-top: 20px;
+                    padding-bottom: 30px;
+                    &:hover{
+                        filter: contrast(200%);
+                    }
+                }
+                p{
+                    color: #fff;
+                    font-size: 18px;
+                    text-align: center;
+                    line-height: 1.6em;
+                    letter-spacing: 2px;
+                    padding: 0 30px;
+                }
+                .sing-game{
+                    width:25%;
+                    float: left;
+                    margin: 20px 100px;
+                    padding: 0;
+                    position: relative;
+                    .sing-gameImg{
+                        width: 100%;
+                        float: left;
+                        &:hover{
+                            filter: contrast(200%);
+                        }
+                    }
+                    .sing-game-content{
+                        width: 100%;
+                        float: left;
+                        margin: auto;
+                        p{
+                            text-align: left;
+                            padding: 0 25px;
+                        }
+                    }
+                    .gameLine{
+                        position: absolute;
+                        top: 70%;
+                        left: 0;
+                    }
+                }
+                .rhyme-game{
+                    width: 25%;
+                    float: left;
+                    margin: 20px 100px;
+                    padding: 0;
+                    .rhyme-gameImg{
+                        width: 100%;
+                        float: left;
+                        &:hover{
+                            filter: contrast(200%);
+                        }
+                    }
+                    .rhyme-game-content{
+                        width: 100%;
+                        float: left;
+                        p{
+                            text-align: left;
+                            padding: 0 25px;
+                        }
+                    }
+                    .gameLine{
+                        position: absolute;
+                        top: 70%;
+                        left: 0;
+                    }
+                } 
+            }       
+        }
+    }
+    @keyframes jump1 {
+        0% {
+            transform: rotate(0);
+        }
+        50% {
+            transform: rotate(15deg);
+        }
+        100% {
+            transform: rotate(0);
+        }
+    }
+
+    //專輯製作
+    .A-record{
+        background-image: url("../images/index/concert1.png");
+        background-repeat: no-repeat; 
+        background-image: url("../images/index/mic-bg.png");
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        height: 100%;
+        .A-page4th{
+            margin-top: -150px;
+            .A-recordH2{
+                margin-top: -220px;
+                color: #fff;
+                padding: 20px;
+                margin: 30px auto 30px;
+                font-size: 26px;;
+            }
+            // h2{
+            //     color: #fff;
+            //     padding: 50px 30px 20px;
+            //     font-size: 16px;
+            //     text-align: center;
+            //     letter-spacing: 2px;
+            //     line-height: 1.6em;
+            // }
+            .A-recordH3{
+                font-size: 26px;
+                color: #fff;
+                margin: 10px auto 10px;
+            }
+            .cuProcrss{
+                width: 100%;
+                display: flex;
+                align-content: center;
+                .cuPro{
+                    float: left;
+                    margin: 0px auto 50px;
+                    width: 250px;
+                    // height: 90px;
+                    line-height: 10px;
+                    // display: inline-block;
+                    // background: rgba(255, 255, 255, 0.4);
+                    text-align: center;
+                    padding: 10px;
+                    color: #333;
+                    border-radius: 5px;
+                    border: 2px solid rgba(255, 255, 255, 0.4); 
+                    .A-CDStep{
+                        width: 100px;
+                        background: rgba(255, 255, 255, 0.4);
+                        border-radius: 50%;
+                    }
+                    .A-starStep{
+                        display: inline-block;
+                        width: 50px;
+                        vertical-align: middle;
+                        padding: 10px;
+                    }
+                    p{  
+                        // text-align: left;
+                        font-size: 18px;
+                        color: #fff;
+                        padding: 10px 0;
+                        font-weight: 600;
+                    }
+                }
+            }
+            h3{
+                font-size: 16px;
+                color: #fff;
+                margin-top: -161px;
+            }
+            .container {
+                text-align: center;
+                position: relative;
+                width: 320px;
+                margin: 100px auto 0 auto;
+                perspective: 1500px;
+                .carousel {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    transform-style: preserve-3d; 
+                    animation: rotate360 60s infinite forwards linear;
+                    .carousel__face { 
+                        position: absolute;
+                        width: 170px;
+                        height: 170px;
+                        top: -50px;
+                        left: 10px;
+                        right: 10px;
+                        background-size: cover;
+                        box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.1);
+                        display: flex;
+                        span {
+                            margin: auto;
+                            font-size: 2rem;
+                        }
+                    }
+                    .carousel__face:nth-child(1) {
+                        background-image: url("../images/CDWall/records/reco1.png");
+                        transform: rotateY(  0deg) translateZ(430px); }
+                    .carousel__face:nth-child(2) { 
+                        background-image: url("../images/CDWall/records/reco2.png");
+                        transform: rotateY( 40deg) translateZ(430px); }
+                    .carousel__face:nth-child(3) {
+                        background-image: url("../images/CDWall/records/reco3.png");
+                        transform: rotateY( 80deg) translateZ(430px); }
+                    .carousel__face:nth-child(4) {
+                        background-image: url("../images/CDWall/records/reco4.png");
+                        transform: rotateY(120deg) translateZ(430px); }
+                    .carousel__face:nth-child(5) { 
+                        background-image: url("../images/CDWall/records/reco5.png");
+                       transform: rotateY(160deg) translateZ(430px); }
+                    .carousel__face:nth-child(6) { 
+                        background-image: url("../images/CDWall/records/reco6.png");
+                       transform: rotateY(200deg) translateZ(430px); }
+                    .carousel__face:nth-child(7) { 
+                        background-image: url("../images/CDWall/records/reco7.png");
+                       transform: rotateY(240deg) translateZ(430px); }
+                    .carousel__face:nth-child(8) {
+                        background-image: url("../images/CDWall/records/reco8.png");
+                        transform: rotateY(280deg) translateZ(430px); }
+                    .carousel__face:nth-child(9) {
+                        background-image: url("../images/CDWall/records/reco1.png");
+                        transform: rotateY(320deg) translateZ(430px); }
+                }
+            }
+            #A-nextButton{
+                @include btn;
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+        @keyframes rotate360 {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(-360deg);
+            }
+        }   
+    }
+    
+        
+    
+    .record{
+        margin: auto;
+        width: 100%;
+        margin-top: 50px;
+    }
+    .record img{
+        width: 20%;
+    }
+    
+    // .mic{
+    //     width: 50%;
+    //     img{
+    //         display: none;
+    //         width: 100%;
+    //         text-align: left;
+    //         left: 0;
+    //     }
+    // }
+    // .A-record{
+    // height: 100vh;
+    // width: 100vw;
+    //     .record{
+    //         margin: 0 auto;
+    //         width: 10px;
+    //     }
+    //     .record img{
+    //             width: 100px;
+    //             position: absolute;
+    //             top:50%;//向下推外層空間的50%
+    //             left:50%;//向右推外層空間的50%
+    //             transform:translateY(-50%);//以內元素的空間為基準，向上移動50%
+    //             transform:translateX(-50%);//以內元素的空間為基準，向左移動50%
+    //             position: absolute;
+    //             top: 40%;
+    //             left: 50%;
+    //     }
+    //     #controls{
+    //         // display: flex;
+    //         margin: auto;
+    //         text-align: center;
+    //         position: absolute;
+    //         top:50%;//向下推外層空間的50%
+    //         left:50%;//向右推外層空間的50%
+    //         transform:translateY(-50%);//以內元素的空間為基準，向上移動50%
+    //         transform:translateX(-50%);//以內元素的空間為基準，向左移動50%
+    //         top: 52%;
+    //         left: 50%;
+    //         button {
+    //             text-decoration: none;
+    //             display: inline-block;
+    //             padding: 8px 55px;
+    //             margin-top: 20px;
+    //             background-color: rgba(245, 1, 62, 0.3);
+    //             border: 1px solid rgba(255, 255, 255, 0.3);
+    //             border-radius: 28px;
+    //             color: rgba(255, 255, 255, 0.7);
+    //             text-align: center;
+    //             transition: 0.3s;
+    //             &:hover{
+    //             background-color: rgba(255, 255, 255, 0.08);
+    //             border: 1px solid rgba(255, 255, 255, 0.7);
+    //             cursor: pointer;
+    //             p{
+    //                 color: rgba(255, 255, 255, 0.9);
+    //             }
+    //             }
+    //             p{
+    //             font-size: 16px;
+    //             transition: 0.3s;
+    //             }
+    //         }
+    //         button:hover, button:focus {
+    //             outline: none;
+    //             background: #c72d1c;
+    //         }
+    //         button::-moz-focus-inner {
+    //             border: 0;
+    //         }
+    //         button:active {
+    //             box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+    //             /*line-height: 3rem;*/
+    //         }
+    //         button:disabled {
+    //             pointer-events: none;
+    //             background: rgb(87, 87, 87);
+    //         }
+    //         audio {
+    //             display: block;
+    //             width: 100%;
+    //             margin-top: 0.2rem;
+    //         }
+    //         li {
+    //             list-style: none;
+    //             margin-bottom: 1rem;
+    //         }
+    //         #formats {
+    //             margin-top: 0.5rem;
+    //             font-size: 80%;
+    //         }
+    //         .musicwave img{
+    //             width: 100vw;
+    //         }
+    //     }
+    // }
+
+    //加值課程
+    .A-class{
+        background-image: url("../images/index/class-bg.png");
+        background-repeat: no-repeat; 
+        width: 100vw;
+        height: 100vh;
+        margin-top: -10px;
+        h2{
+        margin-bottom: 0px;
+        }
+        .owl-carousel h4{
+            color:#fff; 
+        }
+        .A-classItem{
+            margin: auto;
+            width: 85%;
+            background-color: #000000;
+            height: 85%;
+            img{
+                width: 70%;
+            }
+            h4{
+                font-size: 22px;
+                padding: 15px;
+            }
+            p{
+                color: #fff;
+                font-size: 16px;
+                text-align: left;
+                padding: 10px 20px;
+                letter-spacing: 2px;
+                line-height: 1.6em;
+            }
+            .A-singUpButton{
+                text-decoration: none;
+                display: inline-block;
+                padding: 8px 55px;
+                margin-top: 20px;
+                background-color: rgba(245, 1, 62, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 28px;
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                transition: 0.3s;
+                &:hover{
+                background-color: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                cursor: pointer;
+                p{
+                    color: rgba(255, 255, 255, 0.9);
+                }
+                }
+                p{
+                font-size: 16px;
+                transition: 0.3s;
+                }
+            }
+        }  
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

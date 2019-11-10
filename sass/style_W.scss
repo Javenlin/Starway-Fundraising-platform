@@ -1,0 +1,1636 @@
+@import 'reset';
+@import 'mixins';
+@import 'color';
+// @import 'grid';
+.menu li:nth-child(5) a {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 15px rgba(255, 0, 106, 0.8);
+}
+
+.invisible {
+    opacity: 0;
+}
+input {
+    -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+    -moz-appearance: none;     /* FireFox */
+    appearance: none;
+}
+@keyframes fade_from_left {
+    from {
+        transform: translateX(-3000px);
+        opacity: 0;
+    }
+    ;
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.fade_from_right {
+    animation: fade_from_right 1s;
+}
+
+@keyframes fade_from_right {
+    from {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    ;
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.fade_in {
+    animation: fade_in 1s;
+}
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+    }
+    ;
+    to {
+        opacity: 1;
+    }
+    ;
+}
+
+.clearfix {
+    content: "";
+    clear: both;
+}
+
+//sidebar
+.sidebar1,
+.sidebar2,
+.sidebar3,
+.sidebar4 {
+    width: 280px; // height: 330px;
+    color: rgba(255, 255, 255, 0.6);
+    position: fixed;
+    left: 50px; // margin-top: -160px;
+    margin: auto;
+}
+
+.sidebar1 p,
+.sidebar2 p,
+.sidebar3 p,
+.sidebar4 p {
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.sidebar1::before,
+.sidebar2::before,
+.sidebar3::before,
+.sidebar4::before {
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 100px; // height: 120px;
+    left: 6px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    content: '';
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    transform: translateY(20px);
+}
+
+.sidebar1::after,
+.sidebar2::after,
+.sidebar3::after,
+.sidebar4::after {
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 100px; // height: 120px;
+    top: 5px;
+    left: 175px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    content: '';
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    transform: translateY(-25px);
+}
+
+// banner
+.W_banner {
+    video {
+        width: 100%;
+        opacity: .7;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+} // 第一個
+.W_bg1 {
+    background-image: url(../images/Class/computer-1209104_1920.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.W_info_A {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    height: 600px;
+    border: rgba(255, 255, 255, 0.8) solid 3px;
+    background-color: rgba(0, 0, 0, .4);
+    font-weight: bold;
+    position: relative;
+    .W_img {
+        position: absolute;
+        width: 35%;
+        left: 80%;
+        top: 35%;
+    }
+    .W_class_info {
+        width: 40%;
+        margin-left: 100px;
+        h2 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 26px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        span {
+            color: #ffc400;
+            font-size: 22px;
+           
+        }
+        float: left;
+    }
+    .W_teacher_info {
+        width: 40%;
+        h6 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        float: left;
+    }
+    .W_teacher_info_phone {
+        display: none;
+    }
+    #btn {
+        @include btn;
+        float: left;
+        margin-top: 50px;
+    }
+}
+
+// 第二個
+.W_info_B {
+    height: 600px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: rgba(255, 255, 255, 0.8) solid 3px;
+    background-color: rgba(0, 0, 0, .4);
+    font-weight: bold;
+    position: relative;
+    .W_img {
+        position: absolute;
+        width: 30%;
+        left: -15%;
+        top: 45%;
+    }
+    .W_teacher_info {
+        width: 40%;
+        margin-left: 100px;
+        h6 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 55px;
+            font-size: 20px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        float: left;
+    }
+    .W_class_info {
+        width: 45%;
+        margin-left: 50px;
+        h2 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 26px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        span {
+            color: #ffc400;
+            font-size: 22px;
+           
+        }
+        float: left;
+    }
+    .W_teacher_info_phone {
+        display: none;
+    }
+    #btn2 {
+        @include btn;
+        float: left;
+        margin-top: 50px;
+    }
+}
+
+// 第三個
+.W_bg2 {
+    background-image: url(../images/Class/mic-1132528_1920.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.W_info_C {
+    height: 600px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: rgba(255, 255, 255, 0.8) solid 3px;
+    background-color: rgba(0, 0, 0, .4);
+    font-weight: bold;
+    position: relative;
+    .W_img {
+        position: absolute;
+        width: 30%;
+        left: 80%;
+        top: 50%;
+    }
+    .W_class_info {
+        width: 40%;
+        margin-left: 100px;
+        h2 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 26px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        span {
+            color: #ffc400;
+            font-size: 22px;
+        }
+        float: left;
+    }
+    .W_teacher_info {
+        width: 40%;
+        h6 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        float: left;
+    }
+    .W_teacher_info_phone {
+        display: none;
+    }
+    #btn3 {
+        @include btn;
+        float: left;
+        margin-top: 50px;
+    }
+}
+
+// 第四個
+.W_info_D {
+    height: 600px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: rgba(255, 255, 255, 0.8) solid 3px;
+    background-color: rgba(0, 0, 0, .4);
+    font-weight: bold;
+    position: relative;
+    .W_img {
+        position: absolute;
+        width: 30%;
+        left: -10%;
+        top: 50%;
+    }
+    .W_teacher_info {
+        width: 50%;
+        margin-left: 100px;
+        h6 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        float: left;
+    }
+    .W_class_info {
+        width: 30%;
+        margin-left: 50px;
+        h2 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 26px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        span {
+            color: #ffc400;
+            font-size: 22px;
+           
+        }
+        float: left;
+    }
+    .W_teacher_info_phone {
+        display: none;
+    }
+    #btn4 {
+        @include btn;
+        float: left;
+        margin-top: 50px;
+    }
+}
+
+// 第五個
+.W_bg3 {
+    background-image: url(../images/Class/music-1290087_1920.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.W_info_E {
+    height: 600px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: rgba(255, 255, 255, 0.8) solid 3px;
+    background-color: rgba(0, 0, 0, .4);
+    font-weight: bold;
+    position: relative;
+    .W_img {
+        position: absolute;
+        width: 40%;
+        left: 75%;
+        top: 25%;
+    }
+    .W_class_info {
+        width: 40%;
+        margin-left: 100px;
+        h2 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 26px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        span {
+            color: #ffc400;
+            font-size: 22px;
+           
+        }
+        float: left;
+    }
+    .W_teacher_info {
+        width: 40%;
+        h6 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        float: left;
+    }
+    .W_teacher_info_phone {
+        display: none;
+    }
+    #btn5 {
+        @include btn;
+        float: left;
+        margin-top: 50px;
+    }
+}
+
+// 第六個
+.W_info_F {
+    height: 600px;
+    margin-top: 100px;
+    border: rgba(255, 255, 255, 0.8) solid 3px;
+    background-color: rgba(0, 0, 0, .4);
+    font-weight: bold;
+    position: relative;
+    .W_img {
+        position: absolute;
+        width: 35%;
+        left: -15%;
+        top: 32%;
+    }
+    .W_teacher_info {
+        width: 50%;
+        margin-left: 100px;
+        h6 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        float: left;
+    }
+    .W_class_info {
+        width: 30%;
+        margin-left: 50px;
+        h2 {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            margin-top: 50px;
+            font-size: 26px;
+        }
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            font-size: 18px;
+        }
+        span {
+            color: #ffc400;
+            font-size: 22px;
+           
+        }
+        float: left;
+    }
+    .W_teacher_info_phone {
+        display: none;
+    }
+    #btn6 {
+        @include btn;
+        float: left;
+        margin-top: 50px;
+    }
+}
+
+// 日曆
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#calendar {
+    position: fixed;
+    z-index: 99999999;
+    right: -414px;
+    width: 414px;
+    height: 100%; // position: relative;
+    // overflow: hidden;
+    // flex: 1;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-around; 
+}
+
+#calendar li {
+    line-height: 50px;
+    font-size: 1.5rem; //   position: relative;
+}
+
+ul li #date-text {
+    position: absolute;
+    display: inline-block;
+    width: 414px;
+    min-height: 80px;
+    max-height: 80px;
+    line-height: 80px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    outline: none;
+    border-radius: 21px;
+    background-color: rgba(100, 42, 65, .95);
+    transition: 0.3s all ease-in-out;
+}
+
+/*    ul li #date-text::after {
+          content: "";
+          position: absolute;
+          right: 10%;
+          top: 1.2em;
+          border: 0.4em solid #fff;
+          border-color: #fff transparent transparent transparent;
+          transition: .4s all ease-in-out; }*/
+
+#calendar li #date-text label {
+    border-top: 0.06em solid #d9d9d9;
+    display: block;
+    padding-left: 10px;
+    cursor: pointer;
+    font-family: "Microsoft JhengHei";
+    position: relative;
+    transition: 0.3s color ease-in-out;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#calendar li #date-text label:nth-child(2) {
+    margin-top: 42px;
+}
+
+#calendar li .expanded {
+    background-color: rgba(100, 42, 65, .95);
+    border-radius: 21px;
+    padding: 0;
+    max-height: 100%;
+}
+
+#calendar li .expanded::after {
+    transform: rotate(-180deg);
+    top: 0.6em;
+}
+
+li #date-text.expanded {
+    max-height: 1000px;
+}
+
+.expanded {
+    z-index: 999;
+}
+
+#date {
+    display: none;
+}
+
+#date-text label,
+#date-text-2 label {
+    border-top: unset;
+}
+
+#calendar-tb {
+    z-index: 2;
+}
+
+.calendar {
+    width: 100%;
+    cursor: auto;
+}
+
+.calendar i {
+    cursor: pointer;
+}
+
+.calendar .mm {
+    position: relative;
+}
+
+.calendar .mm i {
+    position: absolute;
+    left: 250%;
+    top: 35%;
+}
+
+.calendar .yy {
+    position: relative;
+}
+
+.calendar .yy i {
+    position: absolute;
+    top: 35%;
+    left: 130%;
+}
+
+.calendar tr th {
+    text-align: center;
+}
+
+.calendar tr td {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.btn-nav {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    font-size: 36px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: -50px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #c28c81;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.bar2 {
+    opacity: 0;
+}
+
+.bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+#psgBd {
+    @include btn;
+    margin-bottom: 150px;
+}
+
+//手機板
+@media screen and(max-width:768px) {
+    .sidebar {
+        display: none;
+        width: 18px;
+        height: 330px;
+        color: rgba(255, 255, 255, 0.8);
+        position: fixed;
+        margin-top: 50vh;
+        left: 50px;
+        top: 0px;
+        transform: translateY(-50%);
+    }
+    .sidebar p {
+        margin: 0 auto;
+        padding: 10px 0;
+        font-size: 2.3vmin;
+    }
+    .sidebar::before {
+        position: relative;
+        display: inline-block;
+        content: '';
+        height: 60px; // left: 6px;
+        border-left: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    .sidebar::after {
+        position: relative;
+        display: inline-block;
+        content: '';
+        height: 60px;
+        top: 5px; // left: 6px;
+        border-left: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    .W_banner {
+        video {
+            width: 100%;
+            opacity: .7;
+            margin-top: 70px;
+        }
+    }
+    .W_bg1,
+    .W_bg2,
+    .W_bg3 {
+        width: 100%;
+    }
+    .W_info_A,
+    .W_info_B,
+    .W_info_C,
+    .W_info_D,
+    .W_info_E,
+    .W_info_F {
+        #btn,
+        #btn2,
+        #btn3,
+        #btn4,
+        #btn5,
+        #btn6 {
+            margin-left: 100px;
+            margin-top: 200px;
+        }
+    }
+    .W_info_A {
+        position: relative;
+        .W_img {
+            position: absolute;
+            top: 75%;
+            left: 65%;
+            width: 45%;
+        }
+        .W_teacher_info {
+            display: none;
+        }
+        background-color: rgba(0, 0, 0, .1);
+        margin-top: 0px;
+        margin-bottom: 0;
+        border: 0;
+        .W_class_info {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            h2 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .W_teacher_info_phone {
+                display: block;
+                width: 100%;
+                height: 80px;
+                h6 {
+                    color: rgba(255, 255, 255, 0.8);
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    font-size: 22px;
+                }
+                p {
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 2;
+                    font-size: 16px;
+                }
+                float: left;
+            }
+            span {
+                font-size: 22px;
+                position: absolute;
+                top: 575px;
+                left: 20px;
+            }
+        }
+    }
+    .W_info_B {
+        position: relative;
+        .W_img {
+            position: absolute;
+            top: 85%;
+            left: -10%;
+            width: 40%;
+            
+        }
+        .W_teacher_info {
+            display: none;
+        }
+        background-color: rgba(0, 0, 0, .1);
+        margin-top: 0px;
+        margin-bottom: 0;
+        border: 0;
+        .W_class_info {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            h2 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .W_teacher_info_phone {
+                display: block;
+                width: 100%;
+                height: 80px;
+                h6 {
+                    color: rgba(255, 255, 255, 0.8);
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    font-size: 22px;
+                }
+                p {
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 2;
+                    font-size: 16px;
+                }
+                float: left;
+            }
+            span {
+                font-size: 22px;
+                position: absolute;
+                top: 575px;
+                left: 300px;
+            }
+        }
+    }
+    .W_info_C {
+        position: relative;
+        .W_img {
+            position: absolute;
+            top: 85%;
+            left: 75%;
+            width: 30%;
+        }
+        .W_teacher_info {
+            display: none;
+        }
+        background-color: rgba(0, 0, 0, .1);
+        margin-top: 0px;
+        margin-bottom: 0;
+        border: 0;
+        .W_class_info {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            h2 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .W_teacher_info_phone {
+                display: block;
+                width: 100%;
+                height: 80px;
+                h6 {
+                    color: rgba(255, 255, 255, 0.8);
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    font-size: 22px;
+                }
+                p {
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 2;
+                    font-size: 16px;
+                }
+                float: left;
+            }
+            span {
+                font-size: 22px;
+                position: absolute;
+                top: 575px;
+                left: 10px;
+            }
+            #btn3 {
+                margin-top: 104px;
+            }
+        }
+    }
+    .W_info_D {
+        position: relative;
+        .W_img {
+            position: absolute;
+            top: 80%;
+            left: -5%;
+            width: 40%;
+        }
+        .W_teacher_info {
+            display: none;
+        }
+        background-color: rgba(0, 0, 0, .1);
+        margin-top: 0px;
+        margin-bottom: 0;
+        border: 0;
+        .W_class_info {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            h2 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .W_teacher_info_phone {
+                display: block;
+                width: 100%;
+                height: 80px;
+                h6 {
+                    color: rgba(255, 255, 255, 0.8);
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    font-size: 22px;
+                }
+                p {
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 2;
+                    font-size: 16px;
+                }
+                float: left;
+            }
+            span {
+                font-size: 22px;
+                position: absolute;
+                top: 575px;
+                left: 300px;
+            }
+        }
+    }
+    .W_info_E {
+        position: relative;
+        .W_img {
+            position: absolute;
+            top: 70%;
+            left: 70%;
+            width: 50%;
+        }
+        .W_teacher_info {
+            display: none;
+        }
+        background-color: rgba(0, 0, 0, .1);
+        margin-top: 0px;
+        margin-bottom: 0;
+        border: 0;
+        .W_class_info {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            h2 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .W_teacher_info_phone {
+                display: block;
+                width: 100%;
+                height: 80px;
+                h6 {
+                    color: rgba(255, 255, 255, 0.8);
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    font-size: 22px;
+                }
+                p {
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 2;
+                    font-size: 16px;
+                }
+                float: left;
+            }
+            span {
+                font-size: 22px;
+                position: absolute;
+                top: 575px;
+                left: 20px;
+            }
+        }
+    }
+    .W_info_F {
+        position: relative;
+        .W_img {
+            position: absolute;
+            width: 35%;
+            top: 80%;
+            left: -10%;
+        }
+        .W_teacher_info {
+            display: none;
+        }
+        background-color: rgba(0, 0, 0, .1);
+        margin-top: 0px;
+        margin-bottom: 0;
+        border: 0;
+        .W_class_info {
+            position: relative;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            h2 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .W_teacher_info_phone {
+                display: block;
+                width: 100%;
+                height: 80px;
+                h6 {
+                    color: rgba(255, 255, 255, 0.8);
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                    font-size: 22px;
+                }
+                p {
+                    color: rgba(255, 255, 255, 0.8);
+                    line-height: 2;
+                    font-size: 16px;
+                }
+                float: left;
+            }
+            span {
+                font-size: 22px;
+                position: absolute;
+                top: 575px;
+                left: 300px;
+            }
+        }
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    #calendar {
+        position: fixed;
+        z-index: 99999999;
+        right: -414px;
+        width: 100%;
+        height: 100%; // position: relative;
+        // overflow: hidden;
+        // flex: 1;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-around; 
+    }
+    #calendar li {
+        line-height: 50px;
+        font-size: 1.5rem; //   position: relative;
+    }
+    ul li #date-text {
+        position: absolute;
+        display: inline-block;
+        width: 414px;
+        min-height: 60px;
+        max-height: 60px;
+        line-height: 60px;
+        overflow: hidden;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        outline: none;
+        border-radius: 21px;
+        background-color: rgba(100, 42, 65, .95);
+        transition: 0.3s all ease-in-out;
+    }
+    /*    ul li #date-text::after {
+              content: "";
+              position: absolute;
+              right: 10%;
+              top: 1.2em;
+              border: 0.4em solid #fff;
+              border-color: #fff transparent transparent transparent;
+              transition: .4s all ease-in-out; }*/
+    #calendar li #date-text label {
+        border-top: 0.06em solid #d9d9d9;
+        display: block;
+        padding-left: 10px;
+        cursor: pointer;
+        font-family: "Microsoft JhengHei";
+        position: relative;
+        transition: 0.3s color ease-in-out;
+        font-size: 23px;
+        font-weight: bold;
+    }
+    #calendar li #date-text label:nth-child(2) {
+        margin-top: 42px;
+    }
+    #calendar li .expanded {
+        background-color: rgba(100, 42, 65, .95);
+        border-radius: 21px;
+        padding: 0;
+        max-height: 100%;
+    }
+    #calendar li .expanded::after {
+        transform: rotate(-180deg);
+        top: 0.6em;
+    }
+    li #date-text.expanded {
+        max-height: 1000px;
+    }
+    .expanded {
+        z-index: 999;
+    }
+    #date {
+        display: none;
+    }
+    #date-text label,
+    #date-text-2 label {
+        border-top: unset;
+    }
+    #calendar-tb {
+        z-index: 2;
+    }
+    .calendar {
+        width: 100%;
+        cursor: auto;
+    }
+    .calendar i {
+        cursor: pointer;
+    }
+    .calendar .mm {
+        position: relative;
+    }
+    .calendar .mm i {
+        position: absolute;
+        left: 250%;
+        top: 35%;
+    }
+    .calendar .yy {
+        position: relative;
+    }
+    .calendar .yy i {
+        position: absolute;
+        top: 35%;
+        left: 130%;
+    }
+    .calendar tr th {
+        text-align: center;
+    }
+    .calendar tr td {
+        text-align: center;
+        cursor: pointer;
+        border-radius: 50%;
+        margin: 5px;
+    }
+    .btn-nav {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        font-size: 36px;
+        text-align: center;
+        line-height: 100px;
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: -50px;
+    }
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #c28c81;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    .bar1 {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    .bar2 {
+        opacity: 0;
+    }
+    .bar3 {
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+    #psgBd {
+        @include btn;
+        margin-bottom: 300px;
+    }
+}
+
+//付款方式及寄件資訊頁面
+#Y_payInfo
+{
+position: fixed;
+z-index: 10;
+left: 0;
+top: 0;
+bottom: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+background-color: rgba(0, 0, 0, 0.8);
+display: none;
+z-index: 2000;
+}
+
+  @media screen and (max-width: 569px){
+    #Y_payInfo{
+    z-index: 2000;
+
+    }
+  }
+
+ //  @media screen and (max-width: 569px){
+ //     #Y_payInfo{
+    // position: unset;
+    // margin: 71px auto 0 auto;;
+        
+ //     }
+ //  }
+
+  .L_pay_payinfo{
+    width: 50%;
+    position: relative;
+    padding: 26px 32px;
+    text-align: left;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: rgba(69, 45, 123, 0.9);
+    border-radius: 15px;
+    margin: auto;
+    position: absolute;
+    top: 81px;
+    // bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: auto;
+
+    .L_pay_payinfo_pay{
+      // padding-bottom: 50px;
+     .Y_classInfo{
+        padding: 0 0 10px 0;
+        >h5:first-child{ 
+        padding-top: 10px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 35px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+     }
+        p{
+            padding: 0 0 10px 3px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            strong{
+                color:rgba(255, 196, 0, 0.8);
+            }
+        }
+
+}
+        .Y_payMethod{
+        >h5:first-child{ 
+        padding-top: 10px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 35px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+     }
+}
+
+      label{
+        @include btn2;
+        margin-right: 20px; 
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        // border-radius: 7px;
+       }
+
+       input:checked ~ label{
+        // background-color: #a22135;
+        background-color: rgba(245, 1, 62, 0.3);
+        color: #ececec;
+        font-weight: bold;
+       };
+
+       input[type=radio]{
+        // opacity: 0;
+        display: none;
+       }
+    }
+
+//信用卡卡號輸入相關
+#Y_payCreditInput{
+    display: none;
+    padding: 25px 0 0 0;
+    letter-spacing: 1px;
+    img{
+        max-width: 40%;
+    }
+    input{
+        background-color: rgba(255, 255, 255, 0.1);
+        border-style: none;
+        border-left: 5px solid transparent;
+        padding: 6px;
+        border-radius: 3px;
+        outline: none;
+        caret-color: #fff;
+        color: #fff;
+        font-size: 16px;
+    }
+
+
+    .Y_expireDay{
+        margin: 10px 0 10px 0 ;
+    }
+
+}
+
+  @media screen and (max-width: 569px){
+        #Y_payCreditInput{
+            img{
+                max-width: 55%;
+            }
+        }
+
+        .creadCardtext{
+        span{
+            display: block;
+            padding-bottom: 10px;
+        }
+    }
+  }
+
+#Y_payATMInput{
+    display: none;
+    padding: 25px 0 0 0;
+    letter-spacing: 1px;
+    input{
+        background-color: rgba(255, 255, 255, 0.1);
+        border-style: none;
+        border-left: 5px solid transparent;
+        padding: 6px;
+        border-radius: 3px;
+        outline: none;
+        caret-color: #fff;
+        color: #fff;
+        font-size: 16px;
+    }
+}
+
+  @media screen and (max-width: 569px){
+        #Y_payATMInput{
+        span{
+            display: block;
+            padding-bottom: 10px;
+        }
+    }
+  }
+
+// 付款資訊 - 是否使用折價卷
+    .Y_pay_payinfo_pay{
+         // padding-bottom: 50px;
+      >h5:first-child{
+        padding-top: 60px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 35px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      label{
+        @include btn2;
+        // background-color: hsla(76, 53%, 49%, 0.2);
+        background-color: rgba(245, 1, 62, 0.1);
+        // background-color: rgba(255, 196, 0, 0.1);
+        margin-right: 20px; 
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        // border-radius: 7px;
+        position: relative;
+
+       &:after{
+            content: '';
+            background-image: url('../images/Cart/check2.png');
+            width: 64px;
+            height: 64px;
+            background-repeat: no-repeat;
+            background-size: 45%;
+            position: absolute;
+            top: -16px;
+            right: -65px;
+            display: none
+
+        }
+        &:hover{
+        // background-color: hsla(76, 53%, 49%, 0.6);
+        background-color: rgba(245, 1, 62, 0.2);
+        };
+       }
+
+       input:checked ~ label{
+        // background-color: rgba(255, 196, 0, 0.8);
+        // background-color: hsla(76, 53%, 49%, 0.8);
+        background-color: rgba(245, 1, 62, 0.3);
+        // border: 2px solid rgba(255, 196, 0, 1);
+        color: #ececec;
+        font-weight: bold;
+         &:after{
+        
+         display: block
+
+        }
+       };
+
+         input[type=radio]{
+        // opacity: 0;
+         display: none;
+       }
+
+    }
+
+      @media screen and (max-width: 569px){
+        .L_pay_payinfo_pay{
+            label{
+                padding: 12px 29px;
+            }
+        }
+      }
+
+    // 付款資訊 - 寄件資訊
+    .L_pay_payinfo_adres{
+      padding-bottom: 15px;
+      >h5:first-child{  //?ļ??Ӎ
+        padding-top: 60px;
+        padding-bottom: 30px;
+        &::before{
+          content: '';
+          width: 100%;
+          display: block;
+          position: relative;
+          top: 36px;
+          border-bottom: 1.2px rgba(255, 255, 255, 0.8) solid;
+        }
+      }
+      .L_pay_payinfo_adres_form{
+        padding-top: 15px;
+        padding-bottom: 30px;
+        >li{
+          letter-spacing: 1.5px;
+          line-height: 3;
+          >span{
+            padding-right: 20px;
+            &::after{
+              content: ":";
+              position: absolute;
+              left: 111px;
+            }
+          }
+          >input{
+            margin-left: 5px;
+            width: 88%;
+            background-color: rgba(255, 255, 255, .1);
+            border-style: none;
+            border-left: 5px solid transparent;
+            padding: 6px;
+            border-radius: 3px;
+            outline: none;
+            caret-color: #fff;
+            color: #fff;
+            font-size: 16px;
+            &::placeholder{
+              color: rgba(255, 255, 255, .6);
+              letter-spacing: 1px;
+            }
+          }
+        }
+        >:first-child{
+          >span{
+            letter-spacing: 9px;
+          }
+          >input{
+            margin-left: 0px;
+          }
+        }
+      }
+        
+        @media screen and (max-width: 768px){
+            .L_pay_payinfo_adres_form{
+                >li{
+                    input{
+                        width: 100%
+                    }
+                }
+        }
+    }
+  }
+      .L_pay_payinfo_adres_formBtn{
+        letter-spacing: 1px;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 20px 0 20px 0;
+
+        & button:nth-of-type(1){
+          @include btn2;
+          padding: 12px 50px;
+        }
+          & button:nth-of-type(2){
+          @include btn;
+          padding: 12px 50px;
+        }
+      }
+}
+
+  @media screen and (max-width: 569px){
+    .L_pay_payinfo{
+    width: 100%;
+    top: 0px;
+    bottom:0px;
+    }
+  }
+//******** 訂單完成後感謝購買訊息窗 ********
+#Y_thanksMsgBox{
+    max-width: 960px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 150px auto 0 auto;;
+    // width: 60%;
+    overflow: hidden;
+    height:315px;
+    padding: 26px 0px;
+    width: 100%;
+    color: #fff;
+    border-radius: 15px;
+     background-color: rgba(69, 45, 123, 0.9);
+    text-align: center;
+    box-sizing: border-box;
+    display: none;
+    box-shadow: 0px 0px 20px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 5px #fff;
+}
+
+  @media screen and (max-width: 414px){
+    #Y_thanksMsgBox{
+        max-width: 400px;
+        height:350px;
+    }
+  }
+
+.Y_completeMsg{
+    position: relative;
+    top:50%;
+    transform:translateY(-50%);
+    strong{
+        font-size: 40px;
+        line-height: 1.3;
+    }
+    & strong:nth-of-type(2) {
+        display: block;
+        padding: 0 0 15px 0;
+    };
+    p{
+        line-height: 1.6;
+     letter-spacing: 2px;
+     & span:nth-of-type(1){
+        font-weight: bold;
+     };
+    }
+    .Y_checkBtn{
+     letter-spacing: 1px;
+     display: flex;
+     justify-content: space-evenly;
+     transform: translate(0%,50%);
+     opacity: 0;
+    }
+    
+    a{
+        @include btn2;
+         padding: 12px 50px;
+
+    }
+}
+
+  @media screen and (max-width: 414px){
+    .Y_completeMsg{
+        p{
+            padding: 5px 0;
+        }
+    }
+  }

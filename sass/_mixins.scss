@@ -1,0 +1,940 @@
+
+//******** 預設共用區 ********
+body{
+    background-color: #000;
+    background-image: linear-gradient(80deg, rgb(8, 4, 34)0%, rgb(48, 22, 109)30%, rgb(48, 22, 109)50%, rgb(8, 4, 34)100%);
+    //DEMO後改回來較暗的背景
+    // background-image: linear-gradient(80deg, rgb(12, 9, 29)0%, rgb(20, 15, 48)30%, rgb(20, 15, 48)50%, rgb(12, 9, 29)100%);
+    // background-size:120%;
+}
+a {
+    text-decoration: none;
+}
+
+h1{
+    font-size: 28px;
+}
+
+h2{
+    font-size: 26px;
+}
+
+h3{
+    font-size: 24px;
+}
+
+h4{
+    font-size: 22px;
+}
+
+h5{
+    font-size: 20px;
+}
+
+h6{
+    font-size: 18px;
+}
+
+p{
+    letter-spacing: 1px;
+    line-height: 1.3;
+}
+
+.width1200 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.width1700 {
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+//******** menu + footer ********
+/* ...........menu start............ */
+header {
+	width: 100%;
+	height: 70px;
+    font-size: 0;
+    background-image: linear-gradient(80deg, rgb(36, 13, 72)0%, rgb(48, 22, 109)30%, rgb(48, 22, 109)50%, rgb(8, 4, 34)100%);
+    background-color: rgba(36, 13, 28, 0.6);
+    // box-shadow:0 0 10px 10px  linear-gradient(80deg, rgb(36, 13, 72)0%, rgb(48, 22, 109)30%, rgb(48, 22, 109)50%, rgb(8, 4, 34)100%);
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align: center;
+    z-index: 2000;
+}
+#menu_ctr {
+	position: absolute;
+    top: -100px;
+}
+.menu_ctr {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	left: 10px;
+	top: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+.menu_ctr:before {
+	content:'';
+	width: 25px;
+	height: 2.5px;
+	background-color: #e5ceac;
+	display: block;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	box-shadow: 0px 8px 0 #e5ceac, 0px -8px 0 #e5ceac;
+	border-radius: 3px;
+	transition: .5s;
+}
+.menu {
+	width: 100vw;
+    height: calc( 100vh - 45px);
+    background-image: linear-gradient(80deg, rgb(12, 9, 29)0%, rgb(20, 15, 48)30%, rgb(20, 15, 48)50%, rgb(12, 9, 29)100%);
+    background-color: rgba(36, 13, 28, 0.6);
+    box-shadow:0 0 10px 10px  rgba(48, 17, 37, 0.2);
+	// background-color: rgb(255, 255, 255);
+	position: absolute;
+	top: -1000px;
+	left: 0;
+	transition: top 0.9s;
+	display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    z-index: 20;
+    > li:first-child{
+        margin-top: 30px;
+    }
+    > li{
+        padding: 15px 0px;
+        list-style: none;
+        >a{
+            text-decoration: none;
+            // font-size: 2.3vmin;
+            font-size: 18px;
+            font-family: Microsoft JhengHei;
+            margin: 0 10px;
+            color: rgb(255, 255, 255);
+            &:hover{
+                color: rgba(255, 255, 255, 1);
+                text-shadow: 0 0 15px  rgba(255, 0, 106, 0.8);
+                cursor: pointer;
+            }       
+        }
+    }
+}
+.menu_items {
+	text-align: left;
+	box-sizing: border-box;
+	color: #ffffff;
+}
+.logo{
+    display: block;
+    pointer-events: none;
+    #logo{
+        // position: absolute;
+        pointer-events: auto;
+        display: block;
+        width: 120px;
+        height: 70px;
+        // left: 0px;
+        // top: 0px;
+        position: relative;
+        left:34%;//向右推外層空間的50%
+        transform:translateY(0%);//以內元素的空間為基準，向左移動50%
+        z-index: 6;
+        // background-color: #bbb;
+    }
+}
+// .logo .logo_d {
+//     position: relative;
+//     top: -6px;
+//     left: 20px;
+//     padding: 8px 14px;
+// }
+.logo .logo_b {
+    padding: 5px 20px;
+    // position: relative;
+    left:5%;//向右推外層空間的50%
+    transform:translateY(-38%);//以內元素的空間為基準，向左移動50%
+    position: absolute;
+    // top: 0px;
+    // left: 0px;
+    z-index: 1;
+    opacity: .95; 
+    pointer-events: none;
+}
+
+
+
+.login_mobile{
+		display: block;
+}
+
+#spanLogin2{
+color: #fff;
+cursor: pointer;
+font-size: 16px;
+font-weight: bold;
+&:hover{
+    color: #ffc107;
+};
+}
+
+.nav_user{
+    display: none;
+    a{
+        span{
+            color: #fff;
+        } 
+    }
+
+    #spanLogin{
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        &:hover{
+            color: #ffc107;
+        };
+    }
+    #memName{
+        color: #fff;
+        font-size: 16px;
+        padding-right:5px;
+    }
+    
+}
+
+#menu_ctr:checked ~ nav .menu {
+	top: 70px;
+}
+
+
+@media screen and (min-width:768px){
+    header {
+        text-align: center;
+        width: 100%;
+        height: 100px;
+	}
+
+	header:before {
+		content:'';
+		height: 10px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.menu_ctr{
+		display: none;
+	}
+
+	.menu{
+        position: fixed;
+        top: 50px;
+        width: 60%;
+        height: 3%;
+        font-weight: bold;
+        letter-spacing: 2px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-left: 21%;
+        background-image: none;
+        background-color: transparent;
+        box-shadow:0 0 0px 0px  rgba(48, 17, 37, 0.2);
+    }
+    
+    .menu li{
+        list-style: none;
+    }
+    .menu li:first-child{
+        margin-top: 0;
+    }
+    .menu li a{
+        text-decoration: none;
+        font-size: 2.3vmin;
+        margin: 0 10px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .menu li a:hover{
+        color: rgba(255, 255, 255, 1);
+        text-shadow: 0 0 15px  rgba(255, 0, 106, 0.8);
+        cursor: pointer;
+    }
+    .logo{
+        position: relative;
+        width: 126px;
+        z-index: 5;
+        top: 0%;
+        left: 0%;
+        pointer-events: none;
+        >#logo{
+            position: absolute;
+            pointer-events: auto;
+            display: block;
+            width: 120px;
+            height: 100px;
+            left: 10px;
+            top: -10px;
+            z-index: 6;
+            // background-color: #666;
+            &:hover~.logo_b{
+                animation: flicker 2s forwards;
+                @keyframes flicker{
+                    0% { opacity: 0; }
+                    1%  { opacity: 0; }
+                    2.5% { opacity: 1; }
+                    5% { opacity: .1; }
+                    16% { opacity: .1; }
+                    18% { opacity: 1; }
+                    22% { opacity: 1; }
+                    18.5% { opacity: .1; }
+     
+                    38.5% { opacity: 1; }
+                    39% { opacity: .5; }
+                    42% { opacity: 1; }
+     
+     
+                    73% { opacity: 1; }
+                    75% { opacity: .8; }
+                    79% { opacity: 1; }
+     
+                    100% { opacity: 1; }
+                  }
+            }
+        }
+        .logo_b{
+            // width: 100px;
+            max-width: none;
+            position: absolute;
+            padding: 5px 20px;
+            top: 90px;
+            left: -100%;
+            // top: -35px;
+            // left: -128px;
+            z-index: 1;
+            opacity: .95;
+            pointer-events: none;
+        }
+        >audio{
+            position: absolute;
+            opacity: 0;
+        }
+        #L_box{
+            position: absolute;
+            width: 60px;
+            height: 50vh;
+            top: 85px;
+            left: 39px;
+            margin: auto;
+        }
+    }
+    .login_mobile{
+        display: none;
+    }
+    .nav_user{
+        display: block;
+    }
+}
+
+/* ...........menu end............ */
+
+.nav_user{
+    position: fixed;
+    top: 44px;
+    right: 50px;
+    text-align: right;
+    .fas{
+        color: rgba(255, 255, 255, .8);
+        font-size: 18px;
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+.nav_user a{
+    text-decoration: none;
+    display: inline-block;
+    /* vertical-align: top; */
+    margin-left: 10px; 
+    padding: 5px;
+}
+.nav_user a img{
+    opacity: 0.5;
+}
+.nav_user a img:hover{
+    opacity: 1;
+}
+
+.sidebar{
+    width: 18px;
+    height: 330px;
+    color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    margin-top: 50vh;
+    left: 50px;
+    top: 0px;
+    transform:translateY(-50%);
+}
+.sidebar p{
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 2.3vmin;
+}
+.sidebar::before{
+    position: relative;
+    display: inline-block;
+    content: '';
+    height: 120px;
+    // left: 6px;
+    border-left: 1px solid rgba(255, 255, 255, 0.8);
+}
+.sidebar::after{
+    position: relative;
+    display: inline-block;
+    content: '';
+    height: 120px;
+    top: 5px;
+    // left: 6px;
+    border-left: 1px solid rgba(255, 255, 255, 0.8);
+}
+.star{
+    position: fixed;
+    margin: auto;
+    top: 250px;
+    right: 0px;
+    display: inline;
+    text-align: right;
+    line-height: 80%;
+    margin-right: 42px;
+}
+.star img{
+    display: flex;
+    margin: 20px 0px;
+    padding: 5px;
+    opacity: 0.3;
+}
+.star img:first-child{
+    opacity: 1;
+}
+.footer{
+    // width: 100vw;
+    padding-top: 30px;
+    bottom: 0px;
+    .copyright{
+        position: relative;
+        left: 35px;
+        bottom: 5px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        display: inline;
+    }
+    .copyright div{
+        color: rgba(255, 255, 255, 0.7);
+        display: inline;
+    }
+    .copyright span{
+        color: #711439;
+    }
+}
+.trd{
+    cursor: default;
+    right: 42px;
+    bottom: 20px;
+    text-align: right;
+    position: relative;
+}
+.trd img{
+    opacity: 0.5;
+    margin: 0 5px;
+    &:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+//******** 各function mixin ********
+
+$base-font-size: 16px;
+//字體大小
+@function newFontSize($size){
+    @return $base-font-size * $size;
+}
+
+
+//字體大小px轉換成Rem
+@function pxtoRem($px){
+    @return ($px/$base-font-size) * 1em;
+}
+
+
+// 按鈕顏色
+@mixin btnColor($color){
+    background-color: $color;
+    &:hover{
+        background-color:adjust-hue($color,20);
+    }
+}
+
+@mixin btnColor2($color){
+    background-color:saturate($color,50%);
+    &:hover{
+        background-color:desaturate($color,20%);
+    }
+}
+
+//隱藏文字(目的是將h1的文字放在logo裡，然後不要顯示出來)
+@mixin hide_text{
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+//功能設定(清除浮動)
+@mixin clearfix{
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+        clear: both;
+   }
+}
+
+//水平垂直置中(絕對定位，需要設定該元素的長、寬)
+@mixin horver_center-a($width,$height){
+    width: $width;
+    height: $height;
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+}
+
+
+//水平垂直置中(transform:該方法適用inline-block只有水平垂直置中，無需設定該元素的長、寬)
+@mixin horver_center-t{   
+    position: relative;
+    top:50%;//向下推外層空間的50%
+    left:50%;//向右推外層空間的50%
+    transform:translateY(-50%);//以內元素的空間為基準，向上移動50%
+    transform:translateX(-50%);//以內元素的空間為基準，向左移動50%
+}
+
+//垂直置中(transform:該方法適用inline-block只有垂直置中，無水平置中，無需設定該元素的長、寬)
+@mixin ver_center-t{   
+    position: relative;
+    top:50%;//向下推外層空間的50%
+    transform:translateY(-50%);//以內元素的空間為基準，向上移動50%
+}
+
+//水平置中(transform:該方法適用inline-block只有水平置中，無垂置中，無需設定該元素的長、寬)
+@mixin hor_center-t{   
+    position: relative;
+    left:50%;//向右推外層空間的50%
+    transform:translateY(-50%);//以內元素的空間為基準，向左移動50%
+}
+
+//RWD-將選單清除浮動後，變成2列或3列並水平置中(使用inline-block方法)
+@mixin menu_middle_inline($percent){
+    ul{
+        float: none;
+        text-align: center;//將li給置中，而並非文字置中
+        li{
+            float: none;
+            width:$percent;
+            text-align: center;//將li裡的文字置中
+            display: inline-block;//必需設定為inline-block，這樣才有辦法讓ul透過text-align:center去水平置中
+            @content;
+        }
+    }
+}
+
+
+
+//三角型
+@mixin tri-top-left($size,$color){
+position: absolute;
+border-top: $size solid $color;
+border-right: $size solid transparent;
+}
+
+
+@mixin tri-top-right($size,$color){
+position: absolute;
+border-top: $size solid $color;
+border-left: $size solid transparent;
+}
+
+@mixin tri-left-bottom($size,$color){
+position: absolute;
+border-bottom: $size solid $color;
+border-right: $size solid transparent;
+}
+
+@mixin tri-right-bottom($size,$color){
+position: absolute;
+border-bottom: $size solid $color;
+border-left: $size solid transparent;
+}
+
+//方向型三角形(往右)
+@mixin tri-d_right($size,$color){
+position: absolute;
+border-left: $size solid $color;
+border-top: $size solid transparent;
+border-bottom: $size solid transparent;
+}
+
+//方向型三角形(往下)
+@mixin tri-d_down($size,$color){
+position: absolute;
+border-top: $size solid $color;
+border-left: $size solid transparent;
+border-right: $size solid transparent;
+}
+
+//方向型三角形(往左)
+@mixin tri-d_left($size,$color){
+position: absolute;
+border-right: $size solid $color;
+border-top: $size solid transparent;
+border-bottom: $size solid transparent;
+}
+
+//方向型三角形(往上)
+@mixin tri-d_up($size,$color){
+position: absolute;
+border-bottom: $size solid $color;
+border-left: $size solid transparent;
+border-right: $size solid transparent;
+}
+
+//載入Font Awesome
+@mixin fontawesome($icon,$color){
+    content: $icon; //要寫成"\f107"這樣的格式，需注意
+    font-family: 'Font Awesome 5 free';
+    color: $color;
+    font-weight: 900;
+    position: absolute;
+    //下面content可以再輸入位置等資訊(right、top等)
+    // @content
+}
+
+//強調按鈕
+//html:
+//<a href="#">按鈕文字</a>
+
+//sass:
+//a{
+//    @include btn;
+//}
+@mixin btn{
+    // content: $text;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 55px;
+    margin-top: 20px;
+    background-color: rgba(245, 1, 62, 0.3);
+    border: 1px solid rgba(2245, 1, 62, 0.3);
+    border-radius: 28px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    transition: 0.3s;
+    &:hover{
+      background-color: rgba(245, 1, 62, 0.6);
+      border: 1px solid rgba(245, 1, 62, 0.6);
+      cursor: pointer;
+      color: rgba(255, 255, 255, 1);
+    }
+    @content;
+}
+
+//非強調色按鈕
+@mixin btn2{
+    // content: $text;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 55px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 28px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    transition: 0.3s;
+    &:hover{
+      background-color: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      p{
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+    @content;
+}
+
+input {
+    -webkit-appearance: none; /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
+    -moz-appearance: none; /* FireFox */
+    appearance: none;
+}
+
+//載入svg圖片
+@mixin svg-icon($icon,$width,$height){
+    display: inline-block;
+    background-image: url("../images/icons/#{$icon}.png");
+    background-image: none ,url("../images/icons/#{$icon}.svg");
+    //由於在IE8之前，圖片是不能做多重選擇，所以加了none是為了若瀏覽器有支援多重選擇，此時就會顯示svg圖檔 
+    width: $width;
+    height: $height;
+}
+
+//scroll向上或是向下未讀的效果(利用視差錯覺)
+//參考卡斯柏文章https://wcc723.github.io/css/2013/09/25/background-att/
+@mixin bg-scroll-effect{
+    background:
+    linear-gradient(white 30%, hsla(0,0%,100%,0)),
+    linear-gradient(hsla(0,0%,100%,0), white 70%) bottom,
+    radial-gradient(at top, rgba(0,0,0,.2), transparent 70%),
+    radial-gradient(at bottom, rgba(0,0,0,.2), transparent 70%) bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    background-attachment: local, local, scroll, scroll;
+    }
+
+//
+@mixin shadow1{
+    box-shadow: 0px 1px 5px 0px #4a4a4a;
+}
+
+//斷點設定
+@mixin pad {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin iphone5 {
+    @media screen and (max-width: 414px) {
+        @content;
+    }
+}
+
+@mixin pad-A{
+    @media screen and (min-width:414px){
+        @content;
+    }
+}
+
+@mixin web-A{
+    @media screen and (min-width:768px){
+        @content;
+    }
+}
+
+//******** 會員未登入CSS ********
+#NotLogged{
+    // width: 100vw;
+    // height: 100vh;
+    background-color: rgba(60, 60, 60, 0.5);
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
+    display: none;
+
+    #NotBtnBox{
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 54vmin;
+        height: 170px;
+        padding: 95px 20px 20px;
+        // background-color: rgba(7, 51, 110, 0.8);
+        background-image: linear-gradient(80deg, #080422 0%, #30166d 30%, #30166d 50%, #080422 100%);
+        border-radius: 10px;
+        display: flex;
+        // flex-wrap:wrap;
+        justify-content: space-around;
+        box-sizing: border-box;
+        opacity: .9;
+
+        p{
+            position: absolute;
+            top: 30px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            width: 18 0px;
+            font-size: 22px;
+            color: #fff;
+            text-align: center;
+            padding: 0
+        }
+        #reBtn{
+            @include btn2;
+        }
+
+        #GoToBtn{
+            @include btn;
+        }
+    }
+
+      @media screen and (max-width: 569px){
+        #NotBtnBox{
+        width: 73vmin;
+           #reBtn,#GoToBtn{
+            padding: 8px 40px;
+           }
+        }
+      }
+
+}
+
+//******** 會員登入 ********
+.modal{
+position: fixed;
+z-index: 10;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+background-color: rgba(0, 0, 0, .5);
+display: none;
+z-index: 2000;
+}
+
+  @media screen and (max-width: 569px){
+    .modal{
+        top: 70px;
+
+    }
+  }
+
+
+#memContainer{
+background-color: rgba(55, 55, 55, 0.8);
+margin: 10% auto 15% auto;
+border: 1px solid rgba(55, 55, 55, 0.8);
+width: 35%;
+border-radius: 10px;
+box-shadow: 0px 0px 20px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 0px #fff, 0px 0px 5px #fff;
+position: relative;
+    #memberImg{
+            text-align: center;
+        img{
+            max-width: 100%;
+            position: relative;
+            top:-40px;
+            filter:grayscale(0.5);
+        }
+
+        .close{
+            font-size: 40px;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            color: #aaa;
+            &:hover{
+                color:red
+            };
+        }
+        h4{
+            padding-bottom: 20px;
+            color: #bbb;
+            letter-spacing: 2px;
+        }
+    }
+    #memInfoCheck{
+            text-align: center;
+        input{
+              color: #fff;
+              width: 90%;
+              height: 35px;
+              border-radius: 5px;
+              margin-top: 10px;
+              border: 1px solid #666;
+              background-color: #666;
+              text-indent: 35px;
+
+        }
+        input[type="text"]{
+            background-image: url("../images/Login/account.png");
+            // background-size: 3%;
+            background-repeat: no-repeat;
+            background-position: 8px 6px;
+        }
+
+        input[type="password"]{
+            background-image: url("../images/Login/password.png");
+            background-repeat: no-repeat;
+            background-position: 8px 4px;
+        }
+
+        button{
+            @include btn;
+        }
+    }
+    #memInfoReg{
+        text-align: center;
+        padding: 15px;
+
+        a+a{
+        border-left: 2px solid #999;
+        padding: 0 0px 0 12px;
+         }
+
+         .forgotPsw{
+            padding-right: 10px;
+         }
+        a{
+            color: #bbb;
+        }
+        a:visited{
+        color: #bbb;
+        };
+
+      a:hover{
+        // font-size: 50px;
+        color: #fff;
+      };
+    }
+}
+
+  @media screen and (max-width: 569px){
+    #memContainer{
+        width: 90%;
+    }
+  }
+
+.disppear{
+    animation: LoginDisppear 0.6s;
+}
+
+@keyframes LoginDisppear {
+  from {
+    transform: scale(0);
+        }
+  to {
+    transform: scale(1);
+    } 
+}

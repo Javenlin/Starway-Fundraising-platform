@@ -1,0 +1,181 @@
+@import 'reset';
+@import 'mixins';
+@import 'color';
+// @import 'grid';
+body {
+    background-color: rgba(48, 22, 109, 1);
+}
+
+.enter {
+    position: relative;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: 10000;
+    .logo-container {
+        position: relative;
+        background: rgba(0, 0, 0, .3);
+        height: 100%;
+        width: 100%;
+    }
+    .logo_name {
+        position: absolute;
+        top: 0%;
+        left: 20%;
+        background-image: url(../images/enter_4.png);
+        background-size: 60%;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+    }
+    .logo_fb {
+        .img_1 {
+            img {
+                opacity: .6;
+                width: 24%;
+                position: absolute;
+                top: 40%;
+                left: 20%;
+                z-index: 100;
+                &:hover {
+                    opacity: 1; // filter: contrast(300%);
+                }
+            }
+        }
+        .img_2 {
+            img {
+                opacity: .6;
+                width: 24%;
+                position: absolute;
+                top: 40%;
+                left: 55%;
+                z-index: 100;
+                &:hover {
+                    opacity: 1; // filter: contrast(300%);
+                }
+            }
+        }
+        .img_3{
+            position: absolute;
+            top: 10%;
+            left: -5%;
+            opacity: 0.2;
+            width: 20%;
+            transform: rotate(50deg);
+        }
+        .img_4{
+            position: absolute;
+            top: 70%;
+            left: -5%;
+            opacity: 0.5;
+            width: 30%;
+            transform: rotate(70deg);
+        }
+        .img_5{
+            position: absolute;
+            top: 55%;
+            left: 70%;
+            opacity: 0.4;
+            width: 30%;
+            transform: rotate(-20deg);
+        }
+        .img_6{
+            position: absolute;
+            top: 10%;
+            left: 70%;
+            opacity: 0.3;
+            width: 30%;
+            transform: rotate(30deg);
+        }
+    }
+    .img_1:hover img {
+        display: block;
+    }
+    .light {
+        position: absolute;
+        /*top: 50%;*/
+        /*left: 50%;*/
+        background-image: url(../images/light.png), url(../images/light.png);
+        height: 600px;
+        width: 600px;
+        background-size: 100%;
+        background-position: center;
+        z-index: 9;
+    }
+}
+
+@include iphone5 {
+    .enter {
+        position: relative;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        z-index: 10000;
+        .logo-container {
+            position: relative;
+            background: rgba(0, 0, 0, .3);
+            height: 100%;
+            width: 100%;
+        }
+        .logo_name {
+            position: absolute;
+            top: 7%;
+            left: -6%;
+            background-image: url(../images/enter_4.png);
+            background-size: 60%;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 200%;
+            z-index: 10;
+        }
+        .logo_fb {
+            .img_1 {
+                img {
+                    opacity: 1;
+                    width: 60%;
+                    position: absolute;
+                    top: 30%;
+                    left: 22%;
+                    z-index: 100;
+                    &:hover {
+                        opacity: 1; // filter: contrast(300%);
+                    }
+                }
+            }
+            .img_2 {
+                img {
+                    opacity: 1;
+                    width: 60%;
+                    position: absolute;
+                    top: 60%;
+                    left: 22%;
+                    z-index: 100;
+                    &:hover {
+                        opacity: 1; // filter: contrast(300%);
+                    }
+                }
+            }
+        }
+        .light {
+            display: none;
+            position: absolute;
+            /*top: 50%;*/
+            /*left: 50%;*/
+            background-image: url(../images/light.png), url(../images/light.png);
+            height: 600px;
+            width: 600px;
+            background-size: 100%;
+            background-position: center;
+            z-index: 9;
+        }
+    }
+}

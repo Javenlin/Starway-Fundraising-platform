@@ -1,0 +1,395 @@
+@charset "utf-8";
+* {
+  font-family: "微軟正黑體";
+}
+html {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(../images/StarWay_Backend/mic-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+.sub_edit {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  /*background-image: url(../images/StarWay_Backend/edit.png);*/
+  background-image: url(../images/StarWay_Backend/sub_edit.png);
+  background-color: transparent;
+  margin-bottom: 5px;
+}
+.main_edit {
+  width: 60px;
+  height: 60px;
+  margin-left: 50px;
+  background-size: cover;
+  /*background-image: url(../images/StarWay_Backend/edit.png);*/
+  background-image: url(../images/StarWay_Backend/main_edit.png);
+  background-color: transparent;
+  margin-bottom: 5px;
+}
+
+.bd {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1s ease-out;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.4);
+  /*font-size: 0.8rem;*/
+}
+li:hover .bd {
+  max-height: 600px;
+  transition-timing-function: ease-in;
+}
+li {
+  cursor: default;
+  /*line-height:1.5rem;*/
+}
+
+#content_wrap {
+  margin-top: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 5%;
+}
+
+#container {
+  height: auto;
+  width: auto;
+  margin-top: 0px;
+  margin-right: 20px;
+  margin-left: 200px;
+  background-color: rgba(242, 232, 255, 0.8); /*#f2e8ff;*/ /*rgba(95%, 95%, 95%, 0.9);*/
+  padding-bottom: 30px;
+  padding-top: 10px;
+  border-radius: 6px;
+}
+
+#content_topic {
+  padding-left: 3%;
+  // font-family: "微軟正黑體", "新細明體";
+  font-size: 30px;
+  color: #8f2b2b;
+  padding-top: 2%;
+  border-radius: 6px 6px 0px 0px;
+}
+
+#topic {
+}
+
+#add {
+  text-align: right;
+  padding-right: 5%;
+}
+
+#addgap {
+  height: 32px;
+}
+
+#content_table {
+}
+
+.data_table {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.data_table2 {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data_table .tr_odd {
+  background-color: #e0c6ff;
+}
+
+#pagecss a:link {
+  color: #666;
+}
+
+#pagecss a:visited {
+  color: transparent;
+}
+
+#pagecss a:hover {
+  color: #8f2b2b;
+}
+
+#content_table tr:nth-of-type(2n + 2) {
+  background-color: #e0c6ff;
+}
+
+.data_table td {
+  padding-top: 1%;
+  padding-right: 0.1%;
+  padding-bottom: 1%;
+  padding-left: 0.1%;
+  font-size: 14px;
+  text-align: center;
+  border: 5px solid rgb(185, 185, 185);
+}
+
+.data_table2 td {
+  padding-top: 1%;
+  padding-right: 0.5%;
+  padding-bottom: 1%;
+  padding-left: 0.5%;
+  font-size: 14px;
+  text-align: center;
+}
+
+.data_table th {
+  word-break: break-all;
+  word-wrap: break-all;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ccc;
+  text-align: center;
+  padding-top: 1%;
+  padding-right: 0.1%;
+  padding-bottom: 1%;
+  padding-left: 0.1%;
+  font-size: 14px;
+}
+
+.data_table textarea {
+    resize: none; 
+  } 
+
+#content_footer {
+  text-align: center;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #ccc;
+  margin-right: 30px;
+  margin-left: 260px;
+}
+
+#menu {
+  position: fixed;
+  width: 170px;
+  height: 100%;
+  background-size: cover;
+  background-color: rgba(100%, 100%, 100%, 0.4);
+  /* [disabled]background-image: url(web_element/Menu/MenuBar_0129_2.png); */
+  margin-top: 0px;
+}
+
+#logo_container {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  margin-top: 15%;
+}
+
+#logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: auto;
+}
+
+#menu_header {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 12px;
+}
+
+#menu_ul {
+  list-style-type: none;
+  padding-top: 30px;
+  line-height: 50px;
+  margin-left: 0px;
+  text-align: center;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+#menu #menu_ul li {
+  // font-family: "微軟正黑體", "新細明體";
+  font-size: 14px;
+}
+
+#menu #menu_ul li:hover {
+  /* [disabled]color: #666; */
+  /* [disabled]text-decoration: underline; */
+}
+
+#menu_footer {
+  text-align: center;
+  padding-top: 20%;
+  font-size: 12px;
+}
+
+.add_button {
+  -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+  box-shadow: inset 0px 1px 0px 0px #ffffff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #adadad), color-stop(1, #545454));
+  background: -moz-linear-gradient(center top, #adadad 5%, #545454 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#adadad', endColorstr='#545454');
+  background-color: #adadad;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-left-radius: 6px;
+  text-indent: 0px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  color: #ffffff;
+  // font-family: "微軟正黑體", "新細明體";
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  height: 30px;
+  line-height: 30px;
+  width: 71px;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.add_button:hover {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#545454', endColorstr='#adadad');
+  background-color: #545454;
+  /* [disabled]text-decoration: underline; */
+  color: #e8e8e8;
+}
+
+.add_button:active {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #545454), color-stop(1, #adadad));
+  background: -moz-linear-gradient(center top, #545454 5%, #adadad 100%);
+  color: #fff;
+}
+
+#menu_now {
+  color: #8f2b2b;
+  list-style-type: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: none;
+  border-left-style: none;
+  border-top-color: #cdcdcd;
+  border-right-color: #cdcdcd;
+  border-bottom-color: #dedede;
+  border-left-color: #cdcdcd;
+  border-right-style: none;
+  border-bottom-style: none;
+}
+
+li a:link {
+  text-decoration: none;
+  color: #333;
+}
+
+td a:link {
+  text-decoration: none;
+  color: #333;
+}
+
+li a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+li a:hover {
+  text-decoration: underline;
+  color: #999;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+#menu_footer a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+#menu_footer a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+#menu_footer a:hover {
+  color: #999;
+  text-decoration: underline;
+}
+
+.data_table {
+  img {
+    width: 20px;
+  }
+}
+
+#subBtn {
+  /* background-image: url(../images/StarWay_Backend/mic-bg.png); */
+  background-image: url(../images/starWay_backend/edit.png);
+  width: 20px;
+  height: 20px;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  cursor: pointer;
+  // &::after{
+  //     content: "\f007";
+  //     font-family: FontAwesome;
+  // }
+}
+
+.sub_edit {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  /*background-image: url(../images/StarWay_Backend/edit.png);*/
+  background-image: url(../images/StarWay_Backend/sub_edit.png);
+  background-color: transparent;
+  margin-bottom: 5px;
+}
+.main_edit {
+  width: 110px;
+  height: 60px;
+  margin-left: 50px;
+  margin-top: 50px;
+  background-size: cover;
+  /*background-image: url(../images/StarWay_Backend/edit.png);*/
+  background-image: url(../images/StarWay_Backend/main_edit.png);
+  background-color: transparent;
+  margin-bottom: 5px;
+}

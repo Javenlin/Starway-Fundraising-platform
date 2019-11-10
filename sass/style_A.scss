@@ -1,0 +1,2263 @@
+@import 'reset';
+@import 'mixins';
+@import 'color';
+// @import 'grid';
+//製作完成特效
+.Y_cus_finish{
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+background-color: rgba(2, 2, 2, 0.8);
+text-align: center;
+z-index: 999;
+display: none;
+    
+
+}
+
+.Y_text_bg{
+display: inline-block;
+text-align: left;
+font-size: 80px;
+font-family: '微軟正黑體';
+ // font-family: '王漢宗超黑體繁';
+ // font-family: 'HanWangZonYi';
+
+font-weight: 900;
+letter-spacing: 5px;
+position: relative;
+top: 50%;
+transform: translateY(-50%);
+
+.text{
+    display: inline-block;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.1);
+    background-image: 
+    // linear-gradient(to right, #FFB405 0%, #FFB405 20%, #FFD783 20%, #FFD783 40%, #fff 40%, #fff 60%, #70D9F1 60%, #70D9F1 80%, #0052B1 80%, #0052B1 100%);
+    linear-gradient(to right, #c0f 0%, #c0f 20%, #f9f 20%, #f9f 40%, #939 60%, #939 80%, #606 80%,  rgb(102, 0, 102)100%);
+    background-size: 500px;
+    background-clip: text;
+    overflow: hidden;
+    animation: bgpos 1.5s forwards, chacolor 3s 1s forwards;
+    white-space: nowrap;
+    position: relative;
+
+    }
+}
+@keyframes bgpos {
+  from {
+    width: 0;
+    background-size: 90%; }
+  to {
+    width: 100%;
+    background-size: 100%; }
+
+}
+
+@keyframes chacolor {
+  from {
+    background-position-x: 0px; }
+  to {
+    background-position-x: 50px; } 
+}
+
+.menu li:nth-child(3) a {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 15px rgba(255, 0, 106, 0.8);
+}
+
+.section {
+    text-align:center;
+    font-size: 3em;
+}
+
+//sidebar
+
+.sidebar1,.sidebar2,.sidebar3,.sidebar4{
+    width: 280px;
+    // height: 330px;
+    color: rgba(255, 255, 255, 0.6);
+    position: fixed;
+    left: 50px;
+    margin-top: 160px;
+    margin: auto;
+}
+.sidebar1 p,.sidebar2 p,.sidebar3 p,.sidebar4 p{
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.sidebar1::before,.sidebar2::before,.sidebar3::before,.sidebar4::before{
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 100px;
+    // height: 120px;
+    left: 6px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    content: '';
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    transform: translateY(20px);
+}
+.sidebar1::after,.sidebar2::after,.sidebar3::after,.sidebar4::after{
+    position: relative;
+    display: inline-block;
+    content: '';
+    width: 100px;
+    // height: 120px;
+    top: 5px;
+    left: 175px;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+    content: '';
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    transform: translateY(-25px);
+}
+
+#A-nextButton{
+    @include btn;
+    margin-bottom: 20px;
+}
+#A-beforeButton{
+    @include btn2;
+    margin-bottom: 20px;
+}
+
+/////專輯製作
+// 第一步驟 & 第二步驟
+
+.A-record{
+    .A-page1st{
+        margin-top: 70px;
+        background-image: url("../images/Record/concert5.png");
+        background-repeat: no-repeat; 
+        width: 100%;
+        // background-color: rgba(0, 0, 0, 0.8);
+        // display: flex;
+        // flex-wrap: wrap;
+        .cuProcrss{
+            width: 100%;
+            text-align: center;
+            margin-top: 50px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            height: 225px;
+            .A-star{
+                display: none;
+            }
+            .cuPro{
+                margin: 50px 0;
+                width: 60px;
+                height: 60px;
+                line-height: 10px;
+                display: inline-block;
+                background:rgba(255, 255, 255, 0.4);
+                border-radius: 50%;
+                text-align: center;
+                padding: 5px;
+                color: #333;
+                // img{
+                //     margin-bottom: 15px;
+                // }
+                .A-starStep{
+                    width: 60%;
+                    margin-top: 5px;
+                }
+                p{
+                    font-size: 15px;
+                    text-align: center;
+                    letter-spacing: 4px;
+                    padding: 5px 0 1px 4px;
+                    color: #fff;
+                }
+            }
+        }
+        h2{
+            color: #fff;
+            padding: 20px;
+            font-size: 21px;
+            text-align: center;
+            margin: 15px;
+        }
+        // 第一步驟
+        .A-recAll{
+            display: none;
+        }
+        .mob-A-recAll{
+            background-color: rgba(207, 207, 207, 0.1);
+            width: 95%;
+            padding: 15px;
+            border-radius: 5px;
+            margin: -70px auto;
+            h4{
+                font-size: 18px;
+                color: #fff;
+            }
+            p{
+                font-size: 14px;
+                color: #fff;
+                font-size: 16px;;
+                margin: 16px;
+            }
+            input{
+                margin: 10px auto;
+            }
+            form{
+                .mob-A-songTitle{
+                    margin-bottom: 50px;
+                    .mob-A-sTp{
+                        .mob-A-starStep01{
+                            width: 30px;
+                            vertical-align: text-bottom;
+                            margin: 0 5px;
+                        }
+                        #mob-myWord{
+                            background-color: rgba(255, 255, 255, 0.1);
+                            border-style: none;
+                            border-left: 5px solid transparent;
+                            padding: 5px;
+                            border-radius: 3px;
+                            outline: none;
+                            caret-color: #fff;
+                            color: #fff;
+                            width: 340px;
+                            font-size: 16px;
+                        }
+                        #mob-putWord{
+                            @include btn;
+                        }
+                    }
+                    .mob-A-sCf{
+                        display: none;
+                        .mob-A-starStep01{
+                            width: 30px;
+                            vertical-align: text-bottom;
+                            margin: 0 5px;
+                        }
+                        #mob-beforePutWord{
+                            @include btn2;
+                        }
+                    }
+                }
+                .mob-A-recordBox{
+                    
+                    .mob-A-starStep02{
+                        width: 30px;
+                        vertical-align: text-bottom;
+                        margin: 0 5px;
+                    }
+                    .mob-record{
+                        margin: 30px auto;
+                        width: 100%;
+                        .mob-A-micphone{
+                            width: 100%;
+                            img{
+                                width: 70%;
+                            }
+                        }
+                    }
+                    #controls{
+                        margin: auto;
+                        text-align: center;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        button {
+                            text-decoration: none;
+                            display: inline-block;
+                            padding: 8px 55px;
+                            margin-top: 10px;
+                            background-color: rgba(245, 1, 62, 0.3);
+                            border: 1px solid rgba(255, 255, 255, 0.3);
+                            border-radius: 28px;
+                            color: rgba(255, 255, 255, 0.7);
+                            text-align: center;
+                            transition: 0.3s;
+                            &:hover{
+                                background-color: rgba(167, 129, 129, 0.08);
+                                border: 1px solid rgba(255, 255, 255, 0.7);
+                                cursor: pointer;
+                                p{
+                                    color: rgba(255, 255, 255, 0.9);
+                                }
+                            }
+                            p{
+                                font-size: 16px;
+                                transition: 0.3s;
+                            }
+                        }
+                        button:hover, button:focus {
+                            outline: none;
+                            background: #c72d1c;
+                        }
+                        button::-moz-focus-inner {
+                            border: 0;
+                        }
+                        button:active {
+                            box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+                        }
+                        button:disabled {
+                            pointer-events: none;
+                            background: rgb(87, 87, 87);
+                        }
+                        audio {
+                            display: block;
+                            width: 100%;
+                            margin-top: 0.2rem;
+                        }
+                        li {
+                            list-style: none;
+                            margin-bottom: 1rem;
+                        }
+                        #formats {
+                            margin-top: 0.5rem;
+                            font-size: 80%;
+                        }
+                        .musicwave img{
+                            width: 100vw;
+                        }
+                    }
+                    
+                    #recordingsList{
+                        color: white;
+                        font-size: 15px;
+                        width: 300px;
+                        padding-top: 20px;
+                        margin: 30px auto;
+                            li{
+                                display: flex;
+                                flex-direction: column;
+                            }
+                            a{
+                                color: white;
+                                @include btn2; 
+                            }
+                            form{
+                                display: none;
+                            }                    
+                    }
+                    #music-upfile{
+                        @include btn;
+                        text-decoration: none;
+                        display: inline;
+                        padding: 10px 25px;
+                        // padding-top: 12px;
+                        // padding-right: 43px;
+                        // padding-bottom: 12px;
+                        // padding-left: 43px;
+                        /* margin-top: 14px; */
+                        background-color: rgba(245, 1, 62, 0.3);
+                        border: 1px solid rgba(0, 1, 62, 0.3);
+                        border-radius: 28px;
+                        color: rgba(255, 255, 255, 0.9);
+                        text-align: center;
+                        -webkit-transition: 0.3s;
+                        -o-transition: 0.3s;
+                        transition: 0.3s;
+                        font-size: 14px;
+                        img{
+                            width: 7%;
+                            margin: 0 3px;
+                            vertical-align: middle;
+                        }
+                        #upfile{
+                            color: #fff;
+                            // @include btn;
+                            position: absolute;
+                            opacity: 0;
+                            filter: alpha(opacity=0);
+                            top: 0;
+                            right: 0;
+                            width:100%;
+                            height:100%;
+                        }
+                    }
+                    
+                }
+                .step2ndBnt{
+                    @include btn;
+                    // display: none;
+    
+                    // margin-bottom: 20px;
+                    // #A-nextButton{
+                    //     @include btn;
+                    //     margin-bottom: 20px;
+                    // }
+                    // #A-beforeButton{
+                    //     @include btn2;
+                    //     margin-bottom: 20px;
+                    // }
+                } 
+            }    
+        }
+
+        // .A-recAll{
+        //     background-color: rgba(207, 207, 207, 0.1);
+        //     width: 95%;
+        //     padding: 15px;
+        //     border-radius: 5px;
+        //     margin: 20px auto;
+        //     h4{
+        //         font-size: 18px;
+        //         color: #fff;
+        //     }
+        //     p{
+        //         font-size: 14px;
+        //         color: #fff;
+        //         font-size: 16px;;
+        //         margin: 16px;
+        //     }
+        //     input{
+        //         margin: 10px auto;
+        //     }
+        //     form{
+        //         .A-songTitle{
+        //             margin-bottom: 50px;
+        //             .A-sTp{
+        //                 .A-starStep01{
+        //                     width: 30px;
+        //                     vertical-align: text-bottom;
+        //                     margin: 0 5px;
+        //                 }
+        //                 #myWord{
+        //                     background-color: rgba(255, 255, 255, 0.1);
+        //                     border-style: none;
+        //                     border-left: 5px solid transparent;
+        //                     padding: 5px;
+        //                     border-radius: 3px;
+        //                     outline: none;
+        //                     caret-color: #fff;
+        //                     color: #fff;
+        //                     width: 340px;
+        //                     font-size: 16px;
+        //                 }
+        //             }
+        //             .A-sCf{
+        //                 display: none;
+        //                 .A-starStep01{
+        //                     width: 30px;
+        //                     vertical-align: text-bottom;
+        //                     margin: 0 5px;
+        //                 }
+        //                 #beforePutWord{
+        //                     @include btn2;
+        //                 }
+        //             }
+        //         }
+        //         .A-recordBox{
+        //             display: none;
+        //             .A-starStep02{
+        //                 width: 30px;
+        //                 vertical-align: text-bottom;
+        //                 margin: 0 5px;
+        //             }
+        //             .record{
+        //                 margin: 30px auto;
+        //                 width: 100%;
+        //                 .A-micphone{
+        //                     width: 100%;
+        //                     img{
+        //                         width: 30%;
+        //                     }
+        //                 }
+        //             }
+        //             #controls{
+        //                 margin: auto;
+        //                 text-align: center;
+        //                 margin-top: 20px;
+        //                 margin-bottom: 20px;
+        //                 button {
+        //                     text-decoration: none;
+        //                     display: inline-block;
+        //                     padding: 8px 55px;
+        //                     margin-top: 10px;
+        //                     background-color: rgba(245, 1, 62, 0.3);
+        //                     border: 1px solid rgba(255, 255, 255, 0.3);
+        //                     border-radius: 28px;
+        //                     color: rgba(255, 255, 255, 0.7);
+        //                     text-align: center;
+        //                     transition: 0.3s;
+        //                     &:hover{
+        //                         background-color: rgba(167, 129, 129, 0.08);
+        //                         border: 1px solid rgba(255, 255, 255, 0.7);
+        //                         cursor: pointer;
+        //                         p{
+        //                             color: rgba(255, 255, 255, 0.9);
+        //                         }
+        //                     }
+        //                     p{
+        //                         font-size: 16px;
+        //                         transition: 0.3s;
+        //                     }
+        //                 }
+        //                 button:hover, button:focus {
+        //                     outline: none;
+        //                     background: #c72d1c;
+        //                 }
+        //                 button::-moz-focus-inner {
+        //                     border: 0;
+        //                 }
+        //                 button:active {
+        //                     box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+        //                 }
+        //                 button:disabled {
+        //                     pointer-events: none;
+        //                     background: rgb(87, 87, 87);
+        //                 }
+        //                 audio {
+        //                     display: block;
+        //                     width: 100%;
+        //                     margin-top: 0.2rem;
+        //                 }
+        //                 li {
+        //                     list-style: none;
+        //                     margin-bottom: 1rem;
+        //                 }
+        //                 #formats {
+        //                     margin-top: 0.5rem;
+        //                     font-size: 80%;
+        //                 }
+        //                 .musicwave img{
+        //                     width: 100vw;
+        //                 }
+        //             }
+                    
+        //             #recordingsList{
+        //                 color: white;
+        //                 font-size: 15px;
+        //                 width: 300px;
+        //                 padding-top: 20px;
+        //                 margin: 30px auto;
+        //                     li{
+        //                         display: flex;
+        //                         flex-direction: column;
+        //                     }
+        //                     a{
+        //                         color: white;
+        //                         @include btn2; 
+        //                     }
+        //                     form{
+        //                         display: none;
+        //                     }                    
+        //             }
+        //         }
+        //         .step2ndBnt{
+        //             @include btn;
+        //             display: none;
+    
+        //             // margin-bottom: 20px;
+        //             // #A-nextButton{
+        //             //     @include btn;
+        //             //     margin-bottom: 20px;
+        //             // }
+        //             // #A-beforeButton{
+        //             //     @include btn2;
+        //             //     margin-bottom: 20px;
+        //             // }
+        //         } 
+        //     }    
+        // }
+        
+        
+        
+        //第二步驟
+        .A-albumAll{
+            display: flex;
+            flex-wrap: wrap;
+            .A-centerBox{
+                margin: auto;
+                width: 100%;
+                #dropZone{
+                    width: 361px;
+                    height: 361px;
+                    z-index: 5;
+                    // background-image: url("../images/Record/insertImage.png");
+                    // background-size: 100px;
+                    // background-position: center;
+                    #dropzoneContentimage1{
+                        color: #fff;
+                    }
+                }
+                .A-box{
+                    background-image: url("../images/Record/concert5.png");
+                    background-repeat: no-repeat; 
+                    background-size: cover;
+                    width: 91%;
+                    height: 340px;
+                    // padding-bottom: 91%;
+                    // background-color: #ffb1a8;
+                    border: 2px dotted #333;
+                    margin: auto;
+                    position: relative;
+                    order: 1;
+                    // #large{
+                    //     width: 100%;
+                    //     padding: 20px;
+                    // }
+                    // background-image: url("../images/Record/big/M1_001.jpg");
+                    background-repeat: no-repeat;
+                    margin: 20px auto;
+                    width: 100%;
+                    // border: var(--spacing) solid var(--base);
+                    // img{
+                    //     width: 100%;
+                    //     padding: 20px;
+                    // }
+                }
+                .controls{
+                    order: 2;
+                    margin: auto;
+                    margin-top: 20px;
+                    input{
+                        width: 230px;
+                        margin-bottom: 10px;
+                        width:100px;
+                        text-align: center;
+                        margin: auto;
+                    }
+                    img{
+                        margin-top: -5px;
+                    }
+                    :root{
+                        --spacing : 0px;
+                        /*--blur : 10px;*/
+                        --hue : 0deg;
+                        --base : #ffc600;
+                    }
+                    #hue{   
+                        width: 340px;
+                    }
+                    /******撥放進度條*****/
+                    .range {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        // position: absolute;
+                        // left: 65%;
+                        // top: 50%;
+                        width: 100px;
+                        // transform: translate(-50%, -50%);
+                        // position: absolute;
+                    }
+                    input[type=range]::-webkit-slider-runnable-track {
+                    -webkit-appearance: none;
+                    background: rgba(59,173,227,1);
+                    background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
+                    background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                    background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                    background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                    background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+                    height: 2px;
+                    }
+                    input[type=range]:focus {
+                    outline: none;
+                    }
+                    input[type=range]::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    border: 1px solid;
+                    border-radius: 30%;
+                    height: 20px;
+                    width: 20px;
+                    max-width: 80px;
+                    position: relative;
+                    bottom: 8px;
+                    // background-color: #1d1c25;
+                    background-color: #fff;
+                    cursor: -webkit-grab;
+                    -webkit-transition: border 1000ms ease;
+                    transition: border 1000ms ease;
+                        img{
+                            filter: hue-rotate(var(--hue));
+                        }
+                    }
+                    /******撥放進度條*****/
+                    img{
+                        width: 350px;
+                    }
+                }
+                #mob-btns{
+                    margin-top: 15px;
+                    width: 100%;
+                    align-items: center;
+                    img{
+                        width: 8%;
+                        margin: 10px;
+                    }
+                }
+            }
+            .wrapper {
+                width: 100%;
+                padding: 5px;
+                // min-width: 600px;
+                // max-width: 900px;
+                margin: 10px auto;
+                .tabs {
+                    display: table;
+                    table-layout: fixed;
+                    width: 100%;
+                    -webkit-transform: translateY(5px);
+                    transform: translateY(5px);
+                    li {
+                        transition-duration: .25s;
+                        display: table-cell;
+                        list-style: none;
+                        text-align: center;
+                        padding: 20px 20px 25px 20px;
+                        position: relative;
+                        overflow: hidden;
+                        cursor: pointer;
+                        color: white;
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+                    li:before {
+                        z-index: -1;
+                        position: absolute;
+                        content: "";
+                        width: 100%;
+                        height: 120%;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(255, 255, 255, 0.3);
+                        -webkit-transform: translateY(100%);
+                        transform: translateY(100%);
+                        transition-duration: .25s;
+                        border-radius: 5px 5px 0 0;
+                    }
+                    li:hover:before {
+                        -webkit-transform: translateY(70%);
+                        transform: translateY(70%);
+                    }
+                    li.active {
+                        color: #50555a;
+                    }
+                    li.active:before {
+                        transition-duration: .5s;
+                        background-color: white;
+                        -webkit-transform: translateY(0);
+                        transform: translateY(0);
+                    }
+                }
+                .tab__content {
+                    background-color: rgba(255, 255, 255, 0.123);
+                    position: relative;
+                    width: 100%;
+                    border-radius: 5px;
+                    li {
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: none;
+                        list-style: none;
+                        .content__wrapper {
+                            text-align: center;
+                            border-radius: 5px;
+                            // background-color: rgba(255, 255, 255, 0.123);
+                        }
+                    }
+                }              
+                
+                .A-bg{
+                    order: 3;
+                    width: 100%;
+                    float: left;
+                    // position: relative;
+                    // top:50%;//向下推外層空間的50%
+                    // transform:translateY(-50%);//以內元素的空間為基準，向上移動50%
+                    // margin-top: 280px;
+                    // margin-left: 50px;
+                    background-color: rgba(207, 207, 207, 0.2);
+                    border-radius: 5px;
+                    // h4{
+                    //     font-size: 16px;
+                    //     text-align: left;
+                    //     margin: auto;
+                    //     padding: 10px 0 0px 15px;
+                    // }
+                    // span{
+                    //     color: #fff;
+                    //     font-size: 14px;
+                    // }
+                    .A-bgBox{
+                        width: 100%;
+                        // margin: 20px;
+                        // margin-top: 20px;
+                        // h2 {
+                        //     text-align: center;
+                        //     padding-bottom: 20px;
+                        //     font-weight: 300;
+                        // }
+                        .A-bgBox1{
+                            width: 100%;
+                            img{
+                                margin: 2px;
+                                // float: left;
+                                padding: 0 5px 10px;
+                            }
+                            label{
+                                // width: 30px;
+                                // border: 2px solid rgb(126, 126, 126);
+                                // padding: 6px 12px;
+                                p{
+                                    font-size: 14px;
+                                    display: inline-block;
+                                    padding: 6px 12px;
+                                    border: 2px solid rgb(126, 126, 126);
+                                    color: #fff;
+                                }
+                                img{
+                                    width: 15px;
+                                    margin: 0 10px;
+                                }
+                            }
+                            input{
+                                display: none;
+                            }
+                        }
+                        // .A-bgBox2{
+                        //     width: 100%;
+                        // }
+                        // .A-bgBox3{
+                        //     width: 100%;
+                        // }
+                    }
+                    // margin: 15px;
+                    // background-color: rgba(207, 207, 207, 0.2);
+                    // h4{
+                    //     color: #fff;
+                    //     margin-top: 30px;
+                    //     padding: 15px;
+                    //     font-size: 18px;
+                    // }
+                    // p{
+                    //     font-size: 18px;
+                    //     color: #fff;
+                    //     font-family: Microsoft JhengHei;
+                    // }
+                }
+                .A-rightCont{
+                    order: 4;
+                    width: 100%;
+                    float: left;
+                    background-color: rgba(207, 207, 207, 0.2);
+                    border-radius: 5px;
+                    h4{
+                        font-size: 16px;
+                        text-align: left;
+                        margin: auto;
+                        padding: 10px 0 0px 15px;
+                    }
+                    #A-albumTitle{
+                        margin: 10px;
+                        padding: 0 100px;
+                    }
+                    #hue{
+                        width: 200px;
+                    }
+                    img{
+                        // width: 200px;
+                        padding-bottom: 10px;
+                    }
+                    .A-text{
+                        // background-color: rgba(255, 255, 255, 0.1);
+                        #myWord{
+                            border-style: none;
+                            border-left: 5px solid transparent;
+                            padding: 5px;
+                            border-radius: 3px;
+                            outline: none;
+                            // caret-color: #fff;
+                            // color: #fff;
+                            width: 340px;
+                            font-size: 16px;
+                        }
+                        
+                        // padding: 20px;
+                        // margin: 20px 15px 0;
+                        // background-color: rgba(207, 207, 207, 0.2);
+                        // h4{
+                        //     color: #fff;
+                        //     font-size: 18px;
+                        // }
+                        // p{
+                        //     font-size: 18px;
+                        //     color: #fff;
+                        // }
+                        // #hue{
+                        //     width: 230px;
+                        //     margin: 15px auto 10px;
+                        // }
+                        #btns{
+                            margin: 20px;
+                            img{
+                                width: 30px;
+                            }
+                        }
+                    }
+                    .A-iconImg{
+                        // background-color: rgba(255, 255, 255, 0.123);
+                        border-radius: 5px;
+                        // padding: 20px;
+                        p{
+                            font-size: 18px;
+                            color: #fff;
+                        }
+                        #imgBox{
+                            img{
+                                width: 90px;
+                                padding: 10px;
+                                // margin: 0px 10px;
+                                // float: left;
+                            }
+                            .iconLabel{
+                                p{
+                                    font-size: 14px;
+                                    display: inline-block;
+                                    padding: 0px 12px;
+                                    border: 2px solid #ffffff;
+                                    margin:10px auto 18px;
+                                    img{
+                                        width: 40px;
+                                        vertical-align: middle;
+                                    }
+                                }
+                            }
+                        }
+                        #btns{
+                            display: none;
+                        }
+                        
+                    }
+                }
+                h2{
+                    color: #fff;
+                    padding-top: 20px;
+                    font-size: 18px;
+                    text-align: center;
+                    font-weight: 500;
+                }
+            }
+            
+            #A-nextButton{
+                text-decoration: none;
+                display: inline-block;
+                padding: 8px 55px;
+                margin-top: -30px;
+                background-color: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 28px;
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                transition: 0.3s;
+                &:hover{
+                background-color: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                cursor: pointer;
+                    p{
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+                }
+                p{
+                    font-size: 16px;
+                    transition: 0.3s;
+                }
+            }
+        }
+        
+        //第三步驟
+        .A-step3box{
+            width: 100%;
+            // display: flex;
+            justify-content: center;
+            // margin-top: 50px;
+            display: none;
+
+            // fieldset{
+            //     #panel{
+            //         #step2{
+            //             width: 361px;
+            //             height: 361px;
+            //         }
+            //     }
+            // }
+            // transform: translateX(900px) translateY(-405px) rotate(0deg);
+                // translateX(196px) 
+            animation: mA-runCD 500s forwards ;             
+            img{
+                width: 90%;
+                margin: auto;
+                text-align: center;
+            }
+                    
+        }
+        @keyframes mA-runCD {
+            0% {
+                transform:  translateY(-900px)  rotate(0deg);
+            }
+            1% { transform: translateY(-180px) rotate(1080deg);}
+            // 50% {
+            //     transform: translateX(250px);
+            // }
+            100%{
+                transform: translateY(-180px) rotate(58000deg);
+            }
+        }
+
+        .A-textarea{
+            display: none;
+            background-color: rgba(207, 207, 207, 0.2);
+            border-radius: 5px;
+            margin: 5px;
+            margin-top: -150px;
+            h4{
+                color: #fff;
+                font-size: 16px;
+                text-align: center;
+                margin: auto;
+                padding: 15px 0 20px 0px;
+            }
+            #cuUserName, #cuUserAlbumTitle, #cuUserAlbumContent{
+                background-color: rgba(255, 255, 255, 0.1);
+                border-style: none;
+                border-left: 5px solid transparent;
+                padding: 5px;
+                border-radius: 3px;
+                outline: none;
+                caret-color: #fff;
+                color: #fff;
+                width: 340px;
+                font-size: 16px;
+            }
+            textarea{
+                resize: none; 
+            }
+            .putWord{
+                @include btn;
+                // margin: 15px;
+                // text-decoration: none;
+                // display: inline-block;
+                // padding: 8px 55px;
+                // margin-top: 20px;
+                // background-color: rgba(255, 255, 255, 0.2);
+                // border: 1px solid rgba(255, 255, 255, 0.2);
+                // border-radius: 28px;
+                // color: rgba(255, 255, 255, 0.7);
+                // text-align: center;
+                // transition: 0.3s;
+                // &:hover{
+                //     background-color: rgba(255, 255, 255, 0.3);
+                //     border: 1px solid rgba(255, 255, 255, 0.3);
+                //     cursor: pointer;
+                //     p{
+                //         color: rgba(255, 255, 255, 0.9);
+                //     }
+                // }
+            }
+        }
+        #MyImage{
+            @include btn;
+            margin-bottom: 20px;
+        }
+        #putWord{
+            @include btn;
+            // text-decoration: none;
+            // display: inline-block;
+            // padding: 8px 55px;
+            // margin-top: 10px;
+            // background-color: rgba(245, 1, 62, 0.3);
+            // border: 1px solid rgba(255, 255, 255, 0.3);
+            // border-radius: 28px;
+            // color: rgba(255, 255, 255, 0.7);
+            // text-align: center;
+            // transition: 0.3s;
+            // &:hover{
+            // background-color: rgba(255, 255, 255, 0.08);
+            // border: 1px solid rgba(255, 255, 255, 0.7);
+            // cursor: pointer;
+            //     p{
+            //         color: rgba(255, 255, 255, 0.9);
+            //     }
+            // }
+            // p{
+            // font-size: 16px;
+            // transition: 0.3s;
+            // }
+        }
+        .step3rdBnt{
+            display: none;
+        }
+
+        //燈箱顯示 - 製作完成
+        #finishMaking{
+            // width: 100vw;
+            // height: 100vh;
+            background-color: rgba(60, 60, 60, 0.5);
+            position: fixed;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 50;
+            // display: none;
+
+            #finishMakingBox{
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 54vmin;
+                height: 170px;
+                padding: 95px 20px 20px;
+                // background-color: rgba(7, 51, 110, 0.8);
+                background-image: linear-gradient(80deg, #080422 0%, #30166d 30%, #30166d 50%, #080422 100%);
+                border-radius: 10px;
+                display: flex;
+                // flex-wrap:wrap;
+                justify-content: space-around;
+                box-sizing: border-box;
+                opacity: .9;
+
+                p{
+                    position: absolute;
+                    top: 30px;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                    width: 18 0px;
+                    font-size: 22px;
+                    color: #fff;
+                    text-align: center;
+                    padding: 0
+                }
+                #Btn{
+                    @include btn;
+                }
+            }
+        }
+        
+        
+        //第四步驟
+        .cuWriteConfirm{
+            display: none;
+            background-color: rgba(207, 207, 207, 0.2);
+            border-radius: 5px;
+            margin: 5px;
+            margin-top: -150px;
+            h3{
+                color: #fff;
+                font-size: 22px;
+                padding: 15px;
+                padding: 30px 15px 15px;
+            }
+            h4{
+                color: #fff;
+                font-size: 18px;
+                text-align: center;
+                margin: auto;
+                padding: 15px 0 20px 0px;
+            }
+            .cuWrite{
+                background-color: rgba(255, 255, 255, 0.1);
+                border-style: none;
+                border-left: 5px solid transparent;
+                padding: 5px;
+                border-radius: 3px;
+                outline: none;
+                caret-color: #fff;
+                color: #fff;
+                width: 340px;
+                font-size: 16px;
+                margin: auto;
+            }
+            span{
+                color: #fff;
+                font-size: 16px;
+                padding: 15px;
+                line-height: 1.6em;
+                letter-spacing: 1px;
+                text-align: left;
+            }
+            .cuContentBox{
+                height: 190px;
+            }
+            .cuWriteContent{
+                margin-bottom: 30px;
+            }
+            #auto{
+                @include btn;
+                display: block;
+                margin: auto;
+                margin-bottom: 20px;
+            }
+        }
+        .cuWriteConfirmButtons{
+            display: none;
+            #sendForm{
+                text-decoration: none;
+                display: inline-block;
+                padding: 8px 55px;
+                margin-top: 10px;
+                background-color: rgba(245, 1, 62, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 28px;
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                transition: 0.3s;
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.7);
+                    cursor: pointer;
+                    p{
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+                }
+                p{
+                    font-size: 16px;
+                    transition: 0.3s;
+                }
+            }
+        }
+        canvas{
+            display: none;
+        }
+    }
+}
+
+    
+    
+.footer{
+    padding: 25px 0 5px 0;
+}
+
+
+// // 第四屏
+// .A-albumAnimation{
+//     background-repeat: no-repeat; 
+//     width: 100%;
+//     height: 100%;
+//     .A-page4th{
+//         background-repeat: no-repeat; 
+//         width: 100%;
+//         background-color: rgba(0, 0, 0, 0.9);
+//         border-radius: 8px;
+//         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+//         overflow: hidden;
+//         z-index: 2;
+//         padding: 50px;
+//         box-sizing: border-box;
+//         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+//         overflow: hidden;
+//         background-position: center top;
+//         background-size: cover;
+//         padding: 15px 0;
+//         .A-Box{
+//             // width: 100%;
+//             img{
+//                 width: 80%;
+//                 // float: left;
+//                 padding: 20px;
+//                 margin: 20px;
+//                 text-align: center;
+//             }
+//         }
+//         .A-page4th:after {
+//             // background-image: url("../images/Record/concert.png");
+//             content: '';
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             right: 0;
+//             bottom: 0;
+//             background-color: rgba(255,255,255,0.8);
+//             -webkit-filter: blur(30px);
+//             -moz-filter: blur(30px);
+//             -ms-filter: blur(30px);
+//             -o-filter: blur(30px);
+//             filter: blur(100px);
+//             z-index: -3;
+//             margin: -30px;
+//             background-position: center top;
+//             background-size: cover;
+//             background-attachment: fixed;
+//         }
+//         .A-many-mic{
+//             width: 100%;
+//             display: flex;
+//             justify-content: center;
+//             img{
+//                 width: 50px;
+//                 height: 100%;
+//                 margin: 0 30px;
+//             }
+//         }
+        
+//     }
+// }
+
+// sass rwd函式
+// #aaaa{
+//     width: 100%;
+//     @in rwd(768){
+//         width: 50%; 
+//     }
+// }
+
+//桌機版
+@include web-A{
+    .sidebar{
+        display: block;
+    }
+    .sidebar1,.sidebar2,.sidebar3,.sidebar4{
+        width: 15px;
+        height: 330px;
+        color: rgba(255, 255, 255, 0.6);
+        position: fixed;
+        left: 50px;
+        margin-top: 75px;
+    }
+    .sidebar1 p,.sidebar2 p,.sidebar3 p,.sidebar4 p{
+        margin: 0 auto;
+        padding: 20px 0;
+        font-size: 2.3vmin;
+    }
+    .sidebar1::before,.sidebar2::before,.sidebar3::before,.sidebar4::before{
+        position: relative;
+        // display: inline-block;
+        content: '';
+        height: 120px;
+        left: 6px;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: none;
+        width: 1px;
+        margin: 10px 0;
+    }
+    .sidebar1::after,.sidebar2::after,.sidebar3::after,.sidebar4::after{
+        position: relative;
+        // display: inline-block;
+        content: '';
+        height: 120px;
+        top: 5px;
+        left: 6px;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: none;
+        width: 1px;
+        margin: 10px 0;
+    }
+    .clear-fix{
+        clear: both;
+    }
+    h2{
+        color: #fff;
+        padding: 20px;
+        margin: 60px auto 50px;
+        font-size: 26px;;
+    }
+    .mob-A-A-record{
+        display: none;
+    }
+    //做專輯
+    // body{
+    //     background-image: url("../images/Record/concert4.png");
+    //     background-repeat: no-repeat;
+    // }
+    .section{
+        background-image: url("../images/Record/concert4.png");
+        background-repeat: no-repeat;
+        .A-page1st{
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            overflow: hidden;
+            z-index: 2;
+            padding: 50px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            overflow: hidden;
+            background-position: center top;
+            background-size: cover;
+            padding: 15px 0;
+            margin-top: 120px;
+            .cuProcrss{
+                height: 200px;
+                .cuPro{
+                    margin-top: -10px;
+                    width: 90px;
+                    height: 90px;
+                    line-height: 35px;
+                    display: inline-block;
+                    background:rgba(255, 255, 255, 0.4);
+                    border-radius: 50%;
+                    text-align: center;
+                    padding: 5px;
+                    color: #333;
+                    span,p{
+                        font-size: 16px;
+                        text-align: center;
+                        letter-spacing: 1px;
+                        padding: 0px 0 0px 0px
+                    }
+                }
+                
+                .A-star{
+                    display: inline-block;
+                    margin-top: -20px;
+                }
+            }
+            h2{
+                font-size: 24px;
+                color: #fff;
+                margin: 20px;
+                // margin-top: 230px;
+            }
+            //第一步驟
+            .mob-A-recAll{
+                display: none;
+            }
+            .A-recAll{
+                display: block;
+                // position: relative;
+                background-color: rgba(207, 207, 207, 0.1);
+                width: 90%;
+                padding: 15px;
+                border-radius: 5px;
+                margin: 50px auto;
+                
+                .record{
+                    margin: 0px auto;
+                    width: 300px;
+                    img{
+                        width: 100%;
+                        padding-top: -10px;
+                    }
+                    .A-micphone{
+                        width: 100%;
+                        img{
+                            // position: absolute;
+                            // top: 0;
+                            // left: 15%;
+                            // margin: -130px 0px;
+                            // padding: 50px 10px;
+                            width: 100%;
+                            // height: 50%;
+                            text-align: left;
+                        }
+                    }
+                }
+                iframe{
+                    width: 500px;
+                }
+                form{
+                    
+                    h4{
+                        font-size: 21px;
+                        color: #fff;
+                    }
+                    p{
+                        font-size: 18px;
+                        color: #fff;
+                        margin: 15px;
+                    }
+                    input{
+                        display: block;
+                        margin: 10px auto;
+                    }
+                    
+                }
+                #A-nextButton{
+                    text-decoration: none;
+                    display: inline-block;
+                    padding: 8px 55px;
+                    margin-top: 20px;
+                    margin: auto;
+                    background-color: rgba(245, 1, 62, 0.3);
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    border-radius: 28px;
+                    color: rgba(255, 255, 255, 0.7);
+                    text-align: center;
+                    transition: 0.3s;
+                    &:hover{
+                    background-color: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.7);
+                    cursor: pointer;
+                        p{
+                            color: rgba(255, 255, 255, 0.9);
+                        }
+                    }
+                    p{
+                        font-size: 16px;
+                        transition: 0.3s;
+                    }
+                }
+    
+            }
+
+            .A-recAll{
+                background-color: rgba(207, 207, 207, 0.1);
+                width: 95%;
+                padding: 15px;
+                border-radius: 5px;
+                margin: 20px auto;
+                h4{
+                    font-size: 18px;
+                    color: #fff;
+                }
+                p{
+                    font-size: 14px;
+                    color: #fff;
+                    font-size: 16px;;
+                    margin: 16px;
+                }
+                input{
+                    margin: 10px auto;
+                }
+                form{
+                    .A-songTitle{
+                        margin-bottom: 50px;
+                        .A-sTp{
+                            .A-starStep01{
+                                width: 30px;
+                                vertical-align: text-bottom;
+                                margin: 0 5px;
+                            }
+                            #myWord{
+                                background-color: rgba(255, 255, 255, 0.1);
+                                border-style: none;
+                                border-left: 5px solid transparent;
+                                padding: 5px;
+                                border-radius: 3px;
+                                outline: none;
+                                caret-color: #fff;
+                                color: #fff;
+                                width: 340px;
+                                font-size: 16px;
+                            }
+                        }
+                        .A-sCf{
+                            display: none;
+                            .A-starStep01{
+                                width: 30px;
+                                vertical-align: text-bottom;
+                                margin: 0 5px;
+                            }
+                            #beforePutWord{
+                                @include btn2;
+                            }
+                        }
+                    }
+                    .A-recordBox{
+                        display: none;
+                        .A-starStep02{
+                            width: 30px;
+                            vertical-align: text-bottom;
+                            margin: 0 5px;
+                        }
+                        .record{
+                            margin: 30px auto;
+                            width: 100%;
+                            .A-micphone{
+                                width: 100%;
+                                img{
+                                    width: 30%;
+                                }
+                            }
+                        }
+                        #controls{
+                            margin: auto;
+                            text-align: center;
+                            margin-top: 20px;
+                            margin-bottom: 20px;
+                            input {
+                                text-decoration: none;
+                                display: inline-block;
+                                padding: 9px 10px;
+                                margin-top: 10px;
+                                background-color: rgba(245, 1, 62, 0.3);
+                                border: 1px solid rgba(255, 255, 255, 0.3);
+                                border-radius: 28px;
+                                color: rgba(255, 255, 255, 0.7);
+                                text-align: center;
+                                transition: 0.3s;
+                                &:hover{
+                                    background-color: rgba(167, 129, 129, 0.08);
+                                    border: 1px solid rgba(255, 255, 255, 0.7);
+                                    cursor: pointer;
+                                    p{
+                                        color: rgba(255, 255, 255, 0.9);
+                                    }
+                                }
+                                p{
+                                    font-size: 16px;
+                                    transition: 0.3s;
+                                }
+                            }
+                            button:hover, button:focus {
+                                outline: none;
+                                background: #c72d1c;
+                            }
+                            button::-moz-focus-inner {
+                                border: 0;
+                            }
+                            button:active {
+                                box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+                            }
+                            button:disabled {
+                                pointer-events: none;
+                                background: rgb(87, 87, 87);
+                            }
+                            audio {
+                                display: block;
+                                width: 100%;
+                                margin-top: 0.2rem;
+                            }
+                            li {
+                                list-style: none;
+                                margin-bottom: 1rem;
+                            }
+                            #formats {
+                                margin-top: 0.5rem;
+                                font-size: 80%;
+                            }
+                            .musicwave img{
+                                width: 100vw;
+                            }
+                        }
+                        
+                        #recordingsList{
+                            color: white;
+                            font-size: 15px;
+                            width: 300px;
+                            padding-top: 20px;
+                            margin: 30px auto;
+                                li{
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                                a{
+                                    color: white;
+                                    @include btn2; 
+                                }
+                                form{
+                                    display: none;
+                                }                    
+                        }
+                    }
+                    .step2ndBnt{
+                        @include btn;
+                        display: none;
+        
+                        // margin-bottom: 20px;
+                        // #A-nextButton{
+                        //     @include btn;
+                        //     margin-bottom: 20px;
+                        // }
+                        // #A-beforeButton{
+                        //     @include btn2;
+                        //     margin-bottom: 20px;
+                        // }
+                    } 
+                }    
+            }
+            
+            // 第二步驟
+            .A-albumAll{
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                .A-centerBox{
+                    order: 1;
+                    width: 30%;
+                    margin: auto;
+                    :root{
+                        --spacing : 0px;
+                        /*--blur : 10px;*/
+                        --hue : 0deg;
+                        --base : #ffc600;
+                    }
+                    #dropZone{
+                        overflow: hidden;
+                        width: 361px;
+                        height: 361px;
+                        padding-bottom: 361px;
+                        border: 1px dotted rgba(200, 200, 200, 0.096);
+                        float: left;
+                        text-align: center;
+                    }
+                    #dropZone::after{
+                        content: "";
+                        width: 1px;
+                        height: 100%;
+                        display:inline-block;
+                        vertical-align: middle;
+                    }
+                    #dropZone img{
+                        vertical-align: middle;
+                    }
+                    .A-box{
+                        float: left;
+                        // margin: 20px 40px;
+                        width: 32%;
+                        max-width: 1000px;
+                        position: relative;
+                        // border: var(--spacing) solid var(--base);
+                    }
+                    img{
+                        filter: hue-rotate(var(--hue));
+                    }
+                    .controls {
+                        margin-top: 50px;
+                        /******撥放進度條*****/
+                    .range {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        // position: absolute;
+                        // left: 20%;
+                        // top: 85%;
+                        width: 100px;
+                        // transform: translate(-50%, -50%);
+                        // margin-left: 160px;
+                        // position: absolute;
+                      }
+                      input[type=range]::-webkit-slider-runnable-track {
+                        -webkit-appearance: none;
+                        background: rgba(59,173,227,1);
+                        background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
+                        background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                        background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                        background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                        background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+                        height: 2px;
+                      }
+                      input[type=range]:focus {
+                        outline: none;
+                      }
+                      input[type=range]::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        border: 1px solid;
+                        border-radius: 30%;
+                        height: 15px;
+                        width: 25px;
+                        max-width: 80px;
+                        position: relative;
+                        bottom: 8px;
+                        background-color: #ffffff;
+                        cursor: -webkit-grab;
+                        -webkit-transition: border 1000ms ease;
+                        transition: border 1000ms ease;
+                      }
+                      /******撥放進度條*****/
+                         
+                        #hue{   
+                            width: 320px;
+                            margin: 20px auto;
+                        }
+                        img{
+                            width: 335px;
+                            margin-top: -26px;
+                        }
+                    }
+                    .label{
+                        color: #EAE9E2;
+                    }
+                    input {
+                        width:100px;
+                        text-align: center;
+                        margin: auto;
+                        border-radius: 5px;
+                    }
+                }
+                .wrapper{
+                    width: 60%;
+                    float: left;
+                    order: 2;
+                    .tab__content{
+                        .active{
+                            .content__wrapper{
+                                height: 325px;
+                            }
+                            .A-bgBox{
+                                width: 100%;
+                                h2{
+                                    font-size: 21px;
+                                    text-align: center;
+                                    margin: auto;
+                                    padding: 23px 0 0px 15px;
+                                }
+                                img{
+                                    margin: 0px;
+                                }
+                                .A-bgBox1{
+                                    display: flex;
+                                    justify-content: space-evenly;
+                                    flex-wrap: wrap;
+                                    align-items: center;
+                                    margin-top: 15px;
+                                    img{
+                                        margin: 10px;
+                                        padding: 0px;
+                                    }
+                                    input{
+                                        display: none;   
+                                    }
+                                    p{
+                                        font-size: 14px;
+                                    }
+                                    label{
+                                        margin: 15px;
+                                        p{
+                                            font-size: 16px;
+                                            display: inline-block;
+                                            padding: 6px 12px;
+                                            border: 2px solid rgb(126, 126, 126);
+                
+                                        }
+                                        img{
+                                            width: 16px;
+                                            margin: 0 10px;
+                                        }
+                                    }
+                                }                             
+                            }
+                        }
+                    }
+                    .A-rightCont{
+                        order: 3;
+                        width: 100%;
+                        float: left;
+                        // background-color: rgba(207, 207, 207, 0.2);
+                        border-radius: 5px;
+                        h2{
+                            font-size: 21px;
+                            text-align: center;
+                            // margin: auto;
+                            padding: 10px 0 0px 0px;
+                        }
+                        #A-albumTitle{
+                            margin: 10px;
+                            padding: 0 100px;
+                        }
+                        #hue{
+                            width: 200px;
+                        }
+                        img{
+                            width: 200px;
+                            padding-bottom: 10px;
+                        }
+                        .A-iconImg{
+                            padding: 10px;
+                            margin: 20px;
+                            display: flex;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            // h4{
+                            //     padding-bottom: 15px;
+                            // }
+                            .A-iconbg{
+                                width: 100%;
+                                .img{
+                                    float: left;
+                                    width: 72px !important;
+                                }
+                                .iconLabel{
+                                    float: left;
+                                    p{
+                                        width: 210px;
+                                        font-size: 10px;
+                                        display: inline-block;
+                                        padding: 0px 5px 3px;
+                                        border: 2px solid #ffffff;
+                                        margin-bottom:18px;
+                                        img{
+                                            width: 40px;
+                                            vertical-align: middle;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            #btns{
+                                display: none;
+                                width: 50%;
+                                align-items: center;
+                                img{
+                                    width: 8%;
+                                    margin: 10px;
+                                }
+                            } 
+                            
+                        }
+                    }
+                }
+            }
+            
+            //第三步驟
+            position: relative;
+            .A-step3box{
+                // width: 100%;
+                padding: 20px;
+                position: absolute;
+                // top:27.5%;
+                // left: 19%;
+                // top: 31.5%;
+                // left: 60%;
+                transform: translateX(900px) translateY(-405px) rotate(0deg);
+                // translateX(196px) 
+                animation: A-runCD 500s forwards ;
+                img{
+                    // display: block;
+                    width: 30%;
+                    margin: 30px;
+                    text-align: center;
+                    // padding: 70px 70px 20px;
+                    
+                }
+            }
+
+            @keyframes A-runCD {
+                0% {
+                    transform:  translateX(900px) translateY(-405px) rotate(0deg);
+                }
+                1% { transform: translateX(196px) translateY(-405px) rotate(1080deg);}
+                // 50% {
+                //     transform: translateX(250px);
+                // }
+                100%{
+                    transform: translateX(196px) translateY(-405px) rotate(58000deg);
+                }
+            }
+            .A-textarea{
+                margin: 30px auto;
+                width: 600px;
+                form{
+                    h4{
+                        color: #fff;
+                        font-size: 21px;
+                        text-align: center;
+                        margin: auto;
+                        padding: 20px 0 20px 15px;
+                    }
+                    // textarea{
+                    //     padding: 10px;
+                    //     color: #5a5854;
+                    //     background-color: #f2f2f2;
+                    //     text-align: center;
+                    //     margin: auto;
+                    //     border-radius: 5px;
+                    //     border: 1px solid #bdbdbd;
+                    //     :focus{
+                    //         background-color: #fff;
+                    //         border: 1px solid #372394;
+                    //     }
+                    // }
+                       
+                }
+                fieldset{
+                    display: none;
+                } 
+            }
+            
+            #A-nextButton{
+                @include btn;
+            }
+
+            //第四步驟
+            .cuWriteConfirm{
+                margin: 30px auto;
+                width: 600px;
+                height:420px;
+            }
+
+
+                
+            
+        }
+        .A-page1st:after {
+            // content: '';
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            // right: 0;
+            // bottom: 0;
+            background-color: rgba(255,255,255,0.8);
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -ms-filter: blur(10px);
+            -o-filter: blur(10px);
+            filter: blur(100px);
+            z-index: -3;
+            margin: -30px;
+            background-position: center top;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        #controls{
+            margin: auto;
+            text-align: center;
+            button {
+                text-decoration: none;
+                display: inline-block;
+                padding: 8px 55px;
+                margin-top: 120px;
+                background-color: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 28px;
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                transition: 0.3s;
+                &:hover{
+                background-color: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                cursor: pointer;
+                    p{
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+                }
+                p{
+                    font-size: 16px;
+                    transition: 0.3s;
+                }
+            }
+            button:hover, button:focus {
+                outline: none;
+                background: #c72d1c;
+            }
+            button::-moz-focus-inner {
+                border: 0;
+            }
+            button:active {
+                box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+                /*line-height: 3rem;*/
+            }
+            button:disabled {
+                pointer-events: none;
+                background: rgb(87, 87, 87);
+            }
+            audio {
+                display: block;
+                width: 100%;
+                margin-top: 0.2rem;
+            }
+            li {
+                list-style: none;
+                margin-bottom: 1rem;
+            }
+            #formats {
+                margin-top: 0.5rem;
+                font-size: 80%;
+            }
+            .musicwave img{
+                width: 100vw;
+            }
+        }
+    }
+
+
+    // 第二屏
+    // #A-draw{
+    //     // display: block;
+    //     .A-page2nd{
+    //         // border-radius: 8px;
+    //         // box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    //         // overflow: hidden;
+    //         // z-index: 2;
+    //         // padding: 50px;
+    //         // box-sizing: border-box;
+    //         // overflow: hidden;
+    //         // background-position: center top;
+    //         // background-size: cover;
+    //         // padding: 15px 0;
+    //         // margin-top: 150px;
+    //         .cuProcrss{
+    //             .cuPro{
+    //                 margin-top: -10px;
+    //                 width: 90px;
+    //                 height: 90px;
+    //                 line-height: 35px;
+    //                 display: inline-block;
+    //                 background:rgba(255, 255, 255, 0.4);
+    //                 border-radius: 50%;
+    //                 text-align: center;
+    //                 padding: 5px;
+    //                 color: #333;
+    //                 span,p{
+    //                     font-size: 16px;
+    //                     text-align: center;
+    //                     letter-spacing: 1px;
+    //                     padding: 0px 0 0px 0px
+    //                 }
+    //             }
+    //             .A-star{
+    //                background-color: #372394;
+    //                width: 200px;
+    //             }
+    //             img{
+    //                 display: inline-block;
+    //                 margin-bottom: 0px;
+    //             }
+    //         }
+    //         h2{
+    //             font-size: 24px;
+    //             color: #fff;
+    //             margin: 20px;
+    //             // margin-top: 230px;
+    //         }
+            
+    //     }  
+    // } 
+    // #A-nextButton{
+    //     text-decoration: none;
+    //     display: inline-block;
+    //     padding: 8px 55px;
+    //     margin-top: 30px;
+    //     background-color: rgba(245, 1, 62, 0.3);
+    //     border: 1px solid rgba(255, 255, 255, 0.3);
+    //     border-radius: 28px;
+    //     color: rgba(255, 255, 255, 0.7);
+    //     text-align: center;
+    //     transition: 0.3s;
+    //         &:hover{
+    //         background-color: rgba(255, 255, 255, 0.08);
+    //         border: 1px solid rgba(255, 255, 255, 0.7);
+    //         cursor: pointer;
+    //             p{
+    //                 color: rgba(255, 255, 255, 0.9);
+    //             }
+    //         }
+    //         p{
+    //             font-size: 16px;
+    //             transition: 0.3s;
+    //         }
+    //     }
+
+    // 第三屏
+    // .A-page3rd:after {
+    //     // background-image: url("../images/Record/concert.png");
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     background-color: rgba(255,255,255,0.8);
+    //     -webkit-filter: blur(30px);
+    //     -moz-filter: blur(30px);
+    //     -ms-filter: blur(30px);
+    //     -o-filter: blur(30px);
+    //     filter: blur(100px);
+    //     z-index: -3;
+    //     margin: -30px;
+    //     background-position: center top;
+    //     background-size: cover;
+    //     background-attachment: fixed;
+    // }
+
+
+    // 第四屏
+    .A-albumAnimation{
+        background-repeat: no-repeat; 
+        width: 100%;
+        height: 100%;
+        .A-page4th{
+            background-repeat: no-repeat; 
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            overflow: hidden;
+            z-index: 2;
+            padding: 50px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            overflow: hidden;
+            background-position: center top;
+            background-size: cover;
+            padding: 15px 0;
+            position: relative;
+            .A-Box{
+                width: 450px;
+                padding: 20px;
+                margin: auto;
+                img{
+                    width: 100%;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+            .A-page4th:after {
+                // background-image: url("../images/Record/concert.png");
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(255,255,255,0.8);
+                -webkit-filter: blur(30px);
+                -moz-filter: blur(30px);
+                -ms-filter: blur(30px);
+                -o-filter: blur(30px);
+                filter: blur(100px);
+                z-index: -3;
+                margin: -30px;
+                background-position: center top;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            .A-many-mic{
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 45%;
+                left: 0;
+                img{
+                    width: 20%;
+                    padding: 50px;
+                    margin: 0 30px;
+                }
+            }
+            .A-finish{
+                width: 600px;
+                margin: auto;
+            }
+            #A-nextButton{
+                text-decoration: none;
+                display: inline-block;
+                padding: 8px 55px;
+                margin-top: 10px;
+                background-color: rgba(245, 1, 62, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 28px;
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                transition: 0.3s;
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.7);
+                    cursor: pointer;
+                    p{
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+                }
+                p{
+                    font-size: 16px;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+}
